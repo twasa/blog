@@ -65,6 +65,6 @@ git push -u origin master
 hugo --buildDrafts
 cd public
 git add .
-git commit -m "Generate site"
+git commit -m ""
 git push origin master
 ```
