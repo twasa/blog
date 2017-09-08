@@ -56,9 +56,9 @@ hugo server --buildDrafts --watch
 
 ```
 git init
-git remote add origin git@github.com:twasa/blog.git
+git remote add origin git@github.com:<youraccount>/blog.git
 git rm -r public
-git submodule add git@github.com:twasa/twasa.github.io.git public
+git submodule add git@github.com:<youraccount>/<youraccount>.github.io.git public
 git add .
 git commit -m "first commit"
 git push -u origin master
