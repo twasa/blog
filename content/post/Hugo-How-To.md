@@ -51,16 +51,16 @@ hugo server --buildDrafts --watch
 
 - deploy to github
  - Create a blog git repository on GitHub
- - Create a <username>.github.io GitHub repository
- - run commands as below
+ - Create a twasa.github.io GitHub repository
+ - run commands as below, in your blog folder
 
 ```
 git init
-git remote add origin git@github.com:<username>/blog.git
+git remote add origin git@github.com:twasa/blog.git
 git rm -r public
-git submodule add git@github.com:<username>/<username>.github.io.git public
+git submodule add git@github.com:twasa/twasa.github.io.git public
 git add .
-git commit "first commit"
+git commit -m "first commit"
 git push -u origin master
 hugo --buildDrafts
 cd public
