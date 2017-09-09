@@ -90,7 +90,6 @@ git add -A
 git commit -m "Blog update %current%"
 git push origin master
 ```
-
  - linux : save below content as .sh
 
 ```
