@@ -69,7 +69,7 @@ git commit -m ""
 git push origin master
 ```
 
-- create a batch file for one click deploy, on your blog folder
+- In your blog folder, create a batch file for one click deploy.
 
 ```
 git add .
