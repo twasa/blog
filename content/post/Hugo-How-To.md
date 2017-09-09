@@ -20,7 +20,7 @@ hugo new site blog
 - go in to the blog folder and modify config.toml for your github url
 
 ```
-baseURL = "http://<your-github-account>.github.io/"
+baseURL = "https://<your-github-account>.github.io/"
 ```
 
 - create new page
