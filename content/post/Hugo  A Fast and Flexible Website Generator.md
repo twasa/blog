@@ -1,10 +1,10 @@
 ---
-title: "Hugo A Fast and Flexible Website Generator"
+title: "Hugo How To"
 date: 2017-09-08T19:12:41+08:00
 draft: true
 ---
 
-## Quick Start Guide
+## Hugo | A Fast and Flexible Website Generator
 - Create a blog folder
 
 ```
