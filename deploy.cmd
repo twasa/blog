@@ -1,6 +1,5 @@
 set workdir=%~dp0
 set current=%date:~0,4%-%date:~5,2%-%date:~8,2% %time:~0,2%:%time:~3,2%:%time:~6,2%
-e:
 cd %workdir%
 git add .
 git commit -m "Hugo update %current%"
@@ -10,3 +9,5 @@ cd public
 git add .
 git commit -m "Blog update %current%"
 git push origin master
+PAUSE
+EXIT

@@ -75,15 +75,33 @@ git push origin master
 ```
 
 - In your blog folder, create a batch file for one click deploy.
+ - windows : save below content as .cmd
 
 ```
+set workdir=%~dp0
 set current=%date:~0,4%-%date:~5,2%-%date:~8,2% %time:~0,2%:%time:~3,2%:%time:~6,2%
-git add .
+cd %workdir%
+git add -A
 git commit -m "Hugo content update %current%"
 git push -u origin master
 hugo --buildDrafts
 cd public
-git add .
+git add -A
 git commit -m "Blog update %current%"
+git push origin master
+```
+
+ - linux : save below content as .sh
+
+```
+#!/bin/bash
+workdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+git add -A
+git commit -m "Hugo content update `date`"
+hugo --buildDrafts
+cd public
+git add -A
+current="Blog update `date`"
+git commit -m "$current"
 git push origin master
 ```
