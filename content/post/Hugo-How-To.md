@@ -102,7 +102,6 @@ git commit -m "Hugo content update `date`"
 hugo --buildDrafts
 cd public
 git add -A
-current="Blog update `date`"
-git commit -m "$current"
+git commit -m "Blog update `date`"
 git push origin master
 ```
