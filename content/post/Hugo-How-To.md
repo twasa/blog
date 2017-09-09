@@ -5,6 +5,12 @@ draft: true
 ---
 
 ## Quick Start Guide
+- Hugo download
+ - https://github.com/gohugoio/hugo/releases
+
+- Install Hugo
+ - https://gohugo.io/getting-started/installing/
+
 - Create a blog folder
 
 ```
@@ -14,7 +20,6 @@ hugo new site blog
 - go in to the folder and modify config.toml for your github url
 
 ```
-vi config.toml
 baseURL = "http://<your-github-account>.github.io/"
 ```
 
@@ -51,33 +56,34 @@ hugo server --buildDrafts --watch
 
 - deploy to github
  - Create a blog git repository on GitHub
- - Create a twasa.github.io GitHub repository
+ - Create a <your-github-account>.github.io GitHub repository
  - run commands as below, in your blog folder
 
 ```
 git init
-git remote add origin git@github.com:<youraccount>/blog.git
+git remote add origin git@github.com:<your-github-account>/blog.git
 git rm -r public
-git submodule add git@github.com:<youraccount>/<youraccount>.github.io.git public
+git submodule add git@github.com:<your-github-account>/<your-github-account>.github.io.git public
 git add .
-git commit -m "first commit"
+git commit -m "Hugo content update"
 git push -u origin master
 hugo --buildDrafts
 cd public
 git add .
-git commit -m ""
+git commit -m "Blog update"
 git push origin master
 ```
 
 - In your blog folder, create a batch file for one click deploy.
 
 ```
+set current=%date:~0,4%-%date:~5,2%-%date:~8,2% %time:~0,2%:%time:~3,2%:%time:~6,2%
 git add .
-git commit -m "first commit"
+git commit -m "Hugo content update %current%"
 git push -u origin master
 hugo --buildDrafts
 cd public
 git add .
-git commit -m "Generate site"
+git commit -m "Blog update %current%"
 git push origin master
 ```

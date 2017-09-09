@@ -1,10 +1,11 @@
+set current=%date:~0,4%-%date:~5,2%-%date:~8,2% %time:~0,2%:%time:~3,2%:%time:~6,2%
 e:
 cd \hugo\blog
 git add .
-git commit -m "first commit"
+git commit -m "Hugo update %current%"
 git push -u origin master
 hugo --buildDrafts
 cd public
 git add .
-git commit -m "Generate site"
+git commit -m "Blog update %current%"
 git push origin master
