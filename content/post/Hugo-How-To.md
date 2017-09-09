@@ -17,7 +17,7 @@ draft: true
 hugo new site blog
 ```
 
-- go in to the folder and modify config.toml for your github url
+- go in to the blog folder and modify config.toml for your github url
 
 ```
 baseURL = "http://<your-github-account>.github.io/"
@@ -56,8 +56,8 @@ hugo server --buildDrafts --watch
 
 - deploy to github
  - Create a blog git repository on GitHub
- - Create a <your-github-account>.github.io GitHub repository
- - run commands as below, in your blog folder
+ - Create a <your-github-account>.github.io repository on GitHub
+ - In your blog folder, run commands as below
 
 ```
 git init
