@@ -96,6 +96,7 @@ git push origin master
 ```
 #!/bin/bash
 workdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $workdir
 git add -A
 git commit -m "Hugo content update `date`"
 hugo --buildDrafts
