@@ -1,7 +1,33 @@
 baseURL = "https://twasa.github.io/"
 languageCode = "en-us"
 title = "William's Blog"
-theme = "docdock"
+theme = "hugo-dusk"
+copyright = "Copyright (c) 2017, all rights reserved."
+canonifyurls = true
+paginate = 3
 
-[outputs]
-home = [ "HTML", "RSS", "JSON"]
+#[outputs]
+#home = [ "HTML", "RSS", "JSON"]
+
+[[menu.main]]
+  name = "Posts"
+  weight = -120
+  identifier = "post"
+  url = "/post/"
+
+[[menu.main]]
+  name = "Tags"
+  weight = -110
+  identifier = "tag"
+  url = "/tags/"
+
+[params.meta]
+  keywords = "blog, tech"
+  description = "William's blog."
+
+#[params]
+#  github = "github id"
+#  gitlab = "gitlab id"
+#  twitter = "twitter id"
+#  linkedin = "linkedin id"
+#  email = "myemail"
