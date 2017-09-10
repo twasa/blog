@@ -56,7 +56,7 @@ hugo server --buildDrafts --watch
 
 - deploy to github
  - Create a blog git repository on GitHub
- - Create a <your-github-account>.github.io repository on GitHub
+ - Create a your-github-account.github.io repository on GitHub
  - In your blog folder, run commands as below
 
 ```

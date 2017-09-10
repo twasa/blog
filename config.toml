@@ -6,8 +6,18 @@ copyright = "Copyright (c) 2017, all rights reserved."
 canonifyurls = true
 paginate = 3
 
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
 #[outputs]
 #home = [ "HTML", "RSS", "JSON"]
+
+
+[author]
+  name = ""
+
+SectionPagesMenu = "main"
 
 [[menu.main]]
   name = "Posts"
@@ -25,8 +35,8 @@ paginate = 3
   keywords = "blog, tech"
   description = "William's blog."
 
-#[params]
-#  github = "github id"
+[params]
+  github = "twasa"
 #  gitlab = "gitlab id"
 #  twitter = "twitter id"
 #  linkedin = "linkedin id"
