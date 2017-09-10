@@ -1,5 +1,5 @@
 ﻿---
-title: "Python HTML Entity"
+title: "Python HTML Entity decode and encode"
 date: 2017-09-10T16:14:36+08:00
 draft: true
 ---
@@ -14,4 +14,5 @@ print h.unescape('&#35377;&#21151;&#33995;')
 #encode
 a = u'許功蓋'
 a.encode('ascii', 'xmlcharrefreplace')
+'&#35377;&#21151;&#33995;'
 ```
