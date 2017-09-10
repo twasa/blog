@@ -166,7 +166,7 @@ def login():
 - DELETE: Remove the information at the given location.
 - OPTIONS: Provides a quick way for a client to figure out which methods are supported by this URL. Starting with Flask 0.6, this is implemented for you automatically.
 
-##Static Files
+## Static Files
 To generate URLs for static files, use the special 'static' endpoint name:
 url_for('static', filename='style.css')
 The file has to be stored on the filesystem as static/style.css.
