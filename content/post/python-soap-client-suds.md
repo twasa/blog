@@ -9,7 +9,8 @@ draft: true
  - https://pypi.python.org/pypi/suds
  - https://fedorahosted.org/suds/wiki/Documentation
 
-- example code:
+
+- example code
 ```
 import logging
 logging.basicConfig(level=logging.INFO)
