@@ -7,6 +7,7 @@ draft: true
 ## Requirements
 - Python
 - Selenium
+- webdriver
 - HTMLTestRunner
 
 ## Sample code, test login to bugtracker and create html report
