@@ -1,6 +1,7 @@
 ---
 title: "Sed"
 date: 2017-09-11T12:54:56+08:00
+tags: [ "Linux" ]
 draft: true
 ---
 

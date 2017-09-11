@@ -1,6 +1,7 @@
 ---
 title: "Python Web Automation Test"
 date: 2017-09-11T13:40:40+08:00
+tags: [ "Development", "Python" ]
 draft: true
 ---
 
