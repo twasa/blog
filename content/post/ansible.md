@@ -12,7 +12,7 @@ draft: true
 
 # Requirement
 - Control Machine: SSH client and Linux system
-- Managed Node: Python 2.5+ and SSH service, or windows supprt w
+- Managed Node: Python 2.5+ and SSH service, or windows supprt winrm
 
 
 # Nameing
