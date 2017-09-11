@@ -6,7 +6,7 @@ draft: true
 ---
 # JupyterHub on CentOS 7
 
-# requirement
+## requirement
 - a Linux/Unix based system
 - Python 3.4 or greater
 - wget
@@ -14,7 +14,7 @@ draft: true
 - npm
 
 
-# install
+## install
 - yum search python3
 - yum -y install python3X
 - yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel npm
@@ -24,11 +24,11 @@ draft: true
 - yum -y install python-devel python3X-devel
 - pip3 install jupyterhub ipython[notebook]
 
-# startup
+## startup
 - jupyterhub --ip 0.0.0.0 --port 8443 --ssl-key my_ssl.key --ssl-cert my_ssl.cert
 - jupyterhub -f /path/to/jupyterhub_config.py
 
-# config
+## config
 - jupyterhub --generate-config
 - vi jupyterhub_config.py
 ```
@@ -39,7 +39,7 @@ c.JupyterHub.ssl_cert = '/path/to/ssl.cert'
 c.Spawner.notebook_dir= '~/'
 ```
 
-# systemd
+## systemd
 - vi /usr/lib/systemd/system/jupyterhub.service
 
 ```
@@ -60,6 +60,5 @@ ExecStart=/usr/bin/jupyterhub -f /root/jupyterhub_config.py
 WantedBy=multi-user.target
 ```
 
-- systemctl daemon-reload
+- systemctl reload jupyterhub
 - systemctl enable jupyterhub
-- systemctl start jupyterhub
