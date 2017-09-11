@@ -33,6 +33,7 @@ tar zxvf apache-tomcat-8.0.28.tar.gz
 ```
 JAVA_OPTS="-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:+UseParallelGC"
 ```
+
 - 設定Tomcat JMX remote 監控
 ```
 CATALINA_OPTS="-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8888 -Dcom.sun.management.jmxremote.rmi.port=8889"
@@ -40,6 +41,7 @@ CATALINA_OPTS="-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmx
 
 ## catalina.properties
 - 設定增加讓webapps可讀取property檔路徑
+
 ```
 common.loader="${catalina.base}/lib","${catalina.base}/lib/*.jar","${catalina.home}/lib","${catalina.home}/lib/*.jar","${catalina.home}/路徑"
 ```
@@ -47,6 +49,7 @@ common.loader="${catalina.base}/lib","${catalina.base}/lib/*.jar","${catalina.ho
 ## server.xml
 - 設定webapp可存取系統目錄
 - 設定SSL
+
 ```
     <Connector port="4433" maxThreads="200" scheme="https" secure="true" SSLEnabled="true"
     keystoreFile="/path/to/your/keyfile" keystorePass="密碼" clientAuth="false" sslProtocol="TLS"/>
@@ -54,6 +57,7 @@ common.loader="${catalina.base}/lib","${catalina.base}/lib/*.jar","${catalina.ho
 
 ## tomcat-users.xml
 - 設定使用者或manager-script(deploy server using like jenkins)可存取Manager頁面
+
 ```
   <role rolename="manager-gui" />
   <role rolename="manager-script" />
@@ -70,6 +74,7 @@ manager-status - allows access to the status pages only
 
 ## context.xml
 - 設定資料庫連線位址、Port、帳號、密碼.....
+
 ```
     <Resource name="jdbc/shacomBid" auth="Container" type="javax.sql.DataSource" maxActive="10" maxIdle="5" maxWait="10000" username="帳號" password="密碼" driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://DBFQDN:3306/bid?characterEncoding=UTF-8&allowMultiQueries=true&useUnicode=true"/>
 ```

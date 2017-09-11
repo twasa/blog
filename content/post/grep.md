@@ -9,9 +9,10 @@ draft: true
 
 ## description 
 - prints lines that contain a match for a pattern.
-- reference：https://www.gnu.org/software/grep/manual/grep.html
+- reference https://www.gnu.org/software/grep/manual/grep.html
 
 ## syntax
+
 ```
 grep [OPTIONS] PATTERN [FILE...]
 
