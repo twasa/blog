@@ -62,11 +62,12 @@ Identityfile ~/.ssh/your-private-key
 
 ## 基本指令
 - 建立一個新的 Repository
+
  ```
  git init
  ```
 
- - Clone(複製)別人的 Repository：
+- Clone(複製)別人的 Repository：
 
  ```
  git clone https://xxx@github.com/xxx/xxx.git
@@ -81,11 +82,13 @@ Identityfile ~/.ssh/your-private-key
 ```
 
  - 加檔案
+
  ```
  git add
 ```
 
  - 移檔案:
+
  ```
  git revert
 ```
@@ -99,12 +102,13 @@ Identityfile ~/.ssh/your-private-key
  ```
 
  - 加檔案並提交
- 
+
  ```
  git commit -am "Add test.py to test git function"
 ```
 
  - 查看過去 commit 的紀錄
+
  ```
  git log
  or
@@ -114,21 +118,25 @@ Identityfile ~/.ssh/your-private-key
 ```
 
  - 列出既有標籤:
+
  ```
  git tag -l
  ```
 
  - 新增標籤 -a 就是標籤名稱，-m 代表該標籤說明
+
  ```
  git tag -a v1.4 -m 'my version 1.4'
  ```
 
  - 上傳標籤到遠端, git push並不會把標籤上傳到遠端，所以必須透過底下才行 
+
 ```
 git push origin v1.5
 ```
 
  - 如果在本機端很多標籤，利用 –tags 一次上傳上去
+
 ```
 git push origin --tags
 ```
