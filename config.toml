@@ -31,7 +31,7 @@ SectionPagesMenu = "main"
   url = "/tags/"
 
 [[menu.main]]
-  name = "About"
+  name = "About Hugo"
   weight = -110
   identifier = "about"
   url = "/about/"
