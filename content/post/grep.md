@@ -5,11 +5,12 @@ tags: [ "Linux" ]
 draft: true
 ---
 
-# grep
-
-## description 
-- prints lines that contain a match for a pattern.
-- reference https://www.gnu.org/software/grep/manual/grep.html
+## description
+- prints lines that contain a match for a pattern
+- reference
+```
+https://www.gnu.org/software/grep/manual/grep.html
+```
 
 ## syntax
 

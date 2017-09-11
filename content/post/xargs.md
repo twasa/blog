@@ -11,7 +11,8 @@ draft: true
 - build and execute command lines from standard input
 
 ## syntax and examples
-- Find all .log files in or below the current directory and process them.
+- Find all .log files in or below the current directory and process them
+
 ```
 find . -name "*.log" -type f -print | xargs tar -cvf logs.tar
 
