@@ -15,8 +15,8 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logging.getLogger('suds.client').setLevel(logging.DEBUG)
 
-username = '帳號'
-password = '密碼'
+username = ''
+password = ''
 no = 20787
 
 def b64enc(username, password):
