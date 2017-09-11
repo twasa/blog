@@ -1,6 +1,7 @@
 ---
 title: "Mongodb"
 date: 2017-09-11T15:54:35+08:00
+tags: [ "Database", "NoSQL" ]
 draft: true
 ---
 
