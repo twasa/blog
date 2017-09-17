@@ -14,7 +14,7 @@ draft: true
 ```
 yum install java-1.8.0-openjdk
 or
- curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm > jdk-8u112-linux-x64.rpm && rpm -Uvh jdk-8u112-linux-x64.rpm
+curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm > jdk-8u112-linux-x64.rpm && rpm -Uvh jdk-8u112-linux-x64.rpm
 java -version
 ```
 
