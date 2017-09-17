@@ -145,9 +145,9 @@ db.createUser({
   user: "帳號",
   pwd: "密碼",
   roles: [
-    { role: "userAdmin", db: "bet_collection" },
-    { role: "readWrite", db: "bet_collection" },
-    { role: "dbAdmin", db: "bet_collection" }
+    { role: "userAdmin", db: "資料庫名稱" },
+    { role: "readWrite", db: "資料庫名稱" },
+    { role: "dbAdmin", db: "資料庫名稱" }
   ]
 });
 
@@ -155,7 +155,7 @@ db.createUser({
   user: "帳號",
   pwd: "密碼",
   roles: [
-    { role: "readWrite", db: "bet_collection" },
+    { role: "readWrite", db: "資料庫名稱" },
   ]
 });
 
@@ -163,9 +163,9 @@ db.updateUser(
    "betadmin",
    {
      roles : [
-     { role: "userAdmin", db: "bet_collection" },
-     { role: "readWrite", db: "bet_collection" },
-     { role: "dbAdmin", db: "bet_collection" }
+     { role: "userAdmin", db: "資料庫名稱" },
+     { role: "readWrite", db: "資料庫名稱" },
+     { role: "dbAdmin", db: "資料庫名稱" }
              ],
      pwd: "密碼"
     }
@@ -194,7 +194,7 @@ security:
 
 ```
 mongodump --gzip --archive=backup-file-name --db db-name --collection collection-name -q ""
-mongodump -d bet_collection -c egame -q '{"createDateTime":{$gte:ISODate("2017-06-11T00:00:00.000Z")}}' --gzip --archive=/tmp/backup.tgz
+mongodump -d 資料庫名稱 -c egame -q '{"createDateTime":{$gte:ISODate("2017-06-11T00:00:00.000Z")}}' --gzip --archive=/tmp/backup.tgz
 
 --out filename
 
