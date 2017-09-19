@@ -1,5 +1,5 @@
 ---
-title: "Python Timezone Convert"
+title: "Python Timezone Convert example code"
 date: 2017-09-11T17:49:51+08:00
 tags: [ "Python", "Development" ]
 draft: true
@@ -14,13 +14,14 @@ draft: true
 from datetime import datetime
 from dateutil import tz
 
-# METHOD 1: Hardcode zones:
-from_zone = tz.gettz('UTC-7')
-to_zone = tz.gettz('Asia/Taipei')
-
-# METHOD 2: Auto-detect zones:
+# METHOD Auto-detect zones:
 #from_zone = tz.tzutc()
 #to_zone = tz.tzlocal()
+
+from_zone = raw_input("From Timezone: ")
+to_zone = raw_input("To Timezone: ")
+from_zone = tz.gettz(from_zone)
+to_zone = tz.gettz(to_zone)
 
 def datainput():
     # utc = datetime.utcnow()
@@ -31,6 +32,7 @@ def datainput():
     minute = raw_input("minute: ")
     datetimestring = year + '-' + month + '-'  + day + ' '  + hour + ':'  + minute + ':00'
     return datetimestring
+
 dtstr = datainput()
 
 utc = datetime.strptime(dtstr, '%Y-%m-%d %H:%M:%S')

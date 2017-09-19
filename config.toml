@@ -1,48 +1,23 @@
 baseURL = "https://twasa.github.io/"
 languageCode = "en-us"
 title = "William's Blog"
-theme = "hugo-dusk"
+theme = "hugo-gentoo-theme"
 copyright = "Copyright (c) 2017, all rights reserved."
 canonifyurls = true
-paginate = 3
-
-[taxonomies]
-  tag = "tags"
-
-#[outputs]
-#home = [ "HTML", "RSS", "JSON"]
-
-
-[author]
-  name = ""
-
-SectionPagesMenu = "main"
-
-[[menu.main]]
-  name = "Posts"
-  weight = -120
-  identifier = "post"
-  url = "/post/"
-
-[[menu.main]]
-  name = "Tags"
-  weight = -110
-  identifier = "tag"
-  url = "/tags/"
-
-[[menu.main]]
-  name = "About Hugo"
-  weight = -110
-  identifier = "about"
-  url = "/about/"
-
-[params.meta]
-  keywords = "blog, tech"
-  description = "William's blog."
+paginate = 5
 
 [params]
-  github = "twasa"
-#  gitlab = "gitlab id"
-#  twitter = "twitter id"
-#  linkedin = "linkedin id"
-#  email = "myemail"
+  description = "William's Blog"
+  author = "William Wang"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[[menu.global]]
+    name = "Categories"
+    url = "/categories/"
+
+[[menu.global]]
+    name = "Tags"
+url = "/tags/"

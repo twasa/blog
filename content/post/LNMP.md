@@ -85,7 +85,7 @@ server {
 
 # session path
 # for mod_php, see /etc/httpd/conf.d/php.conf
-# for php-fpm, see /etc/php-fpm.d/*conf
+# for php-fpm, see /etc/php-fpm.d/www.conf
 ```
 
 ## PHP config in /etc/php.ini
@@ -122,4 +122,4 @@ chown -R nginx:nginx /usr/share/nginx/html/
 chcon --reference=/usr/share/nginx/html/index.html /usr/share/nginx/html/*
 ```
 
-### visit http://server/info.php to Verify
+### visit http://伺服器IP_or_FQDN/info.php to Verify
