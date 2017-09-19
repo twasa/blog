@@ -39,6 +39,7 @@ draft: true
 - SSH PIPElinING: 預設為關閉，所以關閉的原因是要相容不同的 sudo設定，若不使用sudo可以在ansible.cfg內開啟 pipelining=True
 - ControlPersist: 即持久化socket一次驗證，多次通信，只需要修改SSH client也就是Ansible Control Machine本身的SSH 設定
  - ~/.ssh/config
+
 ```
 Host *
 Compression yes
