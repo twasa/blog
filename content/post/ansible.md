@@ -54,7 +54,8 @@ ControlPersist 1200
 
 
 # module
-## module_name   module arguments
+
+## module_name and arguments
 ```
 ping            無參數
 comand          -a 'ifconfig'
