@@ -1,6 +1,8 @@
 ---
-title: "Linux openssl"
+title: "openssl"
 date: 2017-09-11T17:12:29+08:00
+tags: [ "commands" ]
+categories: [ "Linux" ]
 draft: true
 ---
 

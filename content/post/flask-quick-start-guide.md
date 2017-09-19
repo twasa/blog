@@ -1,8 +1,8 @@
 ﻿---
 title: "Flask Quick Start Guide"
 date: 2017-09-10T15:47:02+08:00
-tags: [ "Development", "Python" ]
-categories: [ "Development" ]
+tags: [ "Development" ]
+categories: [ "Python" ]
 draft: true
 ---
 

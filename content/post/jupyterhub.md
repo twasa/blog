@@ -2,6 +2,7 @@
 title: "Jupyterhub"
 date: 2017-09-11T17:05:01+08:00
 tags: [ "Development" ]
+categories: [ "Python" ]
 draft: true
 ---
 # JupyterHub on CentOS 7

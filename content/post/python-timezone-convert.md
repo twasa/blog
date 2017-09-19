@@ -1,7 +1,8 @@
 ---
 title: "Python Timezone Convert example code"
 date: 2017-09-11T17:49:51+08:00
-tags: [ "Python", "Development" ]
+tags: [ "Development" ]
+categories: [ "Python" ]
 draft: true
 ---
 

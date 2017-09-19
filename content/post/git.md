@@ -1,7 +1,8 @@
 ---
 title: "Git"
 date: 2017-09-11T16:46:58+08:00
-tags: [ "Development", "Version Control" ]
+tags: [ "Development"]
+categories: [ "Version Control" ]
 draft: true
 ---
 

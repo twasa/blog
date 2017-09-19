@@ -1,7 +1,8 @@
 ---
 title: "Cisco Ios Netwrok Cmmmands"
 date: 2017-09-11T13:00:03+08:00
-tags: [ "Networ", "Cisco" ]
+tags: [ "Cisco" ]
+categories: [ "Network" ]
 draft: true
 ---
 

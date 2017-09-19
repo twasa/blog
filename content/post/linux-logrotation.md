@@ -1,7 +1,8 @@
 ---
 title: "Linux Logrotation"
 date: 2017-09-11T17:08:34+08:00
-tags: [ "Linux", "Log" ]
+tags: [ "Logrotation" ]
+categories: [ "Linux" ]
 draft: true
 ---
 

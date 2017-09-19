@@ -1,8 +1,8 @@
 ﻿---
 title: "Python Virtualenv"
 date: 2017-09-10T17:00:56+08:00
-tags: [ "Development", "Python" ]
-categories: [ "Development" ]
+tags: [ "Development", "Virtualenv" ]
+categories: [ "Python" ]
 draft: true
 ---
 

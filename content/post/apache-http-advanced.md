@@ -1,7 +1,8 @@
 ---
 title: "Apache Http Advanced"
 date: 2017-09-11T15:50:54+08:00
-tags: [ "Webserver", "Apache" ]
+tags: [ "Apache" ]
+categories: [ "Webserver" ]
 draft: true
 ---
 

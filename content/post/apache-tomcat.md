@@ -1,7 +1,8 @@
 ---
 title: "Apache Tomcat"
 date: 2017-09-11T12:34:25+08:00
-tags: [ "Webserver", "Apache", "Tomcat" ]
+tags: [ "Apache", "Tomcat" ]
+categories: [ "Webserver" ]
 draft: true
 ---
 

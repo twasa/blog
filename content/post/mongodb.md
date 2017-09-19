@@ -1,7 +1,8 @@
 ---
-title: "Mongodb"
+title: "Mongodb basic"
 date: 2017-09-11T15:54:35+08:00
-tags: [ "Database", "NoSQL" ]
+tags: [ "Mongodb" ]
+categories: [ "Database", "NoSQL" ]
 draft: true
 ---
 

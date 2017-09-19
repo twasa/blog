@@ -2,6 +2,7 @@
 title: "Ansible"
 date: 2017-09-11T15:48:07+08:00
 tags: [ "Automation", "Devops" ]
+categories: [ "DevOps" ]
 draft: true
 ---
 

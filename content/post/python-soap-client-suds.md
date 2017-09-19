@@ -1,11 +1,12 @@
 ﻿---
-title: "Python Soap Client Suds"
+title: "A Python SOAP client sample code"
 date: 2017-09-11T13:37:20+08:00
-tags: [ "Development", "Python" ]
+tags: [ "Development" ]
+categories: [ "Python" ]
 draft: true
 ---
 
-- suds API
+- suds API references
  - https://pypi.python.org/pypi/suds
  - https://fedorahosted.org/suds/wiki/Documentation
 
@@ -37,7 +38,8 @@ def main():
     wsdl_url = 'http://example.com:6666/portal-ws/ws/PersonalService?wsdl'
     authenticationHeader = b64enc(username, password)
     client = Client(url=wsdl_url, headers=authenticationHeader, retxml=True)
-    #list_of_methods = [method for method in client.wsdl.services[0].ports[0].methods]
+    #list_methods_of_service = [method for method in client.wsdl.services[0].ports[0].methods]
+    #using service.findByNo methods
     response = client.service.findByNo(no)
     xml = response.decode('utf8')
     print xml

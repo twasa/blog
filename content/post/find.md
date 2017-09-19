@@ -1,7 +1,8 @@
 ---
 title: "find"
 date: 2017-09-11T11:43:41+08:00
-tags: [ "Linux" ]
+tags: [ "commands" ]
+categories: [ "Linux" ]
 draft: true
 ---
 

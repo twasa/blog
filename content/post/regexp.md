@@ -1,6 +1,7 @@
 ---
-title: "Regexp"
+title: "Regular Expression"
 date: 2017-09-11T11:46:21+08:00
+categories: [ "Regular Expression" ]
 draft: true
 ---
 

@@ -1,7 +1,8 @@
 ﻿---
-title: "CentOS7 Linux Nginx MariaDB PHP"
+title: "CentOS7 Linux+Nginx+MariaDB+PHP"
 date: 2017-09-11T10:14:51+08:00
-tags: [ "Linux", "Webserver" ]
+tags: [ "Nginx" ]
+categories: [ "Linux" , "Webserver" ]
 draft: true
 ---
 

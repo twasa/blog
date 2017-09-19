@@ -1,7 +1,8 @@
 ---
 title: "MySQL and MariaDB memo"
 date: 2017-09-11T12:24:19+08:00
-tags: [ "Database", "MySQL", "MariaDB" ]
+tags: [ "MySQL", "MariaDB" ]
+categories: [ "Database", "SQL" ]
 draft: true
 ---
 

@@ -1,8 +1,8 @@
 ﻿---
 title: "Python HTML Entity decode and encode"
 date: 2017-09-10T16:14:36+08:00
-tags: [ "Development", "Python" ]
-categories: [ "Development" ]
+tags: [ "Development" ]
+categories: [ "Python" ]
 draft: true
 ---
 ```

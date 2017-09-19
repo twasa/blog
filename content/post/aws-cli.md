@@ -2,6 +2,7 @@
 title: "Aws Cli"
 date: 2017-09-11T15:52:27+08:00
 tags: [ "AWS" ]
+categories: [ "AWS" ]
 draft: true
 ---
 
@@ -34,7 +35,7 @@ aws --profile PROFILE --region REGION ec2 create-key-pair --key-name KEYNAME
 aws --profile PROFILE iam create-user --user-name USERNAME
 aws --profile PROFILE iam create-access-key --user-name USERNAME
 aws --profile PROFILE iam put-user-policy --user-name USERNAME --policy-name POLICYNAME --policy-document  file://POLICYDOCUMENT
-aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTNAME[auto.mydlink.com, mydlink.com, mydlink.net.cn]
+aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTNAME XXXX
 ```
 
 ## SES, SNS
@@ -85,17 +86,17 @@ aws --profile PROFILE s3api create-bucket --acl private --bucket qa-fw-ead98f12 
 
 ### set bucket acl
 ```
-aws --profile PROFILE --region REGION s3api put-bucket-acl --bucket qa-fw-ead98f12 --access-control-policy file://D:\workspace\Mydlink_V3\jsons\cnvr_ead98f12_acl.json
+aws --profile PROFILE --region REGION s3api put-bucket-acl --bucket qa-fw-ead98f12 --access-control-policy file://D:\workspace\Your\jsons\file.json
 ```
 
 
 ### enable bucket log
 ```
-aws --profile PROFILE --region REGION s3api put-bucket-logging --bucket qa-fw-ead98f12 --bucket-logging-status file://D:\workspace\Mydlink_V3\jsons\cnvr_ead98f12_logging.json
+aws --profile PROFILE --region REGION s3api put-bucket-logging --bucket qa-fw-ead98f12 --bucket-logging-status file://D:\workspace\Your\jsons\file.json
 ```
 ### set bucket lifecycle
 ```
-aws --profile PROFILE --region REGION s3api put-bucket-lifecycle-configuration --bucket qa-fw-ead98f12 --lifecycle-configuration  file://D:\workspace\Mydlink_V3\jsons\cnvr_ead98f12_lifecycle.json
+aws --profile PROFILE --region REGION s3api put-bucket-lifecycle-configuration --bucket qa-fw-ead98f12 --lifecycle-configuration  file://D:\workspace\Your\jsons\file.json
 ```
 
 ### create folders
