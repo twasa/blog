@@ -25,9 +25,9 @@ draft: true
 - Container : a runtime instance of an imageâ€”what the image becomes in memory when actually executed. It runs completely isolated from the host environment by default, only accessing host files and ports if configured to do so.
 - registries : a place to store and distribute Docker images, like Docker Hub
 - Repository : a collection of different versions for a single Docker image
-- Compose : a tool for defining and running multi-container Docker applications
 - Docker Machine : a tool that lets you install Docker Engine on virtual hosts, and manage the hosts with docker-machine commands. You can use Machine to create Docker hosts on your local Mac or Windows box, on your company network, in your data center, or on cloud providers like Azure, AWS, or Digital Ocean.
 - Dockerfile : a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession.
+- Compose : a tool for defining and running multi-container Docker applications
 
 ## Requirement
 - 64bit environment
