@@ -6,6 +6,7 @@ categories: [ "Virtualization", "Container" ]
 draft: true
 ---
 
+
 # Docker
 
 ## Description
@@ -26,6 +27,7 @@ draft: true
 - Repository : a collection of different versions for a single Docker image
 - Compose : a tool for defining and running multi-container Docker applications
 - Docker Machine : a tool that lets you install Docker Engine on virtual hosts, and manage the hosts with docker-machine commands. You can use Machine to create Docker hosts on your local Mac or Windows box, on your company network, in your data center, or on cloud providers like Azure, AWS, or Digital Ocean.
+- Dockerfile : a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession.
 
 ## Requirement
 - 64bit environment
@@ -40,7 +42,7 @@ curl -fsSL https://get.docker.com/ | sh
 
 - CentOS 6
 ```
-yum install epel
+yum install epel-release
 yum install docker-io
 ```
 
