@@ -1,7 +1,8 @@
 ---
 title: "xargs"
 date: 2017-09-11T11:32:12+08:00
-tags: [ "Linux" ]
+tags: [ "command" ]
+categories: [ "Linux" ]
 draft: true
 ---
 

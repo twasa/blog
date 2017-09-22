@@ -1,7 +1,8 @@
 ---
-title: "Sed"
+title: "sed"
 date: 2017-09-11T12:54:56+08:00
-tags: [ "Linux" ]
+tags: [ "command" ]
+categories: [ "Linux" ]
 draft: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Grep"
 date: 2017-09-11T10:52:53+08:00
-tags: [ "commands" ]
+tags: [ "command" ]
 categories: [ "Linux" ]
 draft: true
 ---
