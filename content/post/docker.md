@@ -77,7 +77,7 @@ Options:
 
 - Commands
 
-Command |	Description
+|Command |	Description|
 |-|-|
 |docker attach |	Attach local standard input, output, and error streams to a running container
 |docker build |	Build an image from a Dockerfile|
