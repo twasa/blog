@@ -54,6 +54,7 @@ yum install docker
 
 ## commands and syntax
 - Usage:
+
 ```
 docker [OPTIONS] COMMAND [ARG...]
 docker [ --help | -v | --version ]
@@ -72,7 +73,6 @@ Options:
       --tlskey string      Path to TLS key file (default "/root/.docker/key.pem")
       --tlsverify          Use TLS and verify the remote
   -v, --version            Print version information and quit
-
 ```
 
 - Commands
