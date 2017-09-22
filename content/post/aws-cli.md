@@ -2,7 +2,7 @@
 title: "Aws Cli"
 date: 2017-09-11T15:52:27+08:00
 tags: [ "AWS" ]
-categories: [ "AWS" ]
+categories: [ "Virtualization", "Cloud" ]
 draft: true
 ---
 

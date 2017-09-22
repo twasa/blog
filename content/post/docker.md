@@ -1,6 +1,8 @@
 ---
 title: "Docker Memo(drafting)"
 date: 2017-09-22T10:57:01+08:00
+tags: [ "Docker" ]
+categories: [ "Virtualization", "Container" ]
 draft: true
 ---
 
@@ -35,14 +37,18 @@ draft: true
 atp-get update
 curl -fsSL https://get.docker.com/ | sh
 ```
+
 - CentOS 6
 ```
 yum install epel
 yum install docker-io
 ```
+
 - CentOS 7
 ```
 yum install docker
 ```
 
 ## command and syntax
+
+
