@@ -317,3 +317,19 @@ docker service ls
 ```
 docker service ps <service>
 ```
+- check task information
+```
+docker inspect --format='{{.Status.ContainerStatus.ContainerID}}' <task or containerid>
+
+```
+- Scale the app by changing the replicas value in docker-compose.yml, saving the change, and re-running the docker stack deploy command:
+```
+docker stack deploy -c docker-compose.yml getstartedlab
+```
+- Take down the app and the swarm
+```
+docker stack rm getstartedlab
+docker swarm leave --force
+```
+
+### Swarm clusters
