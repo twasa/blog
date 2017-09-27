@@ -169,6 +169,7 @@ docker images
 - Create your project directory
 - Change directories (cd) into the directory
 - create a file called Dockerfile, sample code as below
+
 ```
 # Use an official Python runtime as a parent image
 FROM python:2.7-slim
@@ -258,9 +259,10 @@ docker stop <CONTAINER ID>
 docker tag image username/repository:tag
 docker tag friendlyhello william/get-started:part2
 ```
-- remove duplicate image
+- Remove one or more images
 ```
-docker image rm <image>
+docker rmi <container id>
+docker image rm <image id>
 ```
 - Publish the image
 ```
@@ -332,4 +334,30 @@ docker stack rm getstartedlab
 docker swarm leave --force
 ```
 
+### install docker-machine
+- install
+```
+curl -L https://github.com/docker/machine/releases/download/v0.12.2/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine &&
+chmod +x /tmp/docker-machine &&
+sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
+```
+- check version
+```
+docker-machine version
+```
+- uninstall
+```
+rm $(which docker-machine)
+```
+
 ### Swarm clusters
+- TCP port 2376 for secure Docker client communication. This port is required for Docker Machine to work. Docker Machine is used to orchestrate Docker hosts.
+
+- TCP port 2377. This port is used for communication between the nodes of a Docker Swarm or cluster. It only needs to be opened on manager nodes.
+
+- TCP and UDP port 7946 for communication among nodes (container network discovery).
+
+- UDP port 4789 for overlay network traffic (container ingress networking).
+
+- Manager : 
+- Worker(Node) : 
