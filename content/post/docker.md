@@ -244,7 +244,20 @@ docker container ls #v1.3 or upper only
 ```
 docker stop <CONTAINER ID>
 ```
-- Remove one or more images
+- Tag the image
 ```
-docker image rmi <image id>
+docker tag image username/repository:tag
+docker tag friendlyhello william/get-started:part2
+```
+- remove duplicate image
+```
+docker image rm <image>
+```
+- Publish the image
+```
+docker push username/repository:tag
+```
+- Pull and run the image from the remote repository
+```
+docker run -p 4000:80 username/repository:tag
 ```
