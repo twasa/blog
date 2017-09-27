@@ -146,3 +146,95 @@ docker run hello-world
 docker --version
 ```
 
+- check docker images
+```
+docker images
+```
+
+### Dockerfile
+- Create your project directory
+- Change directories (cd) into the directory
+- create a file called Dockerfile, sample code as below
+```
+# Use an official Python runtime as a parent image
+FROM python:2.7-slim
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+ADD . /app
+
+# Install any needed packages specified in requirements.txt
+RUN pip install -r requirements.txt
+
+# Make port 80 available to the world outside this container
+EXPOSE 80
+
+# Define environment variable
+ENV NAME World
+
+# Run app.py when the container launches
+CMD ["python", "app.py"]
+```
+- Create a requirements.txt
+```
+Flask
+Redis
+```
+- Create a app.py
+```
+from flask import Flask
+from redis import Redis, RedisError
+import os
+import socket
+
+# Connect to Redis
+redis = Redis(host="redis", db=0, socket_connect_timeout=2, socket_timeout=2)
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    try:
+        visits = redis.incr("counter")
+    except RedisError:
+        visits = "<i>cannot connect to Redis, counter disabled</i>"
+
+    html = "<h3>Hello {name}!</h3>" \
+           "<b>Hostname:</b> {hostname}<br/>" \
+           "<b>Visits:</b> {visits}"
+    return html.format(name=os.getenv("NAME", "world"), hostname=socket.gethostname(), visits=visits)
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=80)
+
+```
+- Build the app
+```
+docker build -t friendlyhello .
+```
+- check the docker image
+```
+docker images
+REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
+friendlyhello           latest              2af32fdfad1d        9 seconds ago       195.4 MB
+docker.io/python        2.7-slim            8b88f06b72d7        8 days ago          183.6 MB
+docker.io/hello-world   latest              05a3bd381fc2        2 weeks ago         1.84 kB
+```
+- run the app
+```
+docker run -p 4000:80 friendlyhello
+```
+- run the app in the background, in detached mode:
+```
+docker run -d -p 4000:80 friendlyhello
+```
+- get running container
+```
+docker ps
+```
+- stop the running container
+```
+docker stop CONTAINER_ID
+```
