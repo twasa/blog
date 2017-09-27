@@ -28,6 +28,7 @@ draft: true
 - Docker Machine : a tool that lets you install Docker Engine on virtual hosts, and manage the hosts with docker-machine commands. You can use Machine to create Docker hosts on your local Mac or Windows box, on your company network, in your data center, or on cloud providers like Azure, AWS, or Digital Ocean.
 - Dockerfile : a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession.
 - Compose : a tool for defining and running multi-container Docker applications
+- Docker Swarm (1.12.0 or later) : for natively managing a cluster of Docker Engines called a swarm
 
 ## Requirement
 - 64bit environment
@@ -156,7 +157,7 @@ docker --version
 docker images
 ```
 
-### Dockerfile
+### Using Dockerfile
 - Create your project directory
 - Change directories (cd) into the directory
 - create a file called Dockerfile, sample code as below
@@ -261,3 +262,29 @@ docker push username/repository:tag
 ```
 docker run -p 4000:80 username/repository:tag
 ```
+
+### Using docker-compose
+- create a docker-compose.yml
+```
+version: "3"
+services:
+  web:
+    # replace username/repo:tag with your name and image details
+    image: username/repository:tag
+    deploy:
+      replicas: 5
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "80:80"
+    networks:
+      - webnet
+networks:
+  webnet:
+
+```
+- 
