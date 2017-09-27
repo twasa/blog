@@ -49,7 +49,12 @@ yum install docker-io
 
 - CentOS 7
 ```
-yum install docker
+yum install -y yum-utils device-mapper-persistent-data lvm2
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum-config-manager --enable docker-ce-edge
+yum install docker-ce
+systemctl enable docker
+systemctl start docker
 ```
 
 ## commands and syntax
@@ -233,8 +238,13 @@ docker run -d -p 4000:80 friendlyhello
 - get running container
 ```
 docker ps
+docker container ls #v1.3 or upper only
 ```
 - stop the running container
 ```
-docker stop CONTAINER_ID
+docker stop <CONTAINER ID>
+```
+- Remove one or more images
+```
+docker image rmi <image id>
 ```
