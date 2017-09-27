@@ -193,11 +193,14 @@ ENV NAME World
 CMD ["python", "app.py"]
 ```
 - Create a requirements.txt
+
 ```
 Flask
 Redis
 ```
+
 - Create a app.py
+
 ```
 from flask import Flask
 from redis import Redis, RedisError
@@ -225,11 +228,15 @@ if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)
 
 ```
+
 - Build the app
+
 ```
 docker build -t friendlyhello .
 ```
+
 - check the docker image
+
 ```
 docker images
 REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
@@ -237,38 +244,54 @@ friendlyhello           latest              2af32fdfad1d        9 seconds ago   
 docker.io/python        2.7-slim            8b88f06b72d7        8 days ago          183.6 MB
 docker.io/hello-world   latest              05a3bd381fc2        2 weeks ago         1.84 kB
 ```
+
 - run the app
+
 ```
 docker run -p 4000:80 friendlyhello
 ```
+
 - run the app in the background, in detached mode:
+
 ```
 docker run -d -p 4000:80 friendlyhello
 ```
+
 - get running container
+
 ```
 docker ps
 docker container ls #v1.3 or upper only
 ```
+
 - stop the running container
+
 ```
 docker stop <CONTAINER ID>
 ```
+
 - Tag the image
+
 ```
 docker tag image username/repository:tag
 docker tag friendlyhello william/get-started:part2
 ```
+
 - Remove one or more images
+
 ```
 docker rmi <container id>
 docker image rm <image id>
 ```
+
 - Publish the image
+
 ```
 docker push username/repository:tag
 ```
+
 - Pull and run the image from the remote repository
+
 ```
 docker run -p 4000:80 username/repository:tag
 ```
