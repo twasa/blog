@@ -22,13 +22,21 @@ draft: true
 
 ## docker concept
 - Image : a lightweight, stand-alone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files.
+
 - Container : a runtime instance of an imageâ€”what the image becomes in memory when actually executed. It runs completely isolated from the host environment by default, only accessing host files and ports if configured to do so.
+
 - registries : a place to store and distribute Docker images, like Docker Hub
+
 - Repository : a collection of different versions for a single Docker image
-- Docker Machine : a tool that lets you install Docker Engine on virtual hosts, and manage the hosts with docker-machine commands. You can use Machine to create Docker hosts on your local Mac or Windows box, on your company network, in your data center, or on cloud providers like Azure, AWS, or Digital Ocean.
+
 - Dockerfile : a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession.
+
+- Docker Machine : a tool that lets you install Docker Engine on virtual hosts, and manage the hosts with docker-machine commands. You can use Machine to create Docker hosts on your local Mac or Windows box, on your company network, in your data center, or on cloud providers like Azure, AWS, or Digital Ocean.
+
 - Compose : a tool for defining and running multi-container Docker applications
-- Docker Swarm (1.12.0 or later) : for natively managing a cluster of Docker Engines called a swarm
+
+- Docker Swarm (1.12.0 or later) : enables you to create a cluster of one or more Docker Engines called a swarm. A swarm consists of one or more nodes: physical or virtual machines running Docker Engine 1.12 or later in swarm mode.
+![Alt text](https://docs.docker.com/engine/swarm/images/swarm-diagram.png "Virtual Machine")
 
 ## Requirement
 - 64bit environment
@@ -263,16 +271,22 @@ docker push username/repository:tag
 docker run -p 4000:80 username/repository:tag
 ```
 
-### Using docker-compose
-- create a docker-compose.yml
+### Using docker-compose for docker stack deploy
+- create a docker-compose.yml tells Docker to do the following:
+- Pull the image we uploaded in step 2 from the registry.
+- Run 2 instances of that image as a service called web, limiting each one to use, at most, 10% of the CPU (across all cores), and 50MB of RAM.
+- Immediately restart containers if one fails.
+- Map port 4000 on the host to web’s port 80.
+- Instruct web’s containers to share port 80 via a load-balanced network called webnet. (Internally, the containers themselves will publish to web’s port 80 at an ephemeral port.)
+- Define the webnet network with the default settings (which is a load-balanced overlay network).
 ```
 version: "3"
 services:
   web:
     # replace username/repo:tag with your name and image details
-    image: username/repository:tag
+    image: william/get-started:part2
     deploy:
-      replicas: 5
+      replicas: 2
       resources:
         limits:
           cpus: "0.1"
@@ -280,11 +294,26 @@ services:
       restart_policy:
         condition: on-failure
     ports:
-      - "80:80"
+      - "4000:80"
     networks:
       - webnet
 networks:
   webnet:
 
 ```
-- 
+- for load-balance, run swarm init first
+```
+docker swarm init
+```
+- run docker stack
+```
+docker stack deploy -c docker-compose.yml getstartedlab
+```
+- Get the service ID for the one service in our application:
+```
+docker service ls
+```
+- List the tasks
+```
+docker service ps <service>
+```
