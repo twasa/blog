@@ -304,6 +304,7 @@ docker run -p 4000:80 username/repository:tag
 - Map port 4000 on the host to web’s port 80.
 - Instruct web’s containers to share port 80 via a load-balanced network called webnet. (Internally, the containers themselves will publish to web’s port 80 at an ephemeral port.)
 - Define the webnet network with the default settings (which is a load-balanced overlay network).
+
 ```
 version: "3"
 services:
@@ -326,31 +327,37 @@ networks:
   webnet:
 
 ```
+
 - for load-balance, run swarm init first
 ```
 docker swarm init
 ```
+
 - run docker stack
 ```
 docker stack deploy -c docker-compose.yml getstartedlab
 ```
+
 - Get the service ID for the one service in our application:
 ```
 docker service ls
 ```
+
 - List the tasks
 ```
 docker service ps <service>
 ```
+
 - check task information
 ```
 docker inspect --format='{{.Status.ContainerStatus.ContainerID}}' <task or containerid>
-
 ```
+
 - Scale the app by changing the replicas value in docker-compose.yml, saving the change, and re-running the docker stack deploy command:
 ```
 docker stack deploy -c docker-compose.yml getstartedlab
 ```
+
 - Take down the app and the swarm
 ```
 docker stack rm getstartedlab
