@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+  <title>openssl &middot; William&#39;s Blog -  William&#39;s Blog </title>
+  <meta name="generator" content="Hugo 0.26" />
+  <meta name="description" content="William&#39;s Blog"> 
+
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="openssl"/>
+<meta name="twitter:description" content=" create private key openssl genrsa -out server.key 2048  create Certificate Signing Request openssl req -sha512 -new -key server.key -out server.csr -subj &quot;/C=TW/ST=Taipei/L=Taipei/O=example/OU=Personal/CN=www.example.com&quot;  check csr info openssl req -in server.csr -noout -text  Self-Sign Certificate openssl x509 -sha512 -req -days 3650 -in server.csr -signkey server.key -out server.crt  encrypt private key -a 表示檔案使用 base64 編碼 -salt 加雜湊值，增加安全性 openssl aes-256-cbc -a -salt -in server.key -out server.encrypt.key  "/>
+
+  <meta property="og:title" content="openssl" />
+<meta property="og:description" content=" create private key openssl genrsa -out server.key 2048  create Certificate Signing Request openssl req -sha512 -new -key server.key -out server.csr -subj &quot;/C=TW/ST=Taipei/L=Taipei/O=example/OU=Personal/CN=www.example.com&quot;  check csr info openssl req -in server.csr -noout -text  Self-Sign Certificate openssl x509 -sha512 -req -days 3650 -in server.csr -signkey server.key -out server.crt  encrypt private key -a 表示檔案使用 base64 編碼 -salt 加雜湊值，增加安全性 openssl aes-256-cbc -a -salt -in server.key -out server.encrypt.key  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://twasa.github.io/post/linux-openssl/" />
+
+
+
+<meta property="article:published_time" content="2017-09-11T17:12:29&#43;08:00"/>
+<meta property="article:modified_time" content="2017-09-11T17:12:29&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- RSS autodiscovery --> 
+
+  
+<meta itemprop="name" content="openssl">
+<meta itemprop="description" content=" create private key openssl genrsa -out server.key 2048  create Certificate Signing Request openssl req -sha512 -new -key server.key -out server.csr -subj &quot;/C=TW/ST=Taipei/L=Taipei/O=example/OU=Personal/CN=www.example.com&quot;  check csr info openssl req -in server.csr -noout -text  Self-Sign Certificate openssl x509 -sha512 -req -days 3650 -in server.csr -signkey server.key -out server.crt  encrypt private key -a 表示檔案使用 base64 編碼 -salt 加雜湊值，增加安全性 openssl aes-256-cbc -a -salt -in server.key -out server.encrypt.key  ">
+
+
+<meta itemprop="dateModified" content="2017-09-11T17:12:29&#43;08:00" />
+<meta itemprop="wordCount" content="62">
+
+
+
+<meta itemprop="keywords" content="commands," />
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet">
+  <link rel="stylesheet" href="https://twasa.github.io/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "name": "William&#39;s Blog",
+  "url": "https://twasa.github.io/post/linux-openssl/"
+}
+</script>
+
+</head>
+
+<body>
+  <header class="gheader">
+  <div class="container">
+    <nav class="navbar ">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://twasa.github.io/">
+          <h1 class="brand">William&#39;s Blog</h1>
+        </a>
+
+        <div class="navbar-burger burger" data-target="navMenubd-example">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navMenubd-example" class="navbar-menu">
+        <div class="navbar-start">
+          
+          <a class="navbar-item" href="https://twasa.github.io/categories/">
+            Categories
+          </a>
+          
+          <a class="navbar-item" href="https://twasa.github.io/tags/">
+            Tags
+          </a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+  <div class="main-content">
+    <div class="container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="title">openssl</h1>
+      <div class="meta">
+        <time class="pub-time"  datetime="2017-09-11T17:12:29&#43;08:00">
+          2017.09.11
+        </time>
+        <div class="terms">
+          
+          <div class="categories">
+            
+              <a class="categories-item" href="https://twasa.github.io/categories/linux">Linux</a>
+            
+          </div>
+          
+          
+          <div class="tag">
+            
+              <a class="tag-item" href="https://twasa.github.io/tags/commands">commands</a>
+            
+          </div>
+          
+        </div>
+      </div>
+    </header>
+    <div class="post-body">
+      
+
+<h2 id="create-private-key">create private key</h2>
+
+<pre><code>openssl genrsa -out server.key 2048
+</code></pre>
+
+<h2 id="create-certificate-signing-request">create Certificate Signing Request</h2>
+
+<pre><code>openssl req -sha512 -new -key server.key -out server.csr -subj &quot;/C=TW/ST=Taipei/L=Taipei/O=example/OU=Personal/CN=www.example.com&quot;
+</code></pre>
+
+<h2 id="check-csr-info">check csr info</h2>
+
+<pre><code>openssl req -in server.csr -noout -text
+</code></pre>
+
+<h2 id="self-sign-certificate">Self-Sign Certificate</h2>
+
+<pre><code>openssl x509 -sha512 -req -days 3650 -in server.csr -signkey server.key -out server.crt
+</code></pre>
+
+<h2 id="encrypt-private-key">encrypt private key</h2>
+
+<h2 id="a-表示檔案使用-base64-編碼">-a 表示檔案使用 base64 編碼</h2>
+
+<h2 id="salt-加雜湊值-增加安全性">-salt 加雜湊值，增加安全性</h2>
+
+<pre><code>openssl aes-256-cbc -a -salt -in server.key -out server.encrypt.key
+</code></pre>
+
+    </div>
+    <footer class="post-footer">
+      
+      <div class="share">
+        
+      </div>
+
+      <div class="pagenation">
+        <ul class="pagenation-list">
+          
+          <li class="pager previous">
+            <a href="https://twasa.github.io/post/linux-logrotation/" data-toggle="tooltip" data-placement="top" title="Linux Logrotation">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="pager next">
+            <a href="https://twasa.github.io/post/python-timezone-convert/" data-toggle="tooltip" data-placement="top" title="Python Timezone Convert example code">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+      </div>
+    </footer>
+  </article>
+
+  
+  <article class="related"></article>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "NewsArticle",
+    "@id": "https://twasa.github.io/post/linux-openssl/",
+    "headline": " create private key openssl genrsa -out server.key 2048  create Certificate Signing Request openssl req -sha51",
+    "author": "William Wang",
+    "publisher": {
+      "@type": "Organization",
+      "name": "William Wang",
+      "logo": ""
+    },
+    "image": "",
+    "datePublished": "2017-09-11"
+  },
+  "headline": " create private key openssl genrsa -out server.key 2048  create Certificate Signing Request openssl req -sha51",
+  "alternativeHeadline": "William&#39;s Blog",
+  "datePublished": "2017-09-11",
+  "dateModified": "2017-09-11",
+  "url": "https://twasa.github.io/post/linux-openssl/",
+  "wordCount": "62",
+  "author": {
+    "@type": "Person",
+    "name": "William Wang"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "William Wang"
+  },
+  "image": "",
+  "genre": "Linux",
+  "keywords": "commands",
+  "description": ""
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "@id": "https://twasa.github.io/post/linux-openssl/",
+  "name": "William Wang"
+}
+</script>
+
+
+    </div>
+  </div>
+
+  <footer class="gfooter">
+  <div class="inner">
+    <div class="container">
+      <p class="copy"><small>Copyright (c) 2017, all rights reserved.</small></p>
+
+      <nav class="footer-nav">
+        <div class="inner">
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://twasa.github.io/js/script.js"></script>
+
+</body>
+</html>

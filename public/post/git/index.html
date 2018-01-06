@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+  <title>Git &middot; William&#39;s Blog -  William&#39;s Blog </title>
+  <meta name="generator" content="Hugo 0.26" />
+  <meta name="description" content="William&#39;s Blog"> 
+
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Git"/>
+<meta name="twitter:description" content="Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：
+git config --global user.name &quot;你的姓名&quot; git config --global user.email &quot;你的@email位址&quot;  加上 &ndash;global 表示是全域的設定。你可以使用 git config &ndash;list 這個指令來看你的 Git 設定內容
+ Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status
+git config --global alias.st status git config --global alias.ck checkout git config --global alias.rst reset HEAD  忽略空白"/>
+
+  <meta property="og:title" content="Git" />
+<meta property="og:description" content="Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：
+git config --global user.name &quot;你的姓名&quot; git config --global user.email &quot;你的@email位址&quot;  加上 &ndash;global 表示是全域的設定。你可以使用 git config &ndash;list 這個指令來看你的 Git 設定內容
+ Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status
+git config --global alias.st status git config --global alias.ck checkout git config --global alias.rst reset HEAD  忽略空白" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://twasa.github.io/post/git/" />
+
+
+
+<meta property="article:published_time" content="2017-09-11T16:46:58&#43;08:00"/>
+<meta property="article:modified_time" content="2017-09-11T16:46:58&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- RSS autodiscovery --> 
+
+  
+<meta itemprop="name" content="Git">
+<meta itemprop="description" content="Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：
+git config --global user.name &quot;你的姓名&quot; git config --global user.email &quot;你的@email位址&quot;  加上 &ndash;global 表示是全域的設定。你可以使用 git config &ndash;list 這個指令來看你的 Git 設定內容
+ Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status
+git config --global alias.st status git config --global alias.ck checkout git config --global alias.rst reset HEAD  忽略空白">
+
+
+<meta itemprop="dateModified" content="2017-09-11T16:46:58&#43;08:00" />
+<meta itemprop="wordCount" content="226">
+
+
+
+<meta itemprop="keywords" content="Development," />
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet">
+  <link rel="stylesheet" href="https://twasa.github.io/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "name": "William&#39;s Blog",
+  "url": "https://twasa.github.io/post/git/"
+}
+</script>
+
+</head>
+
+<body>
+  <header class="gheader">
+  <div class="container">
+    <nav class="navbar ">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://twasa.github.io/">
+          <h1 class="brand">William&#39;s Blog</h1>
+        </a>
+
+        <div class="navbar-burger burger" data-target="navMenubd-example">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navMenubd-example" class="navbar-menu">
+        <div class="navbar-start">
+          
+          <a class="navbar-item" href="https://twasa.github.io/categories/">
+            Categories
+          </a>
+          
+          <a class="navbar-item" href="https://twasa.github.io/tags/">
+            Tags
+          </a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+  <div class="main-content">
+    <div class="container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="title">Git</h1>
+      <div class="meta">
+        <time class="pub-time"  datetime="2017-09-11T16:46:58&#43;08:00">
+          2017.09.11
+        </time>
+        <div class="terms">
+          
+          <div class="categories">
+            
+              <a class="categories-item" href="https://twasa.github.io/categories/version-control">Version Control</a>
+            
+          </div>
+          
+          
+          <div class="tag">
+            
+              <a class="tag-item" href="https://twasa.github.io/tags/development">Development</a>
+            
+          </div>
+          
+        </div>
+      </div>
+    </header>
+    <div class="post-body">
+      
+
+<h1 id="git的基本使用">Git的基本使用</h1>
+
+<h2 id="config">Config</h2>
+
+<ul>
+<li><p>在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：</p>
+
+<pre><code>git config --global user.name &quot;你的姓名&quot;
+git config --global user.email &quot;你的@email位址&quot;
+</code></pre></li>
+
+<li><p>加上 &ndash;global 表示是全域的設定。你可以使用 git config &ndash;list 這個指令來看你的 Git 設定內容</p></li>
+
+<li><p>Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status</p>
+
+<pre><code>git config --global alias.st status
+git config --global alias.ck checkout
+git config --global alias.rst reset HEAD
+</code></pre></li>
+
+<li><p>忽略空白</p>
+
+<pre><code>git config --global apply.whitespace nowarn
+</code></pre></li>
+
+<li><p>Git 預設輸出是沒有顏色的，我們可以讓他在輸出時加上顏色讓我們更容易閱讀</p>
+
+<pre><code>git config --global color.ui true
+</code></pre></li>
+
+<li><p>設定commit的預設編輯器</p>
+
+<pre><code>git config --global core.editor vim
+</code></pre></li>
+
+<li><p>設定merge的比對工具</p>
+
+<pre><code>git config --global merge.tool vimdiff
+</code></pre></li>
+
+<li><p>不希望加入版本控制的追蹤設定: 建立<code>.gitignore</code>檔案，內容</p>
+
+<pre><code>*.swp
+log/*.log
+</code></pre></li>
+</ul>
+
+<h2 id="github-ssh-key-config">github ssh-key config</h2>
+
+<ul>
+<li><p>create a ssh key</p>
+
+<pre><code>ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;
+</code></pre></li>
+
+<li><p>upload public key to github</p>
+
+<pre><code>login to GitHub
+Account Settings -&gt; SSH Public Keys -&gt; Add another public key
+cat id_rsa_github.pub # past your public key content
+</code></pre></li>
+
+<li><p>vi .ssh/config</p>
+
+<pre><code>Identityfile ~/.ssh/your-private-key
+</code></pre></li>
+</ul>
+
+<h2 id="基本指令">基本指令</h2>
+
+<ul>
+<li><p>建立一個新的 Repository</p>
+
+<pre><code>git init
+</code></pre></li>
+
+<li><p>Clone(複製)別人的 Repository：</p>
+
+<pre><code>git clone https://xxx@github.com/xxx/xxx.git
+or
+git glone git://xxx@github.com/xxx/xxx.git
+</code></pre>
+
+<ul>
+<li><p>檢查目前 Git 的狀態</p>
+
+<pre><code>git status
+</code></pre></li>
+
+<li><p>加檔案</p>
+
+<pre><code>git add
+git add -p #批次加入，可用在開發時有些程式碼功能想加入，有些不想加入時使用
+</code></pre></li>
+
+<li><p>移檔案:</p>
+
+<pre><code>git revert
+</code></pre></li>
+
+<li><p>提交檔案:</p>
+
+<pre><code>git commit
+or
+git commit -m &quot;說明文字&quot;
+</code></pre></li>
+
+<li><p>加檔案並提交</p>
+
+<pre><code>git commit -am &quot;Add test.py to test git function&quot;
+</code></pre></li>
+
+<li><p>查看過去 commit 的紀錄</p>
+
+<pre><code>git log
+or
+git log --stat
+or
+git log -p
+</code></pre></li>
+
+<li><p>列出既有標籤:</p>
+
+<pre><code>git tag -l
+</code></pre></li>
+
+<li><p>新增標籤 -a 就是標籤名稱，-m 代表該標籤說明</p>
+
+<pre><code>git tag -a v1.4 -m 'my version 1.4'
+</code></pre></li>
+
+<li><p>上傳標籤到遠端, git push並不會把標籤上傳到遠端，所以必須透過底下才行</p>
+
+<pre><code>git push origin v1.5
+</code></pre></li>
+
+<li><p>如果在本機端很多標籤，利用 –tags 一次上傳上去</p>
+
+<pre><code>git push origin --tags
+</code></pre></li>
+</ul></li>
+</ul>
+
+    </div>
+    <footer class="post-footer">
+      
+      <div class="share">
+        
+      </div>
+
+      <div class="pagenation">
+        <ul class="pagenation-list">
+          
+          <li class="pager previous">
+            <a href="https://twasa.github.io/post/mongodb/" data-toggle="tooltip" data-placement="top" title="Mongodb basic">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="pager next">
+            <a href="https://twasa.github.io/post/jupyterhub/" data-toggle="tooltip" data-placement="top" title="Jupyterhub">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+      </div>
+    </footer>
+  </article>
+
+  
+  <article class="related"></article>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "NewsArticle",
+    "@id": "https://twasa.github.io/post/git/",
+    "headline": " Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：git config --global us",
+    "author": "William Wang",
+    "publisher": {
+      "@type": "Organization",
+      "name": "William Wang",
+      "logo": ""
+    },
+    "image": "",
+    "datePublished": "2017-09-11"
+  },
+  "headline": " Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：git config --global us",
+  "alternativeHeadline": "William&#39;s Blog",
+  "datePublished": "2017-09-11",
+  "dateModified": "2017-09-11",
+  "url": "https://twasa.github.io/post/git/",
+  "wordCount": "226",
+  "author": {
+    "@type": "Person",
+    "name": "William Wang"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "William Wang"
+  },
+  "image": "",
+  "genre": "Version Control",
+  "keywords": "Development",
+  "description": ""
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "@id": "https://twasa.github.io/post/git/",
+  "name": "William Wang"
+}
+</script>
+
+
+    </div>
+  </div>
+
+  <footer class="gfooter">
+  <div class="inner">
+    <div class="container">
+      <p class="copy"><small>Copyright (c) 2017, all rights reserved.</small></p>
+
+      <nav class="footer-nav">
+        <div class="inner">
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://twasa.github.io/js/script.js"></script>
+
+</body>
+</html>

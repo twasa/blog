@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+  <title>Regular Expression &middot; William&#39;s Blog -  William&#39;s Blog </title>
+  <meta name="generator" content="Hugo 0.26" />
+  <meta name="description" content="William&#39;s Blog"> 
+
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Regular Expression"/>
+<meta name="twitter:description" content="Regula Express  reference :     說明及範例 比對不成立之字串     /a/ 含字母 “a” 的字串，例如 “ab”, “bac”, “cba” “xyz”   /a./ 含字母 “a” 以及其後任一個字元的字串，例如 “ab”, “bac”（若要比對.，請使用 .） “a”, “ba”   /^xy/ 以 “xy” 開始的字串，例如 “xyz”, “xyab”（若要比對 ^，請使用 \^） “axy”, “bxy”   /xy$/ 以 “xy” 結尾的字串，例如 “axy”, “abxy”以 “xy” 結尾的字串，例如 “axy”, “abxy” （若要比對 $，請使用 \$） “xya”, “xyb”   [13579] 包含 “1” 或 “3” 或 “5” 或 “7” 或 “9” 的字串，例如：”a3b”, “1xy” “y2k”   [0-9] 含數字之字串 不含數字之字串   [a-z0-9] 含數字或小寫字母之字串 不含數字及小寫字母之字串   [a-zA-Z0-9] 含數字或字母之字串 不含數字及字母之字串   b[aeiou]t “bat”, “bet”, “bit”, “bot”, “but” “bxt”, “bzt”   [^0-9] 不含數字之字串（若要比對 ^，請使用 \^） 含數字之字串   [^aeiouAEIOU] 不含母音之字串（若要比對 ^，請使用 \^） 含母音之字串   [^\^] 不含 “^” 之字串，例如 “xyz”, “abc” “xy^”, “a^bc”       正規表示式的特定字元 說明 等效的正規表示式     \d 數字 [0-9]   \D 非數字 [^0-9]   \w 數字、字母、底線 [a-zA-Z0-9_]   \W 非 \w [^a-zA-Z0-9_]   \s 空白字元 [ \r\t\n\f]   \S 非空白字元 [^ \r\t\n\f]       正規表示式 說明     /a?"/>
+
+  <meta property="og:title" content="Regular Expression" />
+<meta property="og:description" content="Regula Express  reference :     說明及範例 比對不成立之字串     /a/ 含字母 “a” 的字串，例如 “ab”, “bac”, “cba” “xyz”   /a./ 含字母 “a” 以及其後任一個字元的字串，例如 “ab”, “bac”（若要比對.，請使用 .） “a”, “ba”   /^xy/ 以 “xy” 開始的字串，例如 “xyz”, “xyab”（若要比對 ^，請使用 \^） “axy”, “bxy”   /xy$/ 以 “xy” 結尾的字串，例如 “axy”, “abxy”以 “xy” 結尾的字串，例如 “axy”, “abxy” （若要比對 $，請使用 \$） “xya”, “xyb”   [13579] 包含 “1” 或 “3” 或 “5” 或 “7” 或 “9” 的字串，例如：”a3b”, “1xy” “y2k”   [0-9] 含數字之字串 不含數字之字串   [a-z0-9] 含數字或小寫字母之字串 不含數字及小寫字母之字串   [a-zA-Z0-9] 含數字或字母之字串 不含數字及字母之字串   b[aeiou]t “bat”, “bet”, “bit”, “bot”, “but” “bxt”, “bzt”   [^0-9] 不含數字之字串（若要比對 ^，請使用 \^） 含數字之字串   [^aeiouAEIOU] 不含母音之字串（若要比對 ^，請使用 \^） 含母音之字串   [^\^] 不含 “^” 之字串，例如 “xyz”, “abc” “xy^”, “a^bc”       正規表示式的特定字元 說明 等效的正規表示式     \d 數字 [0-9]   \D 非數字 [^0-9]   \w 數字、字母、底線 [a-zA-Z0-9_]   \W 非 \w [^a-zA-Z0-9_]   \s 空白字元 [ \r\t\n\f]   \S 非空白字元 [^ \r\t\n\f]       正規表示式 說明     /a?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://twasa.github.io/post/regexp/" />
+
+
+
+<meta property="article:published_time" content="2017-09-11T11:46:21&#43;08:00"/>
+<meta property="article:modified_time" content="2017-09-11T11:46:21&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- RSS autodiscovery --> 
+
+  
+<meta itemprop="name" content="Regular Expression">
+<meta itemprop="description" content="Regula Express  reference :     說明及範例 比對不成立之字串     /a/ 含字母 “a” 的字串，例如 “ab”, “bac”, “cba” “xyz”   /a./ 含字母 “a” 以及其後任一個字元的字串，例如 “ab”, “bac”（若要比對.，請使用 .） “a”, “ba”   /^xy/ 以 “xy” 開始的字串，例如 “xyz”, “xyab”（若要比對 ^，請使用 \^） “axy”, “bxy”   /xy$/ 以 “xy” 結尾的字串，例如 “axy”, “abxy”以 “xy” 結尾的字串，例如 “axy”, “abxy” （若要比對 $，請使用 \$） “xya”, “xyb”   [13579] 包含 “1” 或 “3” 或 “5” 或 “7” 或 “9” 的字串，例如：”a3b”, “1xy” “y2k”   [0-9] 含數字之字串 不含數字之字串   [a-z0-9] 含數字或小寫字母之字串 不含數字及小寫字母之字串   [a-zA-Z0-9] 含數字或字母之字串 不含數字及字母之字串   b[aeiou]t “bat”, “bet”, “bit”, “bot”, “but” “bxt”, “bzt”   [^0-9] 不含數字之字串（若要比對 ^，請使用 \^） 含數字之字串   [^aeiouAEIOU] 不含母音之字串（若要比對 ^，請使用 \^） 含母音之字串   [^\^] 不含 “^” 之字串，例如 “xyz”, “abc” “xy^”, “a^bc”       正規表示式的特定字元 說明 等效的正規表示式     \d 數字 [0-9]   \D 非數字 [^0-9]   \w 數字、字母、底線 [a-zA-Z0-9_]   \W 非 \w [^a-zA-Z0-9_]   \s 空白字元 [ \r\t\n\f]   \S 非空白字元 [^ \r\t\n\f]       正規表示式 說明     /a?">
+
+
+<meta itemprop="dateModified" content="2017-09-11T11:46:21&#43;08:00" />
+<meta itemprop="wordCount" content="483">
+
+
+
+<meta itemprop="keywords" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet">
+  <link rel="stylesheet" href="https://twasa.github.io/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "name": "William&#39;s Blog",
+  "url": "https://twasa.github.io/post/regexp/"
+}
+</script>
+
+</head>
+
+<body>
+  <header class="gheader">
+  <div class="container">
+    <nav class="navbar ">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://twasa.github.io/">
+          <h1 class="brand">William&#39;s Blog</h1>
+        </a>
+
+        <div class="navbar-burger burger" data-target="navMenubd-example">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navMenubd-example" class="navbar-menu">
+        <div class="navbar-start">
+          
+          <a class="navbar-item" href="https://twasa.github.io/categories/">
+            Categories
+          </a>
+          
+          <a class="navbar-item" href="https://twasa.github.io/tags/">
+            Tags
+          </a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+  <div class="main-content">
+    <div class="container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="title">Regular Expression</h1>
+      <div class="meta">
+        <time class="pub-time"  datetime="2017-09-11T11:46:21&#43;08:00">
+          2017.09.11
+        </time>
+        <div class="terms">
+          
+          <div class="categories">
+            
+              <a class="categories-item" href="https://twasa.github.io/categories/regular-expression">Regular Expression</a>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+    </header>
+    <div class="post-body">
+      
+
+<h1 id="regula-express">Regula Express</h1>
+
+<ul>
+<li>reference :</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>說明及範例</th>
+<th>比對不成立之字串</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>/a/</td>
+<td>含字母 “a” 的字串，例如 “ab”, “bac”, “cba” “xyz”</td>
+</tr>
+
+<tr>
+<td>/a./</td>
+<td>含字母 “a” 以及其後任一個字元的字串，例如 “ab”, “bac”（若要比對.，請使用 .） “a”, “ba”</td>
+</tr>
+
+<tr>
+<td>/^xy/</td>
+<td>以 “xy” 開始的字串，例如 “xyz”, “xyab”（若要比對 ^，請使用 \^）  “axy”, “bxy”</td>
+</tr>
+
+<tr>
+<td>/xy$/</td>
+<td>以 “xy” 結尾的字串，例如 “axy”, “abxy”以 “xy” 結尾的字串，例如 “axy”, “abxy” （若要比對 $，請使用 \$）  “xya”, “xyb”</td>
+</tr>
+
+<tr>
+<td>[13579]</td>
+<td>包含 “1” 或 “3” 或 “5” 或 “7” 或 “9” 的字串，例如：”a3b”, “1xy”    “y2k”</td>
+</tr>
+
+<tr>
+<td>[0-9]</td>
+<td>含數字之字串    不含數字之字串</td>
+</tr>
+
+<tr>
+<td>[a-z0-9]</td>
+<td>含數字或小寫字母之字串   不含數字及小寫字母之字串</td>
+</tr>
+
+<tr>
+<td>[a-zA-Z0-9]</td>
+<td>含數字或字母之字串 不含數字及字母之字串</td>
+</tr>
+
+<tr>
+<td>b[aeiou]t</td>
+<td>“bat”, “bet”, “bit”, “bot”, “but” “bxt”, “bzt”</td>
+</tr>
+
+<tr>
+<td>[^0-9]</td>
+<td>不含數字之字串（若要比對 ^，請使用 \^）    含數字之字串</td>
+</tr>
+
+<tr>
+<td>[^aeiouAEIOU]</td>
+<td>不含母音之字串（若要比對 ^，請使用 \^）    含母音之字串</td>
+</tr>
+
+<tr>
+<td>[^\^]</td>
+<td>不含 “^” 之字串，例如 “xyz”, “abc”    “xy^”, “a^bc”</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>正規表示式的特定字元</th>
+<th>說明</th>
+<th>等效的正規表示式</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>\d</td>
+<td>數字</td>
+<td>[0-9]</td>
+</tr>
+
+<tr>
+<td>\D</td>
+<td>非數字</td>
+<td>[^0-9]</td>
+</tr>
+
+<tr>
+<td>\w</td>
+<td>數字、字母、底線</td>
+<td>[a-zA-Z0-9_]</td>
+</tr>
+
+<tr>
+<td>\W</td>
+<td>非 \w</td>
+<td>[^a-zA-Z0-9_]</td>
+</tr>
+
+<tr>
+<td>\s</td>
+<td>空白字元</td>
+<td>[ \r\t\n\f]</td>
+</tr>
+
+<tr>
+<td>\S</td>
+<td>非空白字元</td>
+<td>[^ \r\t\n\f]</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>正規表示式</th>
+<th>說明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>/a?/</td>
+<td>零或一個 a（若要比對? 字元，請使用 \?）</td>
+</tr>
+
+<tr>
+<td>/a+/</td>
+<td>一或多個 a（若要比對+ 字元，請使用 +）</td>
+</tr>
+
+<tr>
+<td>/a*/</td>
+<td>零或多個 a（若要比對* 字元，請使用 *）</td>
+</tr>
+
+<tr>
+<td>/a{4}/</td>
+<td>四個 a</td>
+</tr>
+
+<tr>
+<td>/a{5,10}/</td>
+<td>五至十個 a</td>
+</tr>
+
+<tr>
+<td>/a{5,}/</td>
+<td>至少五個 a</td>
+</tr>
+
+<tr>
+<td>/a{,3}/</td>
+<td>至多三個 a</td>
+</tr>
+
+<tr>
+<td>/a.{5}b/</td>
+<td>a 和 b中間夾五個（非換行）字元</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>字元</th>
+<th>說明</th>
+<th>簡單範例</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td></td>
+<td>避開特殊字元</td>
+<td>/A*/ 可用於比對 “A*”，其中 * 是一個特殊字元，為避開其特殊意義，所以必須加上 “\”</td>
+</tr>
+
+<tr>
+<td>^</td>
+<td>比對輸入列的啟始位置</td>
+<td>/^A/ 可比對 “Abcd” 中的 “A”，但不可比對 “aAb”</td>
+</tr>
+
+<tr>
+<td>$</td>
+<td>比對輸入列的結束位置</td>
+<td>/A$/ 可比對 “bcdA” 中的 “A”，但不可比對 “aAb”</td>
+</tr>
+
+<tr>
+<td>*</td>
+<td>比對前一個字元零次或更多次</td>
+<td>/bo*/ 可比對 “Good boook” 中的 “booo”，亦可比對 “Good bk” 中的 “b”</td>
+</tr>
+
+<tr>
+<td>+</td>
+<td>比對前一個字元一次或更多次，等效於 {1,}</td>
+<td>/a+/ 可比對 “caaandy” 中的 “aaa”，但不可比對 “cndy”</td>
+</tr>
+
+<tr>
+<td>?</td>
+<td>比對前一個字元零次或一次</td>
+<td>/e?l/ 可比對 “angel” 中的 “el”，也可以比對 “angle” 中的 “l”</td>
+</tr>
+
+<tr>
+<td>.</td>
+<td>比對任何一個字元（但換行符號不算）</td>
+<td>/.n/ 可比對 “nay, an apple is on the tree” 中的 “an” 和 “on”，但不可比對 “nay”</td>
+</tr>
+
+<tr>
+<td>(x)</td>
+<td>比對 x 並將符合的部分存入一個變數</td>
+<td>/(a<em>) and (b</em>)/ 可比對 “aaa and bb” 中的 “aaa” 和 “bb”，並將兩個比對得到的字串設定至變數 RegExp.$1 和 RegExp.$2。</td>
+</tr>
+
+<tr>
+<td>xy</td>
+<td>比對 x 或 y</td>
+<td>/a<em>b</em>/g 可比對 “aaa and bb” 中的 “aaa” 和 “bb”</td>
+</tr>
+
+<tr>
+<td>{n}</td>
+<td>比對前一個字元 n 次，n 為一個正整數</td>
+<td>/a{3}/ 可比對 “lllaaalaa” 其中的 “aaa”，但不可比對 “aa”</td>
+</tr>
+
+<tr>
+<td>{n,}</td>
+<td>比對前一個字元至少 n 次，n 為一個正整數</td>
+<td>/a{3,}/ 可比對 “aa aaa aaaa” 其中的 “aaa” 及 “aaaa”，但不可比對 “aa”</td>
+</tr>
+
+<tr>
+<td>{n,m}</td>
+<td>比對前一個字元至少 n 次，至多 m 次，m、n 均為正整數</td>
+<td>/a{3,4}/ 可比對 “aa aaa aaaa aaaaa” 其中的 “aaa” 及 “aaaa”，但不可比對 “aa” 及 “aaaaa”</td>
+</tr>
+
+<tr>
+<td>[xyz]</td>
+<td>比對中括弧內的任一個字元</td>
+<td>/[ecm]/ 可比對 “welcome” 中的 “e” 或 “c” 或 “m”</td>
+</tr>
+
+<tr>
+<td>[^xyz]</td>
+<td>比對不在中括弧內出現的任一個字元</td>
+<td>/[^ecm]/ 可比對 “welcome” 中的 “w”、”l”、”o”，可見出其與 [xyz] 功能相反。（同時請注意 /^/ 與 [^] 之間功能的不同。）</td>
+</tr>
+
+<tr>
+<td>[\b]</td>
+<td>比對退位字元（Backspace character）</td>
+<td>可以比對一個 backspace ，也請注意 [\b] 與 \b 之間的差別</td>
+</tr>
+
+<tr>
+<td>\b</td>
+<td>比對英文字的邊界，例如空格</td>
+<td>例如 /\bn\w/ 可以比對 “noonday” 中的 ‘no’ ; /\wy\b/ 可比對 “possibly yesterday.” 中的 ‘ly’</td>
+</tr>
+
+<tr>
+<td>\B</td>
+<td>比對非「英文字的邊界」</td>
+<td>例如, /\w\Bn/ 可以比對 “noonday” 中的 ‘on’ , 另外 /y\B\w/ 可以比對 “possibly yesterday.” 中的 ‘ye’</td>
+</tr>
+
+<tr>
+<td>\cX</td>
+<td>比對控制字元（Control character），其中 X 是一個控制字元</td>
+<td>/\cM/ 可以比對 一個字串中的 control-M</td>
+</tr>
+
+<tr>
+<td>\d</td>
+<td>比對任一個數字，等效於 [0-9]</td>
+<td>/[\d]/ 可比對 由 “0” 至 “9” 的任一數字 但其餘如字母等就不可比對</td>
+</tr>
+
+<tr>
+<td>\D</td>
+<td>比對任一個非數字，等效於 [^0-9]</td>
+<td>/[\D]/ 可比對 “w” “a”… 但不可比對如 “7” “1” 等數字</td>
+</tr>
+
+<tr>
+<td>\f</td>
+<td>比對 form-feed</td>
+<td>若是在文字中有發生 “換頁” 的行為 則可以比對成功</td>
+</tr>
+
+<tr>
+<td>\n</td>
+<td>比對換行符號</td>
+<td>若是在文字中有發生 “換行” 的行為 則可以比對成功</td>
+</tr>
+
+<tr>
+<td>\r</td>
+<td>比對 carriage return</td>
+<td></td>
+</tr>
+
+<tr>
+<td>\s</td>
+<td>比對任一個空白字元（White space character），等效於 [ \f\n\r\t\v]</td>
+<td>/\s\w*/ 可比對 “A b” 中的 “b”</td>
+</tr>
+
+<tr>
+<td>\S</td>
+<td>比對任一個非空白字元，等效於 [^ \f\n\r\t\v]</td>
+<td>/\S/\w* 可比對 “A b” 中的 “A”</td>
+</tr>
+
+<tr>
+<td>\t</td>
+<td>比對定位字元（Tab）</td>
+<td></td>
+</tr>
+
+<tr>
+<td>\v</td>
+<td>比對垂直定位字元（Vertical tab）</td>
+<td></td>
+</tr>
+
+<tr>
+<td>\w</td>
+<td>比對數字字母字元（Alphanumerical characters）或底線字母（”<em>”），等效於 [A-Za-z0-9</em>]</td>
+<td>/\w/ 可比對 “.A _!9” 中的 “A”、”_”、”9″。</td>
+</tr>
+
+<tr>
+<td>\W</td>
+<td>比對非「數字字母字元或底線字母」，等效於 [^A-Za-z0-9_]</td>
+<td>/\W/ 可比對 “.A _!9” 中的 “.”、” “、”!”，可見其功能與 /\w/ 恰好相反。</td>
+</tr>
+
+<tr>
+<td>\ooctal</td>
+<td>比對八進位，其中octal是八進位數目</td>
+<td>/\oocetal123/ 可比對 與 八進位的ASCII中 “123” 所相對應的字元值。</td>
+</tr>
+
+<tr>
+<td>\xhex</td>
+<td>比對十六進位，其中hex是十六進位數目</td>
+<td>/\xhex38/ 可比對 與 16進位的ASCII中 “38” 所相對應的字元。</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+    <footer class="post-footer">
+      
+      <div class="share">
+        
+      </div>
+
+      <div class="pagenation">
+        <ul class="pagenation-list">
+          
+          <li class="pager previous">
+            <a href="https://twasa.github.io/post/find/" data-toggle="tooltip" data-placement="top" title="find">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="pager next">
+            <a href="https://twasa.github.io/post/my-db/" data-toggle="tooltip" data-placement="top" title="MySQL and MariaDB memo">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+      </div>
+    </footer>
+  </article>
+
+  
+  <article class="related"></article>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "NewsArticle",
+    "@id": "https://twasa.github.io/post/regexp/",
+    "headline": " Regula Express  reference :     說明及範例 比對不成立之字串     /a/ 含字母 “a” 的字串，例如 “ab”, “bac”, “cba” “xyz”   /a./ 含字母 “a”",
+    "author": "William Wang",
+    "publisher": {
+      "@type": "Organization",
+      "name": "William Wang",
+      "logo": ""
+    },
+    "image": "",
+    "datePublished": "2017-09-11"
+  },
+  "headline": " Regula Express  reference :     說明及範例 比對不成立之字串     /a/ 含字母 “a” 的字串，例如 “ab”, “bac”, “cba” “xyz”   /a./ 含字母 “a”",
+  "alternativeHeadline": "William&#39;s Blog",
+  "datePublished": "2017-09-11",
+  "dateModified": "2017-09-11",
+  "url": "https://twasa.github.io/post/regexp/",
+  "wordCount": "483",
+  "author": {
+    "@type": "Person",
+    "name": "William Wang"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "William Wang"
+  },
+  "image": "",
+  "genre": "Regular Expression",
+  
+  "description": ""
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "@id": "https://twasa.github.io/post/regexp/",
+  "name": "William Wang"
+}
+</script>
+
+
+    </div>
+  </div>
+
+  <footer class="gfooter">
+  <div class="inner">
+    <div class="container">
+      <p class="copy"><small>Copyright (c) 2017, all rights reserved.</small></p>
+
+      <nav class="footer-nav">
+        <div class="inner">
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://twasa.github.io/js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+  <title>sed &middot; William&#39;s Blog -  William&#39;s Blog </title>
+  <meta name="generator" content="Hugo 0.26" />
+  <meta name="description" content="William&#39;s Blog"> 
+
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="sed"/>
+<meta name="twitter:description" content=" reference  https://www.gnu.org/software/sed/manual/sed.html http://www.gnu.org/software/sed/manual/sed.html#Examples  syntax sed OPTIONS... [SCRIPT] [INPUTFILE...] STDOUT | sed OPTIONS... [SCRIPT]  OPTIONS -i edited in-place  SCRIPT format &#39;起始行數,結束行數 指令/要被取代的字串/新字串/旗標&#39;  指令： s 搜尋並取代
+旗標 g 取代全部 c 取代前詢問是否confirm I 忽略 pattern 大小寫
+example modify CentOS linux hostname sed -i &#39;s/HOSTNAME\=.*/HOSTNAME\=NEWHOSTNAME/g&#39; /etc/sysconfig/network  change default delimiter 改用 &ldquo;:&rdquo; sed &#39;s:orig:NEW:&#39;  改用 &ldquo;#&rdquo; 當delimiter sed -e &#39;s#/#\\#g&#39;  "/>
+
+  <meta property="og:title" content="sed" />
+<meta property="og:description" content=" reference  https://www.gnu.org/software/sed/manual/sed.html http://www.gnu.org/software/sed/manual/sed.html#Examples  syntax sed OPTIONS... [SCRIPT] [INPUTFILE...] STDOUT | sed OPTIONS... [SCRIPT]  OPTIONS -i edited in-place  SCRIPT format &#39;起始行數,結束行數 指令/要被取代的字串/新字串/旗標&#39;  指令： s 搜尋並取代
+旗標 g 取代全部 c 取代前詢問是否confirm I 忽略 pattern 大小寫
+example modify CentOS linux hostname sed -i &#39;s/HOSTNAME\=.*/HOSTNAME\=NEWHOSTNAME/g&#39; /etc/sysconfig/network  change default delimiter 改用 &ldquo;:&rdquo; sed &#39;s:orig:NEW:&#39;  改用 &ldquo;#&rdquo; 當delimiter sed -e &#39;s#/#\\#g&#39;  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://twasa.github.io/post/sed/" />
+
+
+
+<meta property="article:published_time" content="2017-09-11T12:54:56&#43;08:00"/>
+<meta property="article:modified_time" content="2017-09-11T12:54:56&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- RSS autodiscovery --> 
+
+  
+<meta itemprop="name" content="sed">
+<meta itemprop="description" content=" reference  https://www.gnu.org/software/sed/manual/sed.html http://www.gnu.org/software/sed/manual/sed.html#Examples  syntax sed OPTIONS... [SCRIPT] [INPUTFILE...] STDOUT | sed OPTIONS... [SCRIPT]  OPTIONS -i edited in-place  SCRIPT format &#39;起始行數,結束行數 指令/要被取代的字串/新字串/旗標&#39;  指令： s 搜尋並取代
+旗標 g 取代全部 c 取代前詢問是否confirm I 忽略 pattern 大小寫
+example modify CentOS linux hostname sed -i &#39;s/HOSTNAME\=.*/HOSTNAME\=NEWHOSTNAME/g&#39; /etc/sysconfig/network  change default delimiter 改用 &ldquo;:&rdquo; sed &#39;s:orig:NEW:&#39;  改用 &ldquo;#&rdquo; 當delimiter sed -e &#39;s#/#\\#g&#39;  ">
+
+
+<meta itemprop="dateModified" content="2017-09-11T12:54:56&#43;08:00" />
+<meta itemprop="wordCount" content="55">
+
+
+
+<meta itemprop="keywords" content="command," />
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet">
+  <link rel="stylesheet" href="https://twasa.github.io/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "name": "William&#39;s Blog",
+  "url": "https://twasa.github.io/post/sed/"
+}
+</script>
+
+</head>
+
+<body>
+  <header class="gheader">
+  <div class="container">
+    <nav class="navbar ">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://twasa.github.io/">
+          <h1 class="brand">William&#39;s Blog</h1>
+        </a>
+
+        <div class="navbar-burger burger" data-target="navMenubd-example">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navMenubd-example" class="navbar-menu">
+        <div class="navbar-start">
+          
+          <a class="navbar-item" href="https://twasa.github.io/categories/">
+            Categories
+          </a>
+          
+          <a class="navbar-item" href="https://twasa.github.io/tags/">
+            Tags
+          </a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+  <div class="main-content">
+    <div class="container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="title">sed</h1>
+      <div class="meta">
+        <time class="pub-time"  datetime="2017-09-11T12:54:56&#43;08:00">
+          2017.09.11
+        </time>
+        <div class="terms">
+          
+          <div class="categories">
+            
+              <a class="categories-item" href="https://twasa.github.io/categories/linux">Linux</a>
+            
+          </div>
+          
+          
+          <div class="tag">
+            
+              <a class="tag-item" href="https://twasa.github.io/tags/command">command</a>
+            
+          </div>
+          
+        </div>
+      </div>
+    </header>
+    <div class="post-body">
+      
+
+<h1 id="reference">reference</h1>
+
+<ul>
+<li><a href="https://www.gnu.org/software/sed/manual/sed.html">https://www.gnu.org/software/sed/manual/sed.html</a></li>
+<li><a href="http://www.gnu.org/software/sed/manual/sed.html#Examples">http://www.gnu.org/software/sed/manual/sed.html#Examples</a></li>
+</ul>
+
+<h1 id="syntax">syntax</h1>
+
+<pre><code>sed OPTIONS... [SCRIPT] [INPUTFILE...]
+STDOUT | sed OPTIONS... [SCRIPT]
+</code></pre>
+
+<h1 id="options">OPTIONS</h1>
+
+<pre><code>-i    edited in-place
+</code></pre>
+
+<h1 id="script-format">SCRIPT format</h1>
+
+<pre><code>'起始行數,結束行數 指令/要被取代的字串/新字串/旗標'
+</code></pre>
+
+<h2 id="指令">指令：</h2>
+
+<p>s 搜尋並取代</p>
+
+<h2 id="旗標">旗標</h2>
+
+<p>g 取代全部
+c 取代前詢問是否confirm
+I 忽略 pattern 大小寫</p>
+
+<h1 id="example">example</h1>
+
+<h2 id="modify-centos-linux-hostname">modify CentOS linux hostname</h2>
+
+<pre><code>sed -i 's/HOSTNAME\=.*/HOSTNAME\=NEWHOSTNAME/g' /etc/sysconfig/network
+</code></pre>
+
+<h2 id="change-default-delimiter">change default delimiter</h2>
+
+<h3 id="改用">改用 &ldquo;:&rdquo;</h3>
+
+<pre><code>sed 's:orig:NEW:'
+</code></pre>
+
+<h3 id="改用-當delimiter">改用 &ldquo;#&rdquo; 當delimiter</h3>
+
+<pre><code>sed -e 's#/#\\#g'
+</code></pre>
+
+    </div>
+    <footer class="post-footer">
+      
+      <div class="share">
+        
+      </div>
+
+      <div class="pagenation">
+        <ul class="pagenation-list">
+          
+          <li class="pager previous">
+            <a href="https://twasa.github.io/post/apache-tomcat/" data-toggle="tooltip" data-placement="top" title="Apache Tomcat">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="pager next">
+            <a href="https://twasa.github.io/post/cisco-ios-netwrok-cmmmands/" data-toggle="tooltip" data-placement="top" title="Cisco Ios Netwrok Cmmmands">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+      </div>
+    </footer>
+  </article>
+
+  
+  <article class="related"></article>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "NewsArticle",
+    "@id": "https://twasa.github.io/post/sed/",
+    "headline": " reference  https://www.gnu.org/software/sed/manual/sed.html http://www.gnu.org/software/sed/manual/sed.html#E",
+    "author": "William Wang",
+    "publisher": {
+      "@type": "Organization",
+      "name": "William Wang",
+      "logo": ""
+    },
+    "image": "",
+    "datePublished": "2017-09-11"
+  },
+  "headline": " reference  https://www.gnu.org/software/sed/manual/sed.html http://www.gnu.org/software/sed/manual/sed.html#E",
+  "alternativeHeadline": "William&#39;s Blog",
+  "datePublished": "2017-09-11",
+  "dateModified": "2017-09-11",
+  "url": "https://twasa.github.io/post/sed/",
+  "wordCount": "55",
+  "author": {
+    "@type": "Person",
+    "name": "William Wang"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "William Wang"
+  },
+  "image": "",
+  "genre": "Linux",
+  "keywords": "command",
+  "description": ""
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "@id": "https://twasa.github.io/post/sed/",
+  "name": "William Wang"
+}
+</script>
+
+
+    </div>
+  </div>
+
+  <footer class="gfooter">
+  <div class="inner">
+    <div class="container">
+      <p class="copy"><small>Copyright (c) 2017, all rights reserved.</small></p>
+
+      <nav class="footer-nav">
+        <div class="inner">
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://twasa.github.io/js/script.js"></script>
+
+</body>
+</html>
