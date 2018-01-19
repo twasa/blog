@@ -81,59 +81,92 @@ or
 git glone git://xxx@github.com/xxx/xxx.git
 ```
 
- - 檢查目前 Git 的狀態
+- 檢查目前 Git 的狀態
 ```
 git status
 ```
 
- - 加檔案
+- 加檔案
 ```
 git add
 git add -p #批次加入，可用在開發時有些程式碼功能想加入，有些不想加入時使用
 ```
 
- - 移檔案:
+- 移檔案:
 ```
 git revert
 ```
 
- - 提交檔案:
+- 提交檔案:
 ```
 git commit
 or
 git commit -m "說明文字"
 ```
 
- - 加檔案並提交
+- 加檔案並提交
 ```
 git commit -am "Add test.py to test git function"
 ```
 
- - 查看過去 commit 的紀錄
+- 查看過去 commit 的紀錄
 ```
 git log
 or
 git log --stat
 or
 git log -p
+
+git reflog
 ```
 
- - 列出既有標籤:
+- About HEAD
+```
+在Git中，HEAD像是一個指標，指著一個版本
+HEAD^       把指標只到上一個版本
+HEAD^^      把指標只到上一個版本
+HEAD~100    把指標只到上100個版本
+```
+
+- 回之前版本
+```
+git reset --hard HEAD^
+
+git reset --hard <commitId>
+```
+
+- 放棄修改(git add之前)
+```
+git checkout -- FILE
+```
+
+- 放棄修改(git add之後)
+```
+git reset HEAD FILE
+git checkout -- FILE
+```
+
+- 放棄修改(git commit之後，尚未push至remote之前都有救)
+```
+git checkout <commitId> <file>
+```
+
+- 列出既有標籤:
 ```
 git tag -l
 ```
 
- - 新增標籤 -a 就是標籤名稱，-m 代表該標籤說明
+- 新增標籤 -a 就是標籤名稱，-m 代表該標籤說明
 ```
 git tag -a v1.4 -m 'my version 1.4'
 ```
 
- - 上傳標籤到遠端, git push並不會把標籤上傳到遠端，所以必須透過底下才行 
+- 上傳標籤到遠端, git push並不會把標籤上傳到遠端，所以必須透過底下才行 
 ```
 git push origin v1.5
 ```
 
- - 如果在本機端很多標籤，利用 –tags 一次上傳上去
+- 如果在本機端很多標籤，利用 –tags 一次上傳上去
 ```
 git push origin --tags
 ```
