@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nginx on William&#39;s Blog</title>
+    <link>https://twasa.github.io/tags/nginx/</link>
+    <description>Recent content in Nginx on William&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2017, all rights reserved.</copyright>
+    <lastBuildDate>Mon, 11 Sep 2017 10:14:51 +0800</lastBuildDate>
+    
+	<atom:link href="https://twasa.github.io/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP</title>
+      <link>https://twasa.github.io/post/lnmp/</link>
+      <pubDate>Mon, 11 Sep 2017 10:14:51 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/post/lnmp/</guid>
+      <description>Build a Linux, Nginx, MariaDB, PHP environment in CentOS 7 install rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm yum install nginx php php-fpm mariadb mariadb-server  firewalld for http, https access only firewall-cmd --zone=public --list-all firewall-cmd --permanent --zone=public --add-service=http firewall-cmd --permanent --zone=public --add-service=https firewall-cmd --reload firewall-cmd --zone=public --list-all  Nginx config basic config, edit /etc/nginx/nginx.conf user nginx; worker_processes 2; #by your cpu error_log /var/log/nginx/error.log warn; pid /var/run/nginx.pid; events { worker_connections 1024; } http { include /etc/nginx/mime.</description>
+    </item>
+    
+  </channel>
+</rss>

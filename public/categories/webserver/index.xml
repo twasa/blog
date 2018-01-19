@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Webserver on William&#39;s Blog</title>
+    <link>https://twasa.github.io/categories/webserver/</link>
+    <description>Recent content in Webserver on William&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2017, all rights reserved.</copyright>
+    <lastBuildDate>Mon, 11 Sep 2017 15:50:54 +0800</lastBuildDate>
+    
+	<atom:link href="https://twasa.github.io/categories/webserver/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Apache Http Advanced</title>
+      <link>https://twasa.github.io/post/apache-http-advanced/</link>
+      <pubDate>Mon, 11 Sep 2017 15:50:54 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/post/apache-http-advanced/</guid>
+      <description>http rewrite  syntax  &amp;lt;IfModule mod_rewrite.c&amp;gt; RewriteEngine On #啟用 RewriteBase /路徑 RewriteCond 變數 開關 RewriteCond 變數 條件 [選項] RewriteRule 規則 [選項] &amp;lt;/IfModule&amp;gt; # 開關 on, off # 選項 NC (no case) 不區分大小寫 F (force URL to be forbidden) 禁用URL,返回403HTTP狀態碼。 R[=code] (force redirect) 強制外部重定向 code 預設302, 最好使用301 G (force URL to be gone) 強制URL為GONE，返回410HTTP狀態碼 P (force proxy) 強制使用代理轉發。 N (next round) 重新從第一條規則開始運行重寫過程。 C (chained with next rule) 與下一條規則關聯 AND OR #if ( (A OR B) AND (C OR D) ) RewriteCond A [or] RewriteCond B [or] RewriteCond C RewriteCond D L (last rule) 表明當前規則是最後一條規則，停止分析以後規則的重寫 # 變數 - %{HTTP_HOST} !</description>
+    </item>
+    
+    <item>
+      <title>Apache Tomcat</title>
+      <link>https://twasa.github.io/post/apache-tomcat/</link>
+      <pubDate>Mon, 11 Sep 2017 12:34:25 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/post/apache-tomcat/</guid>
+      <description>參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk or curl -v -j -k -L -H &amp;quot;Cookie: oraclelicense=accept-securebackup-cookie&amp;quot; http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm &amp;gt; jdk-8u112-linux-x64.rpm &amp;amp;&amp;amp; rpm -Uvh jdk-8u112-linux-x64.rpm java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數
+JAVA_OPTS=&amp;quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:+UseParallelGC&amp;quot;  設定Tomcat JMX remote 監控</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP</title>
+      <link>https://twasa.github.io/post/lnmp/</link>
+      <pubDate>Mon, 11 Sep 2017 10:14:51 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/post/lnmp/</guid>
+      <description>Build a Linux, Nginx, MariaDB, PHP environment in CentOS 7 install rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm yum install nginx php php-fpm mariadb mariadb-server  firewalld for http, https access only firewall-cmd --zone=public --list-all firewall-cmd --permanent --zone=public --add-service=http firewall-cmd --permanent --zone=public --add-service=https firewall-cmd --reload firewall-cmd --zone=public --list-all  Nginx config basic config, edit /etc/nginx/nginx.conf user nginx; worker_processes 2; #by your cpu error_log /var/log/nginx/error.log warn; pid /var/run/nginx.pid; events { worker_connections 1024; } http { include /etc/nginx/mime.</description>
+    </item>
+    
+  </channel>
+</rss>

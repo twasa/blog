@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+  <title>Cisco Ios Netwrok Cmmmands &middot; William&#39;s Blog -  William&#39;s Blog </title>
+  <meta name="generator" content="Hugo 0.26" />
+  <meta name="description" content="William&#39;s Blog"> 
+
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Cisco Ios Netwrok Cmmmands"/>
+<meta name="twitter:description" content="狀態查看  show startup-config show running-config show version show vlan id show ip route show ip nhrp show crypto engine connection active sh run | inc ip route 查看連線的TCP session  show ip sockets detail  查IP流量  conf t interface xxx ip accounting end sh ip accounting 備註, 查完記得no掉, 否則會增加cpu的負擔! conf t interface xxx no ip accounting   基本操作  從User Mode進入Privileged Mode enable 從Privileged Mode進入Global Configuration Mode configure terminal 儲存設定  write or copy running-config startup-config   設定  介面IP設定 interface fastEthernet 0/0 ip address IP位置 子網路遮罩 no shutdown"/>
+
+  <meta property="og:title" content="Cisco Ios Netwrok Cmmmands" />
+<meta property="og:description" content="狀態查看  show startup-config show running-config show version show vlan id show ip route show ip nhrp show crypto engine connection active sh run | inc ip route 查看連線的TCP session  show ip sockets detail  查IP流量  conf t interface xxx ip accounting end sh ip accounting 備註, 查完記得no掉, 否則會增加cpu的負擔! conf t interface xxx no ip accounting   基本操作  從User Mode進入Privileged Mode enable 從Privileged Mode進入Global Configuration Mode configure terminal 儲存設定  write or copy running-config startup-config   設定  介面IP設定 interface fastEthernet 0/0 ip address IP位置 子網路遮罩 no shutdown" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://twasa.github.io/post/cisco-ios-netwrok-cmmmands/" />
+
+
+
+<meta property="article:published_time" content="2017-09-11T13:00:03&#43;08:00"/>
+<meta property="article:modified_time" content="2017-09-11T13:00:03&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- RSS autodiscovery --> 
+
+  
+<meta itemprop="name" content="Cisco Ios Netwrok Cmmmands">
+<meta itemprop="description" content="狀態查看  show startup-config show running-config show version show vlan id show ip route show ip nhrp show crypto engine connection active sh run | inc ip route 查看連線的TCP session  show ip sockets detail  查IP流量  conf t interface xxx ip accounting end sh ip accounting 備註, 查完記得no掉, 否則會增加cpu的負擔! conf t interface xxx no ip accounting   基本操作  從User Mode進入Privileged Mode enable 從Privileged Mode進入Global Configuration Mode configure terminal 儲存設定  write or copy running-config startup-config   設定  介面IP設定 interface fastEthernet 0/0 ip address IP位置 子網路遮罩 no shutdown">
+
+
+<meta itemprop="dateModified" content="2017-09-11T13:00:03&#43;08:00" />
+<meta itemprop="wordCount" content="397">
+
+
+
+<meta itemprop="keywords" content="Cisco," />
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet">
+  <link rel="stylesheet" href="https://twasa.github.io/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "name": "William&#39;s Blog",
+  "url": "https://twasa.github.io/post/cisco-ios-netwrok-cmmmands/"
+}
+</script>
+
+</head>
+
+<body>
+  <header class="gheader">
+  <div class="container">
+    <nav class="navbar ">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://twasa.github.io/">
+          <h1 class="brand">William&#39;s Blog</h1>
+        </a>
+
+        <div class="navbar-burger burger" data-target="navMenubd-example">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navMenubd-example" class="navbar-menu">
+        <div class="navbar-start">
+          
+          <a class="navbar-item" href="https://twasa.github.io/categories/">
+            Categories
+          </a>
+          
+          <a class="navbar-item" href="https://twasa.github.io/tags/">
+            Tags
+          </a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+  <div class="main-content">
+    <div class="container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="title">Cisco Ios Netwrok Cmmmands</h1>
+      <div class="meta">
+        <time class="pub-time"  datetime="2017-09-11T13:00:03&#43;08:00">
+          2017.09.11
+        </time>
+        <div class="terms">
+          
+          <div class="categories">
+            
+              <a class="categories-item" href="https://twasa.github.io/categories/network">Network</a>
+            
+          </div>
+          
+          
+          <div class="tag">
+            
+              <a class="tag-item" href="https://twasa.github.io/tags/cisco">Cisco</a>
+            
+          </div>
+          
+        </div>
+      </div>
+    </header>
+    <div class="post-body">
+      
+
+<h2 id="狀態查看">狀態查看</h2>
+
+<ul>
+<li>show startup-config</li>
+<li>show running-config</li>
+<li>show version</li>
+<li>show vlan id</li>
+<li>show ip route</li>
+<li>show ip nhrp</li>
+<li>show crypto engine connection active</li>
+<li>sh run | inc ip route</li>
+<li>查看連線的TCP session
+<code>
+show ip sockets detail
+</code></li>
+<li>查IP流量
+<code>
+conf t
+interface xxx
+ip accounting
+end
+sh ip accounting
+備註, 查完記得no掉, 否則會增加cpu的負擔!
+conf t
+interface xxx
+no ip accounting
+</code></li>
+</ul>
+
+<h2 id="基本操作">基本操作</h2>
+
+<ul>
+<li>從User Mode進入Privileged Mode</li>
+<li>enable</li>
+<li>從Privileged Mode進入Global Configuration Mode</li>
+<li>configure terminal</li>
+<li>儲存設定
+<code>
+write
+or 
+copy running-config startup-config
+</code></li>
+</ul>
+
+<h2 id="設定">設定</h2>
+
+<ul>
+<li>介面IP設定</li>
+<li>interface fastEthernet 0/0</li>
+<li>ip address IP位置 子網路遮罩</li>
+
+<li><p>no shutdown</p></li>
+
+<li><p>路由設定</p></li>
+
+<li><p>ip route IP位置 子網路遮罩 路由IP位置</p></li>
+
+<li><p>ip route IP位置 子網路遮罩 介面名稱</p></li>
+
+<li><p>PPPoE設定</p></li>
+
+<li><p>interface Dialer1</p></li>
+
+<li><p>mtu 1492</p></li>
+
+<li><p>ip address negotiated</p></li>
+
+<li><p>ip nat outside</p></li>
+
+<li><p>no ip virtual-reassembly</p></li>
+
+<li><p>encapsulation ppp</p></li>
+
+<li><p>ip tcp adjust-mss 1300</p></li>
+
+<li><p>dialer pool 1</p></li>
+
+<li><p>dialer-group 1</p></li>
+
+<li><p>ppp pap sent-username XXXX password 0 XXXX</p></li>
+
+<li><p>exit</p></li>
+
+<li><p>interface FastEthernet x/x</p></li>
+
+<li><p>description PPPOE</p></li>
+
+<li><p>no ip address</p></li>
+
+<li><p>duplex auto</p></li>
+
+<li><p>speed auto</p></li>
+
+<li><p>pppoe enable group global</p></li>
+
+<li><p>pppoe-client dial-pool-number 1</p></li>
+</ul>
+
+<h2 id="連線管理設定">連線管理設定</h2>
+
+<ul>
+<li>line vty 0 4</li>
+<li>tra in telnet ssh</li>
+</ul>
+
+<h2 id="aaa設定">AAA設定</h2>
+
+<ul>
+<li>aaa new-model</li>
+<li>aaa authentication login AAAXXX local group radius</li>
+<li>aaa authorization console</li>
+<li>aaa authorization exec AAAXXX  local group radius</li>
+<li>aaa session-id common</li>
+<li>radius-server host A.B.C.D auth-port XXXX acct-port XXXX</li>
+<li>radius-server key 7 XXXXXX</li>
+<li>line vty 0 4</li>
+<li>authorization exec AAAXXX</li>
+<li>login authentication AAAXXX</li>
+<li>exit</li>
+<li>line vty 5 15</li>
+<li>authorization exec AAAXXX</li>
+<li>login authentication AAAXXX</li>
+<li>exit</li>
+<li>ip radius source-interface 介面名稱</li>
+</ul>
+
+<h2 id="權限設定">權限設定</h2>
+
+<ul>
+<li>privilege exec level 7 telnet</li>
+<li>privilege exec level 7 ping ip</li>
+<li>privilege exec level 7 ping</li>
+<li>privilege exec level 7 show startup-config</li>
+<li>privilege exec level 7 show running-config</li>
+<li>privilege exec level 7 show</li>
+</ul>
+
+<h2 id="config-file-backup-to-ftp-設定">config file backup to FTP 設定</h2>
+
+<ul>
+<li>archive</li>
+<li>path <a href="ftp://10.192.1.139/SOME_PATH/$h">ftp://10.192.1.139/SOME_PATH/$h</a></li>
+<li>write-memory</li>
+<li>time-period 1440</li>
+<li>exit</li>
+<li>ip ftp source-interface 介面名稱</li>
+<li>ip ftp username XXXX</li>
+<li>ip ftp password 7 XXXXXXXX</li>
+<li>exit</li>
+</ul>
+
+<h2 id="連線測試">連線測試</h2>
+
+<ul>
+<li>ping 10.192.1.4 source 介面名稱</li>
+<li>ping 10.192.1.139 source 介面名稱</li>
+</ul>
+
+<h2 id="netflow-ce-設定">NetFlow CE 設定</h2>
+
+<ul>
+<li>snmp-server community cnlinktw RO</li>
+<li>show ip flow export : Shows the current NetFlow configuration</li>
+<li>interface Loopback0</li>
+<li>description Netflow</li>
+<li>ip address A.B.C.D 255.255.255.255</li>
+<li>ip flow-export source Loopback0</li>
+<li>ip flow-export version 5</li>
+<li>ip flow-export destination collectorIP位址collectorPort</li>
+</ul>
+
+<h2 id="router-gre-tunnel-設定">Router GRE Tunnel 設定</h2>
+
+<ul>
+<li>interface Tunnel xxx</li>
+<li>description &ldquo;Primary Tunnel description&rdquo;</li>
+<li>ip address IP位址 子網路遮罩</li>
+<li>tunnel source IP位址</li>
+<li>tunnel destination IP位址</li>
+</ul>
+
+<h2 id="nhrp-ce-設定">NHRP CE 設定</h2>
+
+<ul>
+<li>interface Tunnel1009</li>
+<li>description &ldquo;NHRP description&rdquo;</li>
+<li>ip address NHCsPrivateIP位址 255.255.255.252</li>
+<li>no ip redirects</li>
+<li>ip nhrp authentication tp001542</li>
+<li>ip nhrp map 10.195.252.26 NHSsPublicIP位址</li>
+<li>ip nhrp map multicast NHSsPublicIP位址</li>
+<li>ip nhrp network-id 1542</li>
+<li>ip nhrp holdtime 60</li>
+<li>ip nhrp nhs NHSsIP</li>
+<li>ip tcp adjust-mss 1460</li>
+<li>tunnel source 介面名稱</li>
+<li>tunnel mode gre multipoint</li>
+<li>tunnel key 1542</li>
+</ul>
+
+    </div>
+    <footer class="post-footer">
+      
+      <div class="share">
+        
+      </div>
+
+      <div class="pagenation">
+        <ul class="pagenation-list">
+          
+          <li class="pager previous">
+            <a href="https://twasa.github.io/post/sed/" data-toggle="tooltip" data-placement="top" title="sed">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="pager next">
+            <a href="https://twasa.github.io/post/python-package/" data-toggle="tooltip" data-placement="top" title="Python Package">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+      </div>
+    </footer>
+  </article>
+
+  
+  <article class="related"></article>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "NewsArticle",
+    "@id": "https://twasa.github.io/post/cisco-ios-netwrok-cmmmands/",
+    "headline": " 狀態查看  show startup-config show running-config show version show vlan id show ip route show ip nhrp show crypt",
+    "author": "William Wang",
+    "publisher": {
+      "@type": "Organization",
+      "name": "William Wang",
+      "logo": ""
+    },
+    "image": "",
+    "datePublished": "2017-09-11"
+  },
+  "headline": " 狀態查看  show startup-config show running-config show version show vlan id show ip route show ip nhrp show crypt",
+  "alternativeHeadline": "William&#39;s Blog",
+  "datePublished": "2017-09-11",
+  "dateModified": "2017-09-11",
+  "url": "https://twasa.github.io/post/cisco-ios-netwrok-cmmmands/",
+  "wordCount": "397",
+  "author": {
+    "@type": "Person",
+    "name": "William Wang"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "William Wang"
+  },
+  "image": "",
+  "genre": "Network",
+  "keywords": "Cisco",
+  "description": ""
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "@id": "https://twasa.github.io/post/cisco-ios-netwrok-cmmmands/",
+  "name": "William Wang"
+}
+</script>
+
+
+    </div>
+  </div>
+
+  <footer class="gfooter">
+  <div class="inner">
+    <div class="container">
+      <p class="copy"><small>Copyright (c) 2017, all rights reserved.</small></p>
+
+      <nav class="footer-nav">
+        <div class="inner">
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://twasa.github.io/js/script.js"></script>
+
+</body>
+</html>
