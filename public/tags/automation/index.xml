@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automation on William&#39;s Blog</title>
+    <link>https://twasa.github.io/tags/automation/</link>
+    <description>Recent content in Automation on William&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2017, all rights reserved.</copyright>
+    <lastBuildDate>Mon, 11 Sep 2017 15:48:07 +0800</lastBuildDate>
+    
+	<atom:link href="https://twasa.github.io/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ansible</title>
+      <link>https://twasa.github.io/post/ansible/</link>
+      <pubDate>Mon, 11 Sep 2017 15:48:07 +0800</pubDate>
+      
+      <guid>https://twasa.github.io/post/ansible/</guid>
+      <description>Concept  功能：IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates. 管理方式：push-based Ansible manages machines in an agent-less manner. Ansible by default manages machines over the SSH protocol. Because OpenSSH is one of the most peer-reviewed open source components, security exposure is greatly reduced.  Requirement  Control Machine: SSH client and Linux system Managed Node: Python 2.</description>
+    </item>
+    
+  </channel>
+</rss>
