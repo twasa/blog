@@ -49,7 +49,7 @@ git config --global alias.st status git config --global alias.ck checkout git co
 
 
 <meta itemprop="dateModified" content="2017-09-11T16:46:58&#43;08:00" />
-<meta itemprop="wordCount" content="226">
+<meta itemprop="wordCount" content="276">
 
 
 
@@ -214,9 +214,8 @@ cat id_rsa_github.pub # past your public key content
 <pre><code>git clone https://xxx@github.com/xxx/xxx.git
 or
 git glone git://xxx@github.com/xxx/xxx.git
-</code></pre>
+</code></pre></li>
 
-<ul>
 <li><p>檢查目前 Git 的狀態</p>
 
 <pre><code>git status
@@ -245,36 +244,77 @@ git commit -m &quot;說明文字&quot;
 <pre><code>git commit -am &quot;Add test.py to test git function&quot;
 </code></pre></li>
 
-<li><p>查看過去 commit 的紀錄</p>
-
-<pre><code>git log
+<li><p>查看過去 commit 的紀錄
+```
+git log
 or
-git log --stat
+git log &ndash;stat
 or
-git log -p
-</code></pre></li>
-
-<li><p>列出既有標籤:</p>
-
-<pre><code>git tag -l
-</code></pre></li>
-
-<li><p>新增標籤 -a 就是標籤名稱，-m 代表該標籤說明</p>
-
-<pre><code>git tag -a v1.4 -m 'my version 1.4'
-</code></pre></li>
-
-<li><p>上傳標籤到遠端, git push並不會把標籤上傳到遠端，所以必須透過底下才行</p>
-
-<pre><code>git push origin v1.5
-</code></pre></li>
-
-<li><p>如果在本機端很多標籤，利用 –tags 一次上傳上去</p>
-
-<pre><code>git push origin --tags
-</code></pre></li>
-</ul></li>
+git log -p</p></li>
 </ul>
+
+<p>git reflog</p>
+
+<pre><code>
+- About HEAD
+</code></pre>
+
+<p>在Git中，HEAD像是一個指標，指著一個版本
+HEAD^       把指標只到上一個版本
+HEAD^^      把指標只到上一個版本
+HEAD~100    把指標只到上100個版本</p>
+
+<pre><code>
+- 回之前版本
+</code></pre>
+
+<p>git reset &ndash;hard HEAD^</p>
+
+<p>git reset &ndash;hard <commitId></p>
+
+<pre><code>
+- 放棄修改(git add之前)
+</code></pre>
+
+<p>git checkout &ndash; FILE</p>
+
+<pre><code>
+- 放棄修改(git add之後)
+</code></pre>
+
+<p>git reset HEAD FILE
+git checkout &ndash; FILE</p>
+
+<pre><code>
+- 放棄修改(git commit之後，尚未push至remote之前都有救)
+</code></pre>
+
+<p>git checkout <commitId> <file></p>
+
+<pre><code>
+- 列出既有標籤:
+</code></pre>
+
+<p>git tag -l</p>
+
+<pre><code>
+- 新增標籤 -a 就是標籤名稱，-m 代表該標籤說明
+</code></pre>
+
+<p>git tag -a v1.4 -m &lsquo;my version 1.4&rsquo;</p>
+
+<pre><code>
+- 上傳標籤到遠端, git push並不會把標籤上傳到遠端，所以必須透過底下才行 
+</code></pre>
+
+<p>git push origin v1.5</p>
+
+<pre><code>
+- 如果在本機端很多標籤，利用 –tags 一次上傳上去
+</code></pre>
+
+<p>git push origin &ndash;tags
+```</p>
 
     </div>
     <footer class="post-footer">
@@ -325,7 +365,7 @@ git log -p
   "datePublished": "2017-09-11",
   "dateModified": "2017-09-11",
   "url": "https://twasa.github.io/post/git/",
-  "wordCount": "226",
+  "wordCount": "276",
   "author": {
     "@type": "Person",
     "name": "William Wang"

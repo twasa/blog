@@ -276,5 +276,14 @@ Requirements  Python Pip virtualenv Flask : a web development framework Werkzeug
   hugo new site blog   go in to the blog folder and modify config.toml for your github url  baseURL = &amp;quot;https://&amp;lt;your-github-account&amp;gt;.github.io/&amp;quot;   create new page  hugo new about.md   create new post  hugo new post/first.md   install a theme  cd themes git clone https://github.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://twasa.github.io/post/mdadm-rescue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://twasa.github.io/post/mdadm-rescue/</guid>
+      <description>mdadm --assemble /dev/md6 /dev/sde3 mount iscsiadm history clear exit exit df df cat /proc/mdstat mount mdadm -Sf /dev/md6 mdadm -Af /dev/md6 /dev/sde3 cat /proc/mdstat synospace --map-file -d synocheckshare synocheckiscsitrg synocheckiscsitrg  </description>
+    </item>
+    
   </channel>
 </rss>

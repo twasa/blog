@@ -143,6 +143,10 @@
   </url>
   
   <url>
+    <loc>https://twasa.github.io/post/mdadm-rescue/</loc>
+  </url>
+  
+  <url>
     <loc>https://twasa.github.io/tags/apache/</loc>
     <lastmod>2017-09-11T15:50:54+08:00</lastmod>
     <priority>0</priority>
@@ -208,13 +212,13 @@
   </url>
   
   <url>
-    <loc>https://twasa.github.io/categories/devops/</loc>
+    <loc>https://twasa.github.io/tags/devops/</loc>
     <lastmod>2017-09-11T15:48:07+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://twasa.github.io/tags/devops/</loc>
+    <loc>https://twasa.github.io/categories/devops/</loc>
     <lastmod>2017-09-11T15:48:07+08:00</lastmod>
     <priority>0</priority>
   </url>
