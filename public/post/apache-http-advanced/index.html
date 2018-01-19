@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+  <title>Apache Http Advanced &middot; William&#39;s Blog -  William&#39;s Blog </title>
+  <meta name="generator" content="Hugo 0.26" />
+  <meta name="description" content="William&#39;s Blog"> 
+
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Apache Http Advanced"/>
+<meta name="twitter:description" content="http rewrite  syntax  &lt;IfModule mod_rewrite.c&gt; RewriteEngine On #啟用 RewriteBase /路徑 RewriteCond 變數 開關 RewriteCond 變數 條件 [選項] RewriteRule 規則 [選項] &lt;/IfModule&gt; # 開關 on, off # 選項 NC (no case) 不區分大小寫 F (force URL to be forbidden) 禁用URL,返回403HTTP狀態碼。 R[=code] (force redirect) 強制外部重定向 code 預設302, 最好使用301 G (force URL to be gone) 強制URL為GONE，返回410HTTP狀態碼 P (force proxy) 強制使用代理轉發。 N (next round) 重新從第一條規則開始運行重寫過程。 C (chained with next rule) 與下一條規則關聯 AND OR #if ( (A OR B) AND (C OR D) ) RewriteCond A [or] RewriteCond B [or] RewriteCond C RewriteCond D L (last rule) 表明當前規則是最後一條規則，停止分析以後規則的重寫 # 變數 - %{HTTP_HOST} !"/>
+
+  <meta property="og:title" content="Apache Http Advanced" />
+<meta property="og:description" content="http rewrite  syntax  &lt;IfModule mod_rewrite.c&gt; RewriteEngine On #啟用 RewriteBase /路徑 RewriteCond 變數 開關 RewriteCond 變數 條件 [選項] RewriteRule 規則 [選項] &lt;/IfModule&gt; # 開關 on, off # 選項 NC (no case) 不區分大小寫 F (force URL to be forbidden) 禁用URL,返回403HTTP狀態碼。 R[=code] (force redirect) 強制外部重定向 code 預設302, 最好使用301 G (force URL to be gone) 強制URL為GONE，返回410HTTP狀態碼 P (force proxy) 強制使用代理轉發。 N (next round) 重新從第一條規則開始運行重寫過程。 C (chained with next rule) 與下一條規則關聯 AND OR #if ( (A OR B) AND (C OR D) ) RewriteCond A [or] RewriteCond B [or] RewriteCond C RewriteCond D L (last rule) 表明當前規則是最後一條規則，停止分析以後規則的重寫 # 變數 - %{HTTP_HOST} !" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://twasa.github.io/post/apache-http-advanced/" />
+
+
+
+<meta property="article:published_time" content="2017-09-11T15:50:54&#43;08:00"/>
+<meta property="article:modified_time" content="2017-09-11T15:50:54&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- RSS autodiscovery --> 
+
+  
+<meta itemprop="name" content="Apache Http Advanced">
+<meta itemprop="description" content="http rewrite  syntax  &lt;IfModule mod_rewrite.c&gt; RewriteEngine On #啟用 RewriteBase /路徑 RewriteCond 變數 開關 RewriteCond 變數 條件 [選項] RewriteRule 規則 [選項] &lt;/IfModule&gt; # 開關 on, off # 選項 NC (no case) 不區分大小寫 F (force URL to be forbidden) 禁用URL,返回403HTTP狀態碼。 R[=code] (force redirect) 強制外部重定向 code 預設302, 最好使用301 G (force URL to be gone) 強制URL為GONE，返回410HTTP狀態碼 P (force proxy) 強制使用代理轉發。 N (next round) 重新從第一條規則開始運行重寫過程。 C (chained with next rule) 與下一條規則關聯 AND OR #if ( (A OR B) AND (C OR D) ) RewriteCond A [or] RewriteCond B [or] RewriteCond C RewriteCond D L (last rule) 表明當前規則是最後一條規則，停止分析以後規則的重寫 # 變數 - %{HTTP_HOST} !">
+
+
+<meta itemprop="dateModified" content="2017-09-11T15:50:54&#43;08:00" />
+<meta itemprop="wordCount" content="585">
+
+
+
+<meta itemprop="keywords" content="Apache," />
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet">
+  <link rel="stylesheet" href="https://twasa.github.io/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "name": "William&#39;s Blog",
+  "url": "https://twasa.github.io/post/apache-http-advanced/"
+}
+</script>
+
+</head>
+
+<body>
+  <header class="gheader">
+  <div class="container">
+    <nav class="navbar ">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://twasa.github.io/">
+          <h1 class="brand">William&#39;s Blog</h1>
+        </a>
+
+        <div class="navbar-burger burger" data-target="navMenubd-example">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navMenubd-example" class="navbar-menu">
+        <div class="navbar-start">
+          
+          <a class="navbar-item" href="https://twasa.github.io/categories/">
+            Categories
+          </a>
+          
+          <a class="navbar-item" href="https://twasa.github.io/tags/">
+            Tags
+          </a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+  <div class="main-content">
+    <div class="container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="title">Apache Http Advanced</h1>
+      <div class="meta">
+        <time class="pub-time"  datetime="2017-09-11T15:50:54&#43;08:00">
+          2017.09.11
+        </time>
+        <div class="terms">
+          
+          <div class="categories">
+            
+              <a class="categories-item" href="https://twasa.github.io/categories/webserver">Webserver</a>
+            
+          </div>
+          
+          
+          <div class="tag">
+            
+              <a class="tag-item" href="https://twasa.github.io/tags/apache">Apache</a>
+            
+          </div>
+          
+        </div>
+      </div>
+    </header>
+    <div class="post-body">
+      
+
+<h1 id="http-rewrite">http rewrite</h1>
+
+<ul>
+<li>syntax</li>
+</ul>
+
+<pre><code>&lt;IfModule mod_rewrite.c&gt;
+RewriteEngine On #啟用
+RewriteBase /路徑
+RewriteCond 變數 開關
+RewriteCond 變數 條件 [選項]
+RewriteRule 規則 [選項]
+&lt;/IfModule&gt;
+# 開關
+on, off
+
+# 選項
+NC        (no case) 不區分大小寫
+F         (force URL to be forbidden) 禁用URL,返回403HTTP狀態碼。
+R[=code]  (force redirect) 強制外部重定向 code 預設302, 最好使用301
+G         (force URL to be gone) 強制URL為GONE，返回410HTTP狀態碼
+P         (force proxy) 強制使用代理轉發。
+N         (next round) 重新從第一條規則開始運行重寫過程。
+C         (chained with next rule) 與下一條規則關聯
+AND
+OR
+#if ( (A OR B) AND (C OR D) )
+RewriteCond A [or]
+RewriteCond B [or]
+RewriteCond C
+RewriteCond D
+
+L         (last rule) 表明當前規則是最後一條規則，停止分析以後規則的重寫
+
+# 變數
+- %{HTTP_HOST} !^www.example.com #聲明Client請求的主機中首碼不是 www.example.com
+- %{HTTP_HOST} !^8.8.8.8 #聲明Client請求的主機中首碼不是 8.8.8.8
+- %{HTTP_HOST} !^$  #聲明Client請求的主機中首碼不為空
+- %{REQUEST_FILENAME}
+- %{HTTP_USER_AGENT}
+ - 條件
+ &quot;android|blackberry|googlebot-mobile|iemobile|ipad|iphone|ipod|opera mobile|palmos|webos&quot; #手機瀏覽器
+- %{REQUEST_URI} !^user.php$
+- %{SERVER_PORT} ^443$
+- %{HTTP_REFERER} example.com #從別的網站連過來
+
+RewriteCond %{HTTP_HOST} !=&quot;&quot;
+RewriteCond %{HTTP_HOST} .
+RewriteCond %{HTTP_HOST} !^$
+
+RewriteCond {REQUEST_URI} !=/foo/bar
+RewriteCond %{REQUEST_URI} !^/foo/bar$
+
+RewriteCond {SERVER_PORT} =443
+RewriteCond %{SERVER_PORT} ^443$
+
+</code></pre>
+
+<h2 id="en-example-com-to-www-example-com">en.example.com  to www.example.com</h2>
+
+<pre><code>RewriteEngine on
+RewriteCond %{HTTP_HOST} ^en.example.com [NC]
+RewriteRule ^(.*) HTTP://www.example.com/ [L]
+</code></pre>
+
+<h2 id="how-to-redirect-users-to-mobile-or-normal-web-site-based-on-device-using-mod-rewrite">How To Redirect Users To Mobile Or Normal Web Site Based On Device Using mod_rewrite</h2>
+
+<pre><code>RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} &quot;android|blackberry|googlebot-mobile|iemobile|ipad|iphone|ipod|opera mobile|palmos|webos&quot; [NC]
+RewriteRule ^$ http://m.example.com/ [L,R=302]
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}:443%{REQUEST_URI}
+</code></pre>
+
+<h2 id="rewrite-http-to-https">Rewrite http to https</h2>
+
+<pre><code>RewriteEngine On
+RewriteCond %{HTTP:X-Forwarded-Proto} =http
+RewriteRule . https://%{HTTP:Host}%{REQUEST_URI} [L,R=permanent]
+</code></pre>
+
+<h2 id="rewrite-http-to-https-using-http-301">Rewrite http to https using http 301</h2>
+
+<pre><code>RewriteEngine On
+RewriteCond %{HTTP:X-Forwarded-Proto} ^http$
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</code></pre>
+
+<h2 id="rewrite-http-to-https-by-port">Rewrite http to https by port</h2>
+
+<pre><code>RewriteEngine On
+RewriteCond %{SERVER_PORT} !443
+RewriteRule ^(/(.*))?$ https://%{HTTP_HOST}/$1 [R=301,L]
+</code></pre>
+
+<h2 id="rewrite-by-detect-url-and-user-agent">Rewrite by detect url and user-agent</h2>
+
+<pre><code>
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} &quot;android|blackberry|googlebot-mobile|iemobile|ipad|iphone|ipod|operamobile|palmos|webos&quot; [AND,NC]
+RewriteCond %{}%
+RewriteCond
+RewriteRule ^$ http://m.example.com/ [L,R=301]
+
+</code></pre>
+
+<h2 id="reverse-proxy">Reverse Proxy</h2>
+
+<pre><code>ProxyRequests off
+ProxyPreserveHost on
+RequestHeader set X-Forwarded-Proto https
+RequestHeader set X-Forwarded-Port 443
+ProxyPass / http://127.0.0.1:8080/
+ProxyPassReverse / http://127.0.0.1:8080/
+</code></pre>
+
+<h2 id="reverse-proxy-with-virtualhost">Reverse Proxy with VirtualHost</h2>
+
+<pre><code>ProxyRequests off
+&lt;VirtualHost *:80&gt;
+ProxyVia On
+ProxyPreserveHost On
+RequestHeader set Host &quot;t9admin.yolo168.xyz&quot;
+ServerName t9admin.yolo168.xyz
+
+#ProxyPass / http://t9admin.04670467.com/
+#ProxyPassReverse / http://t9admin.04670467.com/
+
+ProxyPass / http://54.64.75.75/
+ProxyPassReverse / http://54.64.75.75/
+
+&lt;/VirtualHost&gt;
+
+
+關於 ProxyPassReverse
+如果今天你的ProxyPass的設定為 ProxyPass /forum http://172.20.100.200/forum
+可能會出現問題，因為rp會幫你把網址慮掉，也就是說
+今天我 http://172.20.100.200/forum 事實上是轉到 http://172.20.100.220/forum
+不過當我連 http://172.20.100.200/forum/blog 時，卻是轉到 http://172.20.100.220/blog
+當網頁資料夾還有子目錄時，rp會自動蓋掉相同的path
+所以要加上ProxyPassReverse這一行敘述，變成
+
+ProxyPass /forum http://172.20.100.200/forum
+ProxyPassReverse /forum http://172.20.100.200/forum
+</code></pre>
+
+<h2 id="compress">compress</h2>
+
+<pre><code>&lt;ifmodule mod_deflate.c&gt;
+   # 壓縮率，建議值:6
+   DeflateCompressionLevel 6
+   AddOutputFilterByType DEFLATE text/plain
+   AddOutputFilterByType DEFLATE text/html
+   AddOutputFilterByType DEFLATE text/xml
+   AddOutputFilterByType DEFLATE text/css
+   AddOutputFilterByType DEFLATE text/javascript
+   AddOutputFilterByType DEFLATE application/xhtml+xml
+   AddOutputFilterByType DEFLATE application/xml
+   AddOutputFilterByType DEFLATE application/rss+xml
+   AddOutputFilterByType DEFLATE application/atom_xml
+   AddOutputFilterByType DEFLATE application/x-javascript
+   AddOutputFilterByType DEFLATE application/x-httpd-php
+   AddOutputFilterByType DEFLATE image/svg+xml
+&lt;/ifmodule&gt;
+</code></pre>
+
+<h2 id="multiple-ssl-certificates">Multiple SSL Certificates</h2>
+
+<pre><code>NameVirtualHost *:443
+
+&lt;VirtualHost *:443&gt;
+ ServerName www.yoursite.com
+ DocumentRoot /var/www/site
+ SSLEngine on
+ SSLCertificateFile /path/to/www_yoursite_com.crt
+ SSLCertificateKeyFile /path/to/www_yoursite_com.key
+ SSLCertificateChainFile /path/to/DigiCertCA.crt
+&lt;/VirtualHost&gt;
+
+&lt;VirtualHost *:443&gt;
+ ServerName www.yoursite2.com
+ DocumentRoot /var/www/site2
+ SSLEngine on
+ SSLCertificateFile /path/to/www_yoursite2_com.crt
+ SSLCertificateKeyFile /path/to/www_yoursite2_com.key
+ SSLCertificateChainFile /path/to/DigiCertCA.crt
+&lt;/VirtualHost&gt;
+</code></pre>
+
+<h2 id="expires">expires</h2>
+
+<pre><code>&lt;IfModule mod_expires.c&gt;
+ ExpiresActive on
+ ExpiresDefault &quot;access plus 1 week&quot;
+​
+ # CSS
+ ExpiresByType text/css &quot;access plus 1 week&quot;
+​
+ # Data interchange
+ ExpiresByType application/json &quot;access plus 0 seconds&quot;
+ ExpiresByType application/xml &quot;access plus 0 seconds&quot;
+ ExpiresByType text/xml &quot;access plus 0 seconds&quot;
+​
+ # Favicon (cannot be renamed!) and cursor images
+ ExpiresByType image/x-icon &quot;access plus 1 week&quot;
+​
+ # HTML components (HTCs)
+ ExpiresByType text/x-component &quot;access plus 1 week&quot;
+​
+ # HTML
+ ExpiresByType text/html &quot;access plus 0 seconds&quot;
+​
+ # JavaScript
+ ExpiresByType application/javascript &quot;access plus 1 week&quot;
+​
+ # Manifest files
+ ExpiresByType application/x-web-app-manifest+json &quot;access plus 0 seconds&quot;
+ ExpiresByType text/cache-manifest &quot;access plus 0 seconds&quot;
+​
+ # Media
+ ExpiresByType audio/ogg &quot;access plus 1 week&quot;
+ ExpiresByType image/gif &quot;access plus 1 week&quot;
+ ExpiresByType image/jpeg &quot;access plus 1 week&quot;
+ ExpiresByType image/png &quot;access plus 1 week&quot;
+ ExpiresByType video/mp4 &quot;access plus 1 week&quot;
+ ExpiresByType video/ogg &quot;access plus 1 week&quot;
+ ExpiresByType video/webm &quot;access plus 1 week&quot;
+ # Web feeds
+ ExpiresByType application/atom+xml &quot;access plus 1 hour&quot;
+ ExpiresByType application/rss+xml &quot;access plus 1 hour&quot;
+&lt;/IfModule&gt;
+</code></pre>
+
+<h2 id="hsts-http-strict-transport-security">HSTS( HTTP Strict Transport Security )</h2>
+
+<pre><code>Header always set Strict-Transport-Security &quot;max-age=31536000;includeSubdomains; preload&quot;
+</code></pre>
+
+    </div>
+    <footer class="post-footer">
+      
+      <div class="share">
+        
+      </div>
+
+      <div class="pagenation">
+        <ul class="pagenation-list">
+          
+          <li class="pager previous">
+            <a href="https://twasa.github.io/post/ansible/" data-toggle="tooltip" data-placement="top" title="Ansible">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="pager next">
+            <a href="https://twasa.github.io/post/aws-cli/" data-toggle="tooltip" data-placement="top" title="Aws Cli">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+      </div>
+    </footer>
+  </article>
+
+  
+  <article class="related"></article>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "NewsArticle",
+    "@id": "https://twasa.github.io/post/apache-http-advanced/",
+    "headline": " http rewrite  syntax  &amp;lt;IfModule mod_rewrite.c&amp;gt; RewriteEngine On #啟用 RewriteBase /路徑 RewriteCond 變數 開關 R",
+    "author": "William Wang",
+    "publisher": {
+      "@type": "Organization",
+      "name": "William Wang",
+      "logo": ""
+    },
+    "image": "",
+    "datePublished": "2017-09-11"
+  },
+  "headline": " http rewrite  syntax  &amp;lt;IfModule mod_rewrite.c&amp;gt; RewriteEngine On #啟用 RewriteBase /路徑 RewriteCond 變數 開關 R",
+  "alternativeHeadline": "William&#39;s Blog",
+  "datePublished": "2017-09-11",
+  "dateModified": "2017-09-11",
+  "url": "https://twasa.github.io/post/apache-http-advanced/",
+  "wordCount": "585",
+  "author": {
+    "@type": "Person",
+    "name": "William Wang"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "William Wang"
+  },
+  "image": "",
+  "genre": "Webserver",
+  "keywords": "Apache",
+  "description": ""
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "@id": "https://twasa.github.io/post/apache-http-advanced/",
+  "name": "William Wang"
+}
+</script>
+
+
+    </div>
+  </div>
+
+  <footer class="gfooter">
+  <div class="inner">
+    <div class="container">
+      <p class="copy"><small>Copyright (c) 2017, all rights reserved.</small></p>
+
+      <nav class="footer-nav">
+        <div class="inner">
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://twasa.github.io/js/script.js"></script>
+
+</body>
+</html>

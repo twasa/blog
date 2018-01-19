@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+  <title>Ansible &middot; William&#39;s Blog -  William&#39;s Blog </title>
+  <meta name="generator" content="Hugo 0.26" />
+  <meta name="description" content="William&#39;s Blog"> 
+
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Ansible"/>
+<meta name="twitter:description" content="Concept  功能：IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates. 管理方式：push-based Ansible manages machines in an agent-less manner. Ansible by default manages machines over the SSH protocol. Because OpenSSH is one of the most peer-reviewed open source components, security exposure is greatly reduced.  Requirement  Control Machine: SSH client and Linux system Managed Node: Python 2."/>
+
+  <meta property="og:title" content="Ansible" />
+<meta property="og:description" content="Concept  功能：IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates. 管理方式：push-based Ansible manages machines in an agent-less manner. Ansible by default manages machines over the SSH protocol. Because OpenSSH is one of the most peer-reviewed open source components, security exposure is greatly reduced.  Requirement  Control Machine: SSH client and Linux system Managed Node: Python 2." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://twasa.github.io/post/ansible/" />
+
+
+
+<meta property="article:published_time" content="2017-09-11T15:48:07&#43;08:00"/>
+<meta property="article:modified_time" content="2017-09-11T15:48:07&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- RSS autodiscovery --> 
+
+  
+<meta itemprop="name" content="Ansible">
+<meta itemprop="description" content="Concept  功能：IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates. 管理方式：push-based Ansible manages machines in an agent-less manner. Ansible by default manages machines over the SSH protocol. Because OpenSSH is one of the most peer-reviewed open source components, security exposure is greatly reduced.  Requirement  Control Machine: SSH client and Linux system Managed Node: Python 2.">
+
+
+<meta itemprop="dateModified" content="2017-09-11T15:48:07&#43;08:00" />
+<meta itemprop="wordCount" content="936">
+
+
+
+<meta itemprop="keywords" content="Automation,Devops," />
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet">
+  <link rel="stylesheet" href="https://twasa.github.io/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "name": "William&#39;s Blog",
+  "url": "https://twasa.github.io/post/ansible/"
+}
+</script>
+
+</head>
+
+<body>
+  <header class="gheader">
+  <div class="container">
+    <nav class="navbar ">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://twasa.github.io/">
+          <h1 class="brand">William&#39;s Blog</h1>
+        </a>
+
+        <div class="navbar-burger burger" data-target="navMenubd-example">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navMenubd-example" class="navbar-menu">
+        <div class="navbar-start">
+          
+          <a class="navbar-item" href="https://twasa.github.io/categories/">
+            Categories
+          </a>
+          
+          <a class="navbar-item" href="https://twasa.github.io/tags/">
+            Tags
+          </a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+  <div class="main-content">
+    <div class="container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="title">Ansible</h1>
+      <div class="meta">
+        <time class="pub-time"  datetime="2017-09-11T15:48:07&#43;08:00">
+          2017.09.11
+        </time>
+        <div class="terms">
+          
+          <div class="categories">
+            
+              <a class="categories-item" href="https://twasa.github.io/categories/devops">DevOps</a>
+            
+          </div>
+          
+          
+          <div class="tag">
+            
+              <a class="tag-item" href="https://twasa.github.io/tags/automation">Automation</a>
+            
+              <a class="tag-item" href="https://twasa.github.io/tags/devops">Devops</a>
+            
+          </div>
+          
+        </div>
+      </div>
+    </header>
+    <div class="post-body">
+      
+
+<h1 id="concept">Concept</h1>
+
+<ul>
+<li>功能：IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates.</li>
+<li>管理方式：<strong>push-based</strong> Ansible manages machines in an <strong>agent-less</strong> manner. Ansible by default manages machines <strong>over the SSH protocol</strong>. Because OpenSSH is one of the most peer-reviewed open source components, security exposure is greatly reduced.</li>
+</ul>
+
+<h1 id="requirement">Requirement</h1>
+
+<ul>
+<li>Control Machine: SSH client and Linux system</li>
+<li>Managed Node: Python 2.5+ and SSH service, or windows supprt winrm</li>
+</ul>
+
+<h1 id="nameing">Nameing</h1>
+
+<ul>
+<li>Control Machine</li>
+<li>Managed Node</li>
+<li>inventory
+
+<ul>
+<li>定義Managed Node主機位址與群組</li>
+<li>設定SSH 連線資訊、SSH金鑰、使用者名稱&hellip;.等</li>
+</ul></li>
+<li>Ad-Hoc command: 簡短一次性的指令</li>
+<li>PlayBook: 使用YAML格式撰寫的腳本，可使用Jinja(template系統)
+
+<ul>
+<li>一個PlayBook可有多個Play跟Task</li>
+<li>Play: 要跑的大項目標，與Managed Node</li>
+<li>Task: 要做的工作細項</li>
+<li>module: 已寫好的自動化模組</li>
+<li>Roles: 是一種分類 &amp; 重用的概念，透過將 vars, tasks, files, templates, handler … 等等根據不同的目的(例如：web server、db server)，規劃後至於獨立目錄中，後續便可以利用 include 的概念來使用。</li>
+</ul></li>
+<li>Galayx:  是一個搜尋、分享與下載 roles的網站</li>
+<li>facts: 實際上是ansible的setup module功能，用來取得Managed Node的系統變數資訊</li>
+</ul>
+
+<h1 id="ssh-connection-issue">SSH connection issue</h1>
+
+<ul>
+<li>關閉SSH key host 檢查：在ansible.cfg內 host_key_checking = False</li>
+<li>關閉gathering facts: 所有playbook不管有沒有設定gathering facts tasks，都會執行，可以在playbook中加入 gather_facts: no</li>
+<li>SSH PIPElinING: 預設為關閉，所以關閉的原因是要相容不同的 sudo設定，若不使用sudo可以在ansible.cfg內開啟 pipelining=True</li>
+<li>ControlPersist: 即持久化socket一次驗證，多次通信，只需要修改SSH client也就是Ansible Control Machine本身的SSH 設定
+
+<ul>
+<li>~/.ssh/config</li>
+</ul></li>
+</ul>
+
+<pre><code>Host *
+Compression yes
+TCPKeepAlive yes
+ServerAliveInterval 120
+ServerAliveCountMax 5
+ControlMaster auto
+ControlPath ~/.ssh/sockets/%r@%h-%p
+ControlPersist 1200
+
+</code></pre>
+
+<h1 id="module">module</h1>
+
+<h2 id="module-name-and-arguments">module_name and arguments</h2>
+
+<pre><code>ping            無參數
+comand          -a 'ifconfig'
+user            -a 'name= state={present(創建)|absent(刪除)} force=(是否強制操作刪除傢目錄) system= uid= shell= home='
+group           -a 'name= state={present|absent} gid= system=(系統組)'
+cron            -a 'name= state= minute= hour= day= month= weekday= job='
+file            -a 'path= mode= owner= group= state={file|directory|link|hard|touch|absent} src=(link，鏈接至何處)'
+copy            -a 'dest=(遠程主機上路徑) src=(本地主機路徑) content=(直接指明內容) owner= group= mode='
+yum             -a 'name= state={present(已安裝)|latest(最新版)|absent(未安裝)}'
+service         -a 'name= state=started|restarted|stopped|reloaded'
+unarchive       -a 'src= dest= remote_src={True|False}'
+lineinfile      -a ''
+setup           無參數
+</code></pre>
+
+<h2 id="inventory-for-all-hosts-ssh-settings">inventory for all hosts ssh settings</h2>
+
+<pre><code>[all:vars]
+ansible_connection=ssh
+ansible_ssh_user='{{ user }}'
+ansible_ssh_pass='{{ password }}'
+ansible_become_pass='{{ password }}'
+</code></pre>
+
+<h2 id="inventory-for-differentiate-staging-vs-production">inventory for Differentiate Staging vs Production</h2>
+
+<pre><code># file: production
+
+[atlanta-webservers]
+www-atl-1.example.com
+www-atl-2.example.com
+
+[boston-webservers]
+www-bos-1.example.com
+www-bos-2.example.com
+
+[atlanta-dbservers]
+db-atl-1.example.com
+db-atl-2.example.com
+
+[boston-dbservers]
+db-bos-1.example.com
+
+# webservers in all geos
+[webservers:children]
+atlanta-webservers
+boston-webservers
+
+# dbservers in all geos
+[dbservers:children]
+atlanta-dbservers
+boston-dbservers
+
+# everything in the atlanta geo
+[atlanta:children]
+atlanta-webservers
+atlanta-dbservers
+
+# everything in the boston geo
+[boston:children]
+boston-webservers
+boston-dbservers
+</code></pre>
+
+<h1 id="syntax">syntax</h1>
+
+<h2 id="ansible-syntax">ansible syntax</h2>
+
+<pre><code>ansible &lt;Patterns&gt; -m &lt;module_name&gt; -a &lt;arguments&gt; &lt;Options&gt;
+
+Options:
+--list-hosts        outputs a list of matching hosts
+--module-name       module name to execute (default=command)
+--args              module arguments
+--user              connect as this user
+--ask-pass          Prompt for the connection password
+--become            Use privilege escalation
+--ask-become-pass   Ask for privilege escalation password
+--inventory         The PATH to the inventory, which defaults to /etc/ansible/hosts
+--limit             further limit selected hosts to an additional pattern or comma separated host list.
+--check             Check mode is just a simulation it will not make any changes on remote systems
+--verbose           verbose mode (-vvv for more, -vvvv to enable connection debugging)
+--background=       run asynchronously, failing after X seconds(default=N/A)
+--poll              set the poll interval if using -B (default=15)
+--forks             specify number of parallel processes to use(default=5)
+--extra-vars        Extra variables to inject into a playbook, in key=value key=value format or as quoted YAML/JSON (hashes and arrays). To load variables from a file, specify the file preceded by @ (e.g. @vars.yml).
+</code></pre>
+
+<h2 id="example">example</h2>
+
+<pre><code>ansible localhost -m ping #連本機自己,無須驗證
+ansible localhost -m ping -i &quot;localhost,&quot; -u 帳號 -k 密碼 --key-file=私鑰檔案
+</code></pre>
+
+<h2 id="ansible-playbook-syntax">ansible-playbook syntax</h2>
+
+<pre><code>ansible-playbook playbook.yml &lt;Options&gt;
+
+Options:
+--check             Check mode is just a simulation it will not make any changes on remote systems
+--inventory         The PATH to the inventory, which defaults to /etc/ansible/hosts
+--limit             further limit selected hosts to an additional pattern
+--list-hosts        outputs a list of matching hosts
+--syntax-check      perform a syntax check on the playbook, but do not execute it
+--tags=TAGS         only run plays and tasks tagged with these values
+--flush-cache       clear the fact cache
+</code></pre>
+
+<h2 id="ansible-vault-syntax">ansible-vault syntax</h2>
+
+<pre><code>ansible-vault [create|decrypt|edit|encrypt|rekey|view] [--help] [options] vaultfile.yml
+
+Options:
+create foo.yml      建立加密 (Encrypted) 檔案。
+edit foo.yml        編輯加密檔案內容。
+rekey foo.yml       更換加密金鑰 (密碼)。
+encrypt foo.yml     對已存在的明文檔案進行加密
+decrypt foo.yml     解開 (Decrypt) 已加密檔案。
+view foo.yml        檢視已加密的檔案內容。
+</code></pre>
+
+<h2 id="ansible-playboox-examples">ansible playboox examples</h2>
+
+<h3 id="service">service</h3>
+
+<pre><code>---
+- hosts: all
+  gather_facts: no
+  tasks:
+  - name: ensure enable_twrd is running
+    service: name=enable_twrd state=started
+</code></pre>
+
+<h3 id="shell">shell</h3>
+
+<pre><code>---
+- hosts: all
+  gather_facts: no
+  tasks:
+  - name: enable twrd account
+    shell: /etc/init.d/enable_twrd start
+  - name: check twrd status
+    shell: /etc/init.d/enable_twrd status
+    register: ps
+  - debug: var=ps.stdout_lines
+</code></pre>
+
+<h3 id="copy-unzip-file">copy, unzip, file</h3>
+
+<pre><code>---
+- hosts: all
+  gather_facts: no
+  tasks:
+  - name: copy news archive file to target news path
+    copy:
+      src: /root/news.zip
+      dest: /mydlink/portal/web/_news/news.zip
+  - name: unzip news archive file to target news path
+    unarchive:
+      src: /mydlink/portal/web/_news/news.zip
+      dest: /mydlink/portal/web/_news/
+      remote_src: True
+  - name: change owner and permission to news files
+    file:
+      path: /mydlink/portal/web/_news/
+      owner: webuser
+      group: daemon
+      mode: 0750
+      recurse: yes
+</code></pre>
+
+<h3 id="handlers-if-nothing-notifies-a-handler-it-will-not-run">Handlers,  If nothing notifies a handler, it will not run</h3>
+
+<pre><code>- name: template configuration file
+  template: src=template.j2 dest=/etc/foo.conf
+  notify:
+     - restart memcached
+     - restart apache
+
+  handlers:
+    - name: restart memcached
+      service: name=memcached state=restarted
+    - name: restart apache
+      service: name=apache state=restarted
+</code></pre>
+
+<h3 id="retry-task">retry task</h3>
+
+<ul>
+<li>Retry task 10 times with interval 1 second until return code of the command will not be 0. Ignore if even all tries will fail.
+```
+&mdash;</li>
+<li>hosts: all
+connection: local
+tasks:
+
+<ul>
+<li>shell: exit 1
+register: task_result
+until: task_result.rc == 0
+retries: 10
+delay: 1
+ignore_errors: yes</li>
+</ul></li>
+</ul>
+
+<pre><code>
+### Delegation, Rolling Updates, and Local Actions
+- By default, Ansible will try to manage all of the machines referenced in a play in parallel. For a rolling updates use case, you can define how many hosts Ansible should manage at a single time by using the ‘’serial’’ keyword:
+- examples:
+
+</code></pre>
+
+<hr />
+
+<ul>
+<li>name: test play
+hosts: webservers
+service: name=httpd state=started
+serial: &ldquo;30%&rdquo;
+&mdash;</li>
+<li>name: test play
+hosts: webservers
+service: name=httpd state=started
+serial: 3
+&mdash;</li>
+<li>name: test play
+hosts: webservers
+serial:
+
+<ul>
+<li>1</li>
+<li>5</li>
+<li>&ldquo;20%&rdquo;
+```</li>
+</ul></li>
+</ul>
+
+<h2 id="ansible-playbook-with-sudo-and-vaults">ansible-playbook with sudo and vaults</h2>
+
+<ul>
+<li><p>hosts</p>
+
+<pre><code>[all:vars]
+ansible_connection=ssh
+ansible_ssh_user='{{ ansible_ssh_user }}'
+ansible_ssh_pass='{{ ansible_ssh_pass }}'
+ansible_become_pass='{{ ansible_become_pass }}'
+</code></pre></li>
+
+<li><p>yml</p>
+
+<h2 id="toc_20">```</h2>
+
+<ul>
+<li>hosts: all
+gather_facts: no
+tasks:</li>
+<li>name: restart sshd service
+shell: /etc/init.d/sshd restart</li>
+<li>name: check sshd status
+```</li>
+</ul></li>
+
+<li><p>vaults</p>
+
+<ul>
+<li>ansible-vault edit YOUR-VAULT-FILE
+<code>
+ansible_ssh_user: YOUR_USER_NAME
+ansible_ssh_pass: 'YOUR_PASSWORD'
+ansible_become_pass: 'YOUR_SUDO_PASSWORD'
+</code></li>
+</ul></li>
+
+<li><p>run playbook with log output</p>
+
+<pre><code>echo &quot;`ansible-playbook YOUR_PLAYBOOK.yml --inventory &quot;localhost,&quot; --user --ask-ssh-pass --become --ask-become-pass --ask-vault-pass -e@YOUR_VAULT_FILE -vvv`&quot; | tee -a LOG-FILE-PATH
+</code></pre></li>
+</ul>
+
+    </div>
+    <footer class="post-footer">
+      
+      <div class="share">
+        
+      </div>
+
+      <div class="pagenation">
+        <ul class="pagenation-list">
+          
+          <li class="pager previous">
+            <a href="https://twasa.github.io/post/python-web-automation-test/" data-toggle="tooltip" data-placement="top" title="Python Web Automation Test">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="pager next">
+            <a href="https://twasa.github.io/post/apache-http-advanced/" data-toggle="tooltip" data-placement="top" title="Apache Http Advanced">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+      </div>
+    </footer>
+  </article>
+
+  
+  <article class="related"></article>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "NewsArticle",
+    "@id": "https://twasa.github.io/post/ansible/",
+    "headline": " Concept  功能：IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT t",
+    "author": "William Wang",
+    "publisher": {
+      "@type": "Organization",
+      "name": "William Wang",
+      "logo": ""
+    },
+    "image": "",
+    "datePublished": "2017-09-11"
+  },
+  "headline": " Concept  功能：IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT t",
+  "alternativeHeadline": "William&#39;s Blog",
+  "datePublished": "2017-09-11",
+  "dateModified": "2017-09-11",
+  "url": "https://twasa.github.io/post/ansible/",
+  "wordCount": "936",
+  "author": {
+    "@type": "Person",
+    "name": "William Wang"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "William Wang"
+  },
+  "image": "",
+  "genre": "DevOps",
+  "keywords": "AutomationDevops",
+  "description": ""
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "@id": "https://twasa.github.io/post/ansible/",
+  "name": "William Wang"
+}
+</script>
+
+
+    </div>
+  </div>
+
+  <footer class="gfooter">
+  <div class="inner">
+    <div class="container">
+      <p class="copy"><small>Copyright (c) 2017, all rights reserved.</small></p>
+
+      <nav class="footer-nav">
+        <div class="inner">
+          
+        </div>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://twasa.github.io/js/script.js"></script>
+
+</body>
+</html>
