@@ -1,4 +1,4 @@
----
+﻿---
 title: "Powershell"
 date: 2018-04-21T17:33:21+08:00
 tags: [ "Microsoft", "powershell" ]
@@ -14,12 +14,12 @@ PowerShell Core is a cross-platform (Windows, Linux, and macOS) automation and c
 
 ```
 Get-Command
-Get-Command –Name *IP*
-Get-Command –Module ISE –Name *IP*
+Get-Command -Name *IP*
+Get-Command -Module ISE -Name *IP*
 
 Get-Help Get-Process
 Get-Member
-Get-Process | Where-Object {$_.Name –eq "powershell"} #$_ is the current pipeline object
+Get-Process | Where-Object {$_.Name -eq "powershell"} #$_ is the current pipeline object
 ```
 
 - cmdlet combind example: find all file mode = a
