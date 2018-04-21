@@ -15,8 +15,7 @@ PowerShell Core is a cross-platform (Windows, Linux, and macOS) automation and c
 Get-Command
 Get-Command –Name *IP*
 Get-Command –Module ISE –Name *IP*
-```
-```
+
 Get-Help Get-Process
 Get-Member
 Get-Process | Where-Object {$_.Name –eq "powershell"} #$_ is the current pipeline object
@@ -90,7 +89,9 @@ ForEach ($item in $items){
 }    
 ```
 
+
 - define function
+
 ```
 function FunctionNAME {
     #do something
@@ -109,6 +110,7 @@ function FunctionNAME([String] $parm1 = "hello"){
     return $parm1
 }
 ```
+
 
 - call function
 ```
