@@ -11,6 +11,7 @@ PowerShell Core is a cross-platform (Windows, Linux, and macOS) automation and c
 
 ## cmdlet
 - get all cmdlet
+
 ```
 Get-Command
 Get-Command –Name *IP*
@@ -53,6 +54,7 @@ $variable.GetType().FullName
 
 - Comparison Operators
 
+
 | Purpose                  | Operator | Example                   |
 |--------------------------|----------|---------------------------|
 | Greater than             | -gt      | 1 -gt 2 (Returns $false)  |
@@ -61,6 +63,8 @@ $variable.GetType().FullName
 | Not equals               | -ne      | 3 -ne 1+1 (Returns $true) |
 | Greater than or equal to | -ge      | 3 -ge 1+1 (Returns $true) |
 | Less than or equal to    | -le      | 2 -le 1+1 (Returns $true) |
+
+
 
 - statements: if else
 ```
@@ -89,7 +93,6 @@ ForEach ($item in $items){
 }    
 ```
 
-
 - define function
 
 ```
@@ -111,7 +114,6 @@ function FunctionNAME([String] $parm1 = "hello"){
 }
 ```
 
-
 - call function
 ```
 FunctionNAME
@@ -120,6 +122,7 @@ FunctionNAME -parm1 "echo"
 ```
 
 - prevent external Windows subsystem based EXE, for each command to end before starting the next
+
 ```
 <path to exe> | Out-Null
 
