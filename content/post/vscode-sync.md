@@ -9,7 +9,7 @@ draft: true
 # Visual Studio Code
 ## Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications.
 
-## Configuration
+## basic Configuration
 ```
     "editor.wordWrap": "off",
     "[markdown]": {
@@ -29,3 +29,10 @@ draft: true
 - Path Intellisense
 - Markdown table prettifier
 - Microsoft Python extension
+
+## Settings sync using github
+- Settings > Developer settings > Personal access tokens > Generate new token
+- Give your token a descriptive name like vscode, check gist and click Generate token.
+- Copy and backup your token.
+- Type upload in VSCode Command Palette.
+- Enter your GitHub Personal Access Token.
