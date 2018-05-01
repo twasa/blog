@@ -99,6 +99,7 @@ chown consul:consul ./data
 ### Setting up consul server cluster
 
 - server1 + bootstrap + ui
+
 ```
 consul keygen
 X4SYOinf2pTAcAHRhpj7dA==
@@ -137,12 +138,14 @@ consul agent -node=node3 -data-dir="/opt/consul/data" -config-dir="./conf" -enab
 
 ## service discovery
 - Defining a Service
+
 ```
 echo '{"service": {"name": "web", "tags": ["rails"], "port": 80, "interval": "10s"}}' | sudo tee ./conf/web.json
 
 ```
 
 - Querying Services
+
 ```
 dig @127.0.0.1 -p 8600 web.service.consul
 
