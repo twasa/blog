@@ -97,6 +97,7 @@ chown consul:consul ./data
 ```
 
 ### Setting up consul server cluster
+
 - server1 + bootstrap + ui
 ```
 consul keygen
