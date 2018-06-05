@@ -133,3 +133,34 @@ $job = Start-Job <path to exe>
 Wait-Job $job
 Receive-Job $job
 ```
+
+- get ClipboardText
+```
+add-type -an system.windows.forms
+[System.Windows.Forms.Clipboard]::GetText()
+
+# 5.1
+Get-Clipboard
+   [-Format <ClipboardFormat>]
+   [-TextFormatType <TextDataFormat>]
+   [-Raw]
+   [<CommonParameters>]
+```
+
+- set ClipboardText
+```
+add-type -an system.windows.forms
+[System.Windows.Forms.Clipboard]::SetText('hello world')
+
+# 5.1
+Set-Clipboard
+   [-Append]
+   [-Value] <String[]>
+   -Path <String[]>
+   -LiteralPath <String[]>
+   [-AsHtml]
+   [-WhatIf]
+   [-Confirm]
+   [<CommonParameters>]
+```
+
