@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.39" />
+    <meta name="description" content="William&#39;s blog">
+<meta name="author" content="Mathieu Cornic">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <title>Consul :: William&#39;s blog</title>
+    
+    
+    <link href="/css/nucleus.css?1528491832" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1528491832" rel="stylesheet">
+    <link href="/css/hybrid.css?1528491832" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1528491832" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1528491832" rel="stylesheet">
+    <link href="/css/auto-complete.css?1528491832" rel="stylesheet">
+    <link href="/css/theme.css?1528491832" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1528491832" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1528491832"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/post/consul/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1528491832"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1528491832"></script>
+<script type="text/javascript">
+    
+        var baseurl = '\/';
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1528491832"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/post/" title="Posts" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/post/">
+          Posts
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/consul/" title="Consul" class="dd-item active">
+        <a href="/post/consul/">
+        Consul
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/powershell/" title="Powershell" class="dd-item ">
+        <a href="/post/powershell/">
+        Powershell
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/docker/" title="Docker Memo(drafting)" class="dd-item ">
+        <a href="/post/docker/">
+        Docker Memo(drafting)
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/jupyterhub/" title="Jupyterhub" class="dd-item ">
+        <a href="/post/jupyterhub/">
+        Jupyterhub
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/git/" title="Git" class="dd-item ">
+        <a href="/post/git/">
+        Git
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/aws-cli/" title="Aws Cli" class="dd-item ">
+        <a href="/post/aws-cli/">
+        Aws Cli
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/apache-http-advanced/" title="Apache Http Advanced" class="dd-item ">
+        <a href="/post/apache-http-advanced/">
+        Apache Http Advanced
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/cisco-ios-netwrok-cmmmands/" title="Cisco Ios Netwrok Cmmmands" class="dd-item ">
+        <a href="/post/cisco-ios-netwrok-cmmmands/">
+        Cisco Ios Netwrok Cmmmands
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/apache-tomcat/" title="Apache Tomcat" class="dd-item ">
+        <a href="/post/apache-tomcat/">
+        Apache Tomcat
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/lnmp/" title="CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP" class="dd-item ">
+        <a href="/post/lnmp/">
+        CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/flask-quick-start-guide/" title="Flask Quick Start Guide" class="dd-item ">
+        <a href="/post/flask-quick-start-guide/">
+        Flask Quick Start Guide
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/hugo-how-to/" title="Hugo A Fast and Flexible Website Generator" class="dd-item ">
+        <a href="/post/hugo-how-to/">
+        Hugo A Fast and Flexible Website Generator
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/mdadm-rescue/" title="" class="dd-item ">
+        <a href="/post/mdadm-rescue/">
+        
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/programing/" title="Programings" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/programing/">
+          Programings
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/tools/vscode-sync/" title="Vscode Sync" class="dd-item ">
+        <a href="/programing/tools/vscode-sync/">
+        Vscode Sync
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-timezone-convert/" title="Python Timezone Convert example code" class="dd-item ">
+        <a href="/programing/python/python-timezone-convert/">
+        Python Timezone Convert example code
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-web-automation-test/" title="Python Web Automation Test" class="dd-item ">
+        <a href="/programing/python/python-web-automation-test/">
+        Python Web Automation Test
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-soap-client-suds/" title="A Python SOAP client sample code" class="dd-item ">
+        <a href="/programing/python/python-soap-client-suds/">
+        A Python SOAP client sample code
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-package/" title="Python Package" class="dd-item ">
+        <a href="/programing/python/python-package/">
+        Python Package
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-virtualenv/" title="Python Virtualenv" class="dd-item ">
+        <a href="/programing/python/python-virtualenv/">
+        Python Virtualenv
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-html-entity/" title="Python HTML Entity decode and encode" class="dd-item ">
+        <a href="/programing/python/python-html-entity/">
+        Python HTML Entity decode and encode
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/linux/" title="Linuxes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/linux/">
+          Linuxes
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/openssl/" title="openssl" class="dd-item ">
+        <a href="/linux/openssl/">
+        openssl
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/logrotation/" title="Linux Logrotation" class="dd-item ">
+        <a href="/linux/logrotation/">
+        Linux Logrotation
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/sed/" title="sed" class="dd-item ">
+        <a href="/linux/sed/">
+        sed
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/regexp/" title="Regular Expression" class="dd-item ">
+        <a href="/linux/regexp/">
+        Regular Expression
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/find/" title="find" class="dd-item ">
+        <a href="/linux/find/">
+        find
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/xargs/" title="xargs" class="dd-item ">
+        <a href="/linux/xargs/">
+        xargs
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/grep/" title="Grep" class="dd-item ">
+        <a href="/linux/grep/">
+        Grep
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/db/" title="DBs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/db/">
+          DBs
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/db/mongodb/" title="Mongodb basic" class="dd-item ">
+        <a href="/db/mongodb/">
+        Mongodb basic
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/db/my-db/" title="MySQL and MariaDB memo" class="dd-item ">
+        <a href="/db/my-db/">
+        MySQL and MariaDB memo
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/devops/" title="DevOps" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devops/">
+          DevOps
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/ansible/" title="Ansible" class="dd-item ">
+        <a href="/devops/ansible/">
+        Ansible
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/twasa"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://blog.twasa.cf/showcase"><i class='fa fa-fw fa-camera'></i> Showcases</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://gohugo.io/"><i class='fa fa-fw fa-bookmark'></i> Hugo Documentation</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+       
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fa fa-fw fa-history"></i> Clear History</a></li>         
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fa fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://blog.twasa.cfpost/consul.md" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>About</a> > <a href='/post/'>Posts</a> > Consul
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li><a href="#consul">Consul</a>
+<ul>
+<li><a href="#description">Description</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#glossary">Glossary</a></li>
+<li><a href="#ports">Ports</a></li>
+<li><a href="#syntax">Syntax</a>
+<ul>
+<li><a href="#commands">commands</a>
+<ul>
+<li><a href="#agent-command-args">agent command args</a></li>
+</ul></li>
+<li><a href="#create-the-necessary-directory-and-system-structure">Create the Necessary Directory and System Structure</a></li>
+<li><a href="#setting-up-consul-server-cluster">Setting up consul server cluster</a></li>
+</ul></li>
+<li><a href="#service-discovery">service discovery</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Consul</h1>
+          
+
+        
+
+
+
+
+<h1 id="consul">Consul</h1>
+
+<h2 id="description">Description</h2>
+
+<p>Consul has multiple components, but as a whole, it is a tool for discovering and configuring services in your infrastructure.</p>
+
+<h2 id="features">Features</h2>
+
+<ul>
+<li>Service Discovery: Clients of Consul can provide a service, such as api or mysql, and other clients can use Consul to discover providers of a given service. Using either DNS or HTTP, applications can easily find the services they depend upon.</li>
+<li>Health Checking: Consul clients can provide any number of health checks, either associated with a given service (&ldquo;is the webserver returning 200 OK&rdquo;), or with the local node (&ldquo;is memory utilization below 90%&rdquo;). This information can be used by an operator to monitor cluster health, and it is used by the service discovery components to route traffic away from unhealthy hosts.</li>
+<li>KV Store: Applications can make use of Consul&rsquo;s hierarchical key/value store for any number of purposes, including dynamic configuration, feature flagging, coordination, leader election, and more. The simple HTTP API makes it easy to use.</li>
+<li>Multi Datacenter: Consul supports multiple datacenters out of the box. This means users of Consul do not have to worry about building additional layers of abstraction to grow to multiple regions.</li>
+</ul>
+
+<h2 id="glossary">Glossary</h2>
+
+<ul>
+<li>Agent - An agent is the long running daemon on every member of the Consul cluster. It is started by running consul agent. The agent is able to run in either client or server mode. Since all nodes must be running an agent, it is simpler to refer to the node as being either a client or server, but there are other instances of the agent. All agents can run the DNS or HTTP interfaces, and are responsible for running checks and keeping services in sync.</li>
+<li>Client - A client is an agent that forwards all RPCs to a server. The client is relatively stateless. The only background activity a client performs is taking part in the LAN gossip pool. This has a minimal resource overhead and consumes only a small amount of network bandwidth.</li>
+<li>Server - A server is an agent with an expanded set of responsibilities including participating in the Raft quorum, maintaining cluster state, responding to RPC queries, exchanging WAN gossip with other datacenters, and forwarding queries to leaders or remote datacenters.</li>
+<li>Datacenter - While the definition of a datacenter seems obvious, there are subtle details that must be considered. For example, in EC2, are multiple availability zones considered to comprise a single datacenter? We define a datacenter to be a networking environment that is private, low latency, and high bandwidth. This excludes communication that would traverse the public internet, but for our purposes multiple availability zones within a single EC2 region would be considered part of a single datacenter.</li>
+<li>Consensus - When used in our documentation we use consensus to mean agreement upon the elected leader as well as agreement on the ordering of transactions. Since these transactions are applied to a finite-state machine, our definition of consensus implies the consistency of a replicated state machine. Consensus is described in more detail on Wikipedia, and our implementation is described here.</li>
+<li>Gossip - Consul is built on top of Serf which provides a full gossip protocol that is used for multiple purposes. Serf provides membership, failure detection, and event broadcast. Our use of these is described more in the gossip documentation. It is enough to know that gossip involves random node-to-node communication, primarily over UDP.</li>
+<li>LAN Gossip - Refers to the LAN gossip pool which contains nodes that are all located on the same local area network or datacenter.</li>
+<li>WAN Gossip - Refers to the WAN gossip pool which contains only servers. These servers are primarily located in different datacenters and typically communicate over the internet or wide area network.</li>
+<li>RPC - Remote Procedure Call. This is a request / response mechanism allowing a client to make a request of a server.</li>
+</ul>
+
+<h2 id="ports">Ports</h2>
+
+<ul>
+<li>Server RPC (Default 8300). This is used by servers to handle incoming requests from other agents. TCP only.</li>
+<li>Serf LAN (Default 8301). This is used to handle gossip in the LAN. Required by all agents. TCP and UDP.</li>
+<li>Serf WAN (Default 8302). This is used by servers to gossip over the WAN to other servers. TCP and UDP.</li>
+<li>CLI RPC (Default 8400). This is used by all agents to handle RPC from the CLI. TCP only.</li>
+<li>HTTP API (Default 8500). This is used by clients to talk to the HTTP API. TCP only.</li>
+<li>DNS Interface (Default 8600). Used to resolve DNS queries. TCP and UDP.</li>
+</ul>
+
+<h2 id="syntax">Syntax</h2>
+
+<ul>
+<li>Usage
+<code>
+consul [--version] [--help] &lt;command&gt; [&lt;args&gt;]
+</code></li>
+</ul>
+
+<h3 id="commands">commands</h3>
+
+<ul>
+<li>version: Prints the Consul version</li>
+<li>agent: Runs a Consul agent</li>
+<li>join: Tell Consul agent to join cluster</li>
+<li>members: Lists the members of a Consul cluster</li>
+<li>reload: Triggers the agent to reload configuration files</li>
+<li>leave: Gracefully leaves the Consul cluster and shuts down</li>
+<li>validate: Validate config files/directories</li>
+<li>info: Provides debugging information for operators.</li>
+</ul>
+
+<h4 id="agent-command-args">agent command args</h4>
+
+<ul>
+<li>datacenter: Datacenter of the agent.</li>
+<li>dev: Starts the agent in development mode.</li>
+<li>data-dir:  Path to a data directory to store agent state.</li>
+<li>config-file: A configuration file to load</li>
+<li>config-dir: Path to a directory to read configuration files from in &lsquo;.json&rsquo;, Can be specified multiple times.</li>
+<li>node: Name of this node. Must be unique in the cluster.</li>
+<li>bind: The address that should be bound to for internal cluster communications. By default, this is &ldquo;0.0.0.0&rdquo;, if there was multi private ip, this args must be config</li>
+<li>http-port: Sets the HTTP API port to listen on.</li>
+<li>dns-port: DNS port to use.</li>
+<li>server: used to control if an agent is in server or client mode. When provided, an agent will act as a Consul server. Each Consul cluster must have at least one server and ideally no more than 5 per datacenter.</li>
+<li>client: The address to which Consul will bind client interfaces, including the HTTP and DNS servers. By default, this is &ldquo;127.0.0.1&rdquo;</li>
+<li>datacenter: controls the datacenter in which the agent is running. If not provided, it defaults to &ldquo;dc1&rdquo;.</li>
+<li>ui: Enables the built-in web UI server and the required HTTP routes. This eliminates the need to maintain the Consul web UI files separately from the binary.</li>
+<li>log-level: Log level of the agent</li>
+<li>bootstrap-expect: hints to the Consul server the number of additional server nodes we are expecting to join.</li>
+<li>enable-script-checks: controls whether health checks that execute scripts are enabled on this agent, and defaults to false so operators must opt-in to allowing these.</li>
+<li>ui: Enables the built-in web UI server and the required HTTP routes. This eliminates the need to maintain the Consul web UI files separately from the binary.</li>
+<li>encrypt: Specifies the secret key to use for encryption of Consul network traffic. This key must be 16-bytes that are Base64-encoded.</li>
+<li>key_file</li>
+<li>cert_file</li>
+<li>ca_file</li>
+<li>retry-join: allows retrying a join if the first attempt fails.
+<code>
+consul agent -retry-join &quot;provider=aws tag_key=... tag_value=...&quot;
+consul agent -retry-join &quot;provider=gce project_name=... tag_value=...&quot;
+consul agent -retry-join &quot;provider=aliyun region=... tag_key=consul tag_value=... access_key_id=... access_key_secret=...&quot;
+</code></li>
+</ul>
+
+<h3 id="create-the-necessary-directory-and-system-structure">Create the Necessary Directory and System Structure</h3>
+
+<ul>
+<li><p>Create the user now by typing:</p>
+
+<pre><code>adduser consul
+</code></pre></li>
+
+<li><p>create the configuration hierarchy</p>
+
+<pre><code>mkdir -p /etc/consul.d/{bootstrap,server,client}
+</code></pre></li>
+
+<li><p>create a location where consul can store persistent data</p>
+
+<pre><code>mkdir ./data
+chown consul:consul ./data
+</code></pre></li>
+</ul>
+
+<h3 id="setting-up-consul-server-cluster">Setting up consul server cluster</h3>
+
+<ul>
+<li>server1 + bootstrap + ui</li>
+</ul>
+
+<pre><code>consul keygen
+X4SYOinf2pTAcAHRhpj7dA==
+
+consul agent -server -client=0.0.0.0 -bootstrap-expect=3 -datacenter=gcp-asia-east -node=node1 -data-dir=&quot;/opt/consul/data&quot; -config-dir=&quot;./conf&quot; -enable-script-checks=true -encrypt=&quot;X4SYOinf2pTAcAHRhpj7dA==&quot;
+
+or using config file
+
+consul agent -server -config-dir=&quot;./conf&quot;
+
+#./conf/default.json
+{
+  &quot;client&quot;: &quot;0.0.0.0&quot;,
+  &quot;ports&quot;: {
+      &quot;https&quot;: 8080
+  }
+  &quot;datacenter&quot;: &quot;gcp-asia-east&quot;,
+  &quot;data_dir&quot;: &quot;/opt/consul/data&quot;,
+  &quot;enable-script-checks&quot;: &quot;true&quot;,
+  &quot;log_level&quot;: &quot;INFO&quot;,
+  &quot;node_name&quot;: &quot;mycluster&quot;,
+  &quot;server&quot;: true,
+  &quot;encrypt&quot;: &quot;X4SYOinf2pTAcAHRhpj7dA==&quot;,
+  &quot;key_file&quot;: &quot;/etc/pki/tls/private/my.key&quot;,
+  &quot;cert_file&quot;: &quot;/etc/pki/tls/certs/my.crt&quot;,
+  &quot;ca_file&quot;: &quot;/etc/pki/tls/certs/ca-bundle.crt&quot;
+}
+</code></pre>
+
+<ul>
+<li>in server2 and server 3
+<code>
+consul agent -node=node2 -data-dir=&quot;/opt/consul/data&quot; -config-dir=&quot;./conf&quot; -enable-script-checks=true -retry-join 
+consul agent -node=node3 -data-dir=&quot;/opt/consul/data&quot; -config-dir=&quot;./conf&quot; -enable-script-checks=true -retry-join 
+</code></li>
+</ul>
+
+<h2 id="service-discovery">service discovery</h2>
+
+<ul>
+<li>Defining a Service</li>
+</ul>
+
+<pre><code>echo '{&quot;service&quot;: {&quot;name&quot;: &quot;web&quot;, &quot;tags&quot;: [&quot;rails&quot;], &quot;port&quot;: 80, &quot;interval&quot;: &quot;10s&quot;}}' | sudo tee ./conf/web.json
+
+</code></pre>
+
+<ul>
+<li>Querying Services</li>
+</ul>
+
+<pre><code>dig @127.0.0.1 -p 8600 web.service.consul
+
+;; QUESTION SECTION:
+;web.service.consul.        IN  A
+
+;; ANSWER SECTION:
+web.service.consul. 0   IN  A   172.20.20.11
+
+dig @127.0.0.1 -p 8600 rails.web.service.consul
+
+;; QUESTION SECTION:
+;rails.web.service.consul.      IN  A
+
+;; ANSWER SECTION:
+rails.web.service.consul.   0   IN  A   172.20.20.11
+
+dig @127.0.0.1 -p 8600 web.service.consul SRV
+
+;; QUESTION SECTION:
+;web.service.consul.        IN  SRV
+
+;; ANSWER SECTION:
+web.service.consul. 0   IN  SRV 1 1 80 Armons-MacBook-Air.node.dc1.consul.
+
+;; ADDITIONAL SECTION:
+Armons-MacBook-Air.node.dc1.consul. 0 IN A  172.20.20.11
+</code></pre>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/post/" title="Posts"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/post/powershell/" title="Powershell" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1528491832"></script>
+    <script src="/js/perfect-scrollbar.min.js?1528491832"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1528491832"></script>
+    <script src="/js/jquery.sticky.js?1528491832"></script>
+    <script src="/js/featherlight.min.js?1528491832"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1528491832"></script>
+    <script src="/js/highlight.pack.js?1528491832"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1528491832"></script>
+    <script src="/js/learn.js?1528491832"></script>
+    <script src="/js/hugo-learn.js?1528491832"></script>
+
+    <link href="/mermaid/mermaid.css?1528491832" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1528491832"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

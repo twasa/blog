@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtualization on William&#39;s blog</title>
+    <link>https://blog.twasa.cf/categories/virtualization/</link>
+    <description>Recent content in Virtualization on William&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 22 Sep 2017 10:57:01 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.twasa.cf/categories/virtualization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker Memo(drafting)</title>
+      <link>https://blog.twasa.cf/post/docker/</link>
+      <pubDate>Fri, 22 Sep 2017 10:57:01 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/post/docker/</guid>
+      <description>Docker Description  is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud Containers vs. virtual machines  Virtual Machine diagram    Container diagram  docker concept  Image : a lightweight, stand-alone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files.</description>
+    </item>
+    
+    <item>
+      <title>Aws Cli</title>
+      <link>https://blog.twasa.cf/post/aws-cli/</link>
+      <pubDate>Mon, 11 Sep 2017 15:52:27 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/post/aws-cli/</guid>
+      <description>AWS CLI referneces syntax aws [options] \&amp;lt;command&amp;gt; \&amp;lt;subcommand&amp;gt; [\&amp;lt;subcommand&amp;gt; ...] [parameters] options: --region --profile --filters &amp;quot;Name=instance-state-name,Values=running&amp;quot; --query  create or modify profile aws configure --profile PROFILE aws configure set default.s3.signature_version s3v4 aws configure set profile.your_profile_name.s3.signature_version s3v4  create key pairs aws --profile PROFILE --region REGION ec2 create-key-pair --key-name KEYNAME  create IAM users and permission aws --profile PROFILE iam create-user --user-name USERNAME aws --profile PROFILE iam create-access-key --user-name USERNAME aws --profile PROFILE iam put-user-policy --user-name USERNAME --policy-name POLICYNAME --policy-document file://POLICYDOCUMENT aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTNAME XXXX  SES, SNS - aws --profile PROFILE --region REGION ses verify-email-identity --email-address YOUR@MAIL.</description>
+    </item>
+    
+  </channel>
+</rss>

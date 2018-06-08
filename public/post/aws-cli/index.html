@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.39" />
+    <meta name="description" content="William&#39;s blog">
+<meta name="author" content="Mathieu Cornic">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <title>Aws Cli :: William&#39;s blog</title>
+    
+    
+    <link href="/css/nucleus.css?1528491832" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1528491832" rel="stylesheet">
+    <link href="/css/hybrid.css?1528491832" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1528491832" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1528491832" rel="stylesheet">
+    <link href="/css/auto-complete.css?1528491832" rel="stylesheet">
+    <link href="/css/theme.css?1528491832" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1528491832" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1528491832"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/post/aws-cli/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1528491832"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1528491832"></script>
+<script type="text/javascript">
+    
+        var baseurl = '\/';
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1528491832"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/post/" title="Posts" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/post/">
+          Posts
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/consul/" title="Consul" class="dd-item ">
+        <a href="/post/consul/">
+        Consul
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/powershell/" title="Powershell" class="dd-item ">
+        <a href="/post/powershell/">
+        Powershell
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/docker/" title="Docker Memo(drafting)" class="dd-item ">
+        <a href="/post/docker/">
+        Docker Memo(drafting)
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/jupyterhub/" title="Jupyterhub" class="dd-item ">
+        <a href="/post/jupyterhub/">
+        Jupyterhub
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/git/" title="Git" class="dd-item ">
+        <a href="/post/git/">
+        Git
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/aws-cli/" title="Aws Cli" class="dd-item active">
+        <a href="/post/aws-cli/">
+        Aws Cli
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/apache-http-advanced/" title="Apache Http Advanced" class="dd-item ">
+        <a href="/post/apache-http-advanced/">
+        Apache Http Advanced
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/cisco-ios-netwrok-cmmmands/" title="Cisco Ios Netwrok Cmmmands" class="dd-item ">
+        <a href="/post/cisco-ios-netwrok-cmmmands/">
+        Cisco Ios Netwrok Cmmmands
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/apache-tomcat/" title="Apache Tomcat" class="dd-item ">
+        <a href="/post/apache-tomcat/">
+        Apache Tomcat
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/lnmp/" title="CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP" class="dd-item ">
+        <a href="/post/lnmp/">
+        CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/flask-quick-start-guide/" title="Flask Quick Start Guide" class="dd-item ">
+        <a href="/post/flask-quick-start-guide/">
+        Flask Quick Start Guide
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/hugo-how-to/" title="Hugo A Fast and Flexible Website Generator" class="dd-item ">
+        <a href="/post/hugo-how-to/">
+        Hugo A Fast and Flexible Website Generator
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/mdadm-rescue/" title="" class="dd-item ">
+        <a href="/post/mdadm-rescue/">
+        
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/programing/" title="Programings" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/programing/">
+          Programings
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/tools/vscode-sync/" title="Vscode Sync" class="dd-item ">
+        <a href="/programing/tools/vscode-sync/">
+        Vscode Sync
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-timezone-convert/" title="Python Timezone Convert example code" class="dd-item ">
+        <a href="/programing/python/python-timezone-convert/">
+        Python Timezone Convert example code
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-web-automation-test/" title="Python Web Automation Test" class="dd-item ">
+        <a href="/programing/python/python-web-automation-test/">
+        Python Web Automation Test
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-soap-client-suds/" title="A Python SOAP client sample code" class="dd-item ">
+        <a href="/programing/python/python-soap-client-suds/">
+        A Python SOAP client sample code
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-package/" title="Python Package" class="dd-item ">
+        <a href="/programing/python/python-package/">
+        Python Package
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-virtualenv/" title="Python Virtualenv" class="dd-item ">
+        <a href="/programing/python/python-virtualenv/">
+        Python Virtualenv
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-html-entity/" title="Python HTML Entity decode and encode" class="dd-item ">
+        <a href="/programing/python/python-html-entity/">
+        Python HTML Entity decode and encode
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/linux/" title="Linuxes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/linux/">
+          Linuxes
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/openssl/" title="openssl" class="dd-item ">
+        <a href="/linux/openssl/">
+        openssl
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/logrotation/" title="Linux Logrotation" class="dd-item ">
+        <a href="/linux/logrotation/">
+        Linux Logrotation
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/sed/" title="sed" class="dd-item ">
+        <a href="/linux/sed/">
+        sed
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/regexp/" title="Regular Expression" class="dd-item ">
+        <a href="/linux/regexp/">
+        Regular Expression
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/find/" title="find" class="dd-item ">
+        <a href="/linux/find/">
+        find
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/xargs/" title="xargs" class="dd-item ">
+        <a href="/linux/xargs/">
+        xargs
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/grep/" title="Grep" class="dd-item ">
+        <a href="/linux/grep/">
+        Grep
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/db/" title="DBs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/db/">
+          DBs
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/db/mongodb/" title="Mongodb basic" class="dd-item ">
+        <a href="/db/mongodb/">
+        Mongodb basic
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/db/my-db/" title="MySQL and MariaDB memo" class="dd-item ">
+        <a href="/db/my-db/">
+        MySQL and MariaDB memo
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/devops/" title="DevOps" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devops/">
+          DevOps
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/ansible/" title="Ansible" class="dd-item ">
+        <a href="/devops/ansible/">
+        Ansible
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/twasa"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://blog.twasa.cf/showcase"><i class='fa fa-fw fa-camera'></i> Showcases</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://gohugo.io/"><i class='fa fa-fw fa-bookmark'></i> Hugo Documentation</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+       
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fa fa-fw fa-history"></i> Clear History</a></li>         
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fa fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://blog.twasa.cfpost/aws-cli.md" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>About</a> > <a href='/post/'>Posts</a> > Aws Cli
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li><a href="#aws-cli-referneces">AWS CLI referneces</a>
+<ul>
+<li><a href="#syntax">syntax</a></li>
+<li><a href="#create-or-modify-profile">create or modify profile</a></li>
+<li><a href="#create-key-pairs">create key pairs</a></li>
+<li><a href="#create-iam-users-and-permission">create IAM users and permission</a></li>
+<li><a href="#ses-sns">SES, SNS</a></li>
+<li><a href="#dynamodb">DynamoDB</a></li>
+<li><a href="#create-vpc-subnet-internet-gateway-route-table-security-group-and-associate">Create VPC, Subnet, internet gateway, route-table, security-group, and associate</a></li>
+<li><a href="#s3">S3</a>
+<ul>
+<li><a href="#list-buckets">list buckets</a></li>
+<li><a href="#create-bucket">create bucket</a></li>
+<li><a href="#set-bucket-acl">set bucket acl</a></li>
+<li><a href="#enable-bucket-log">enable bucket log</a></li>
+<li><a href="#set-bucket-lifecycle">set bucket lifecycle</a></li>
+<li><a href="#create-folders">create folders</a></li>
+<li><a href="#upload-file-to-bucket">upload file to bucket</a></li>
+<li><a href="#bucket-policy-for-elb-access-logs-and-iam-users">bucket policy for elb access logs, and IAM users</a></li>
+<li><a href="#for-cross-account-access">for Cross-Account Access</a></li>
+</ul></li>
+<li><a href="#elb-classic-load-balancer">ELB(Classic Load Balancer)</a>
+<ul>
+<li><a href="#create">create</a></li>
+<li><a href="#modify-attribute">modify attribute</a></li>
+</ul></li>
+<li><a href="#rds">RDS</a>
+<ul>
+<li><a href="#create-snapshot">create snapshot</a></li>
+<li><a href="#restore-from-snapshot">restore from snapshot</a></li>
+<li><a href="#wait-rds-available">wait rds available</a></li>
+<li><a href="#change-parameter-group">change parameter group</a></li>
+<li><a href="#modify-parameter-group">modify parameter group</a></li>
+</ul></li>
+<li><a href="#route53">Route53</a>
+<ul>
+<li><a href="#list-hosted-zones">list hosted zones</a></li>
+<li><a href="#get-hosted-zone-info">get hosted zone info</a></li>
+<li><a href="#list-record-sets-of-hosted-zone">list record sets of hosted zone</a></li>
+<li><a href="#change-resource-record-sets">change resource record sets</a></li>
+</ul></li>
+<li><a href="#cloudwatch">CloudWatch</a>
+<ul>
+<li><a href="#list-metrics">list-metrics</a></li>
+<li><a href="#get-metrics-statistics">get-metrics-statistics</a></li>
+</ul></li>
+<li><a href="#decode-authorization-message">decode-authorization-message</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Aws Cli</h1>
+          
+
+        
+
+
+
+
+<h1 id="aws-cli-referneces">AWS CLI referneces</h1>
+
+<h2 id="syntax">syntax</h2>
+
+<pre><code>aws [options] \&lt;command&gt; \&lt;subcommand&gt; [\&lt;subcommand&gt; ...] [parameters]
+options:
+--region
+--profile
+--filters &quot;Name=instance-state-name,Values=running&quot;
+--query
+</code></pre>
+
+<h2 id="create-or-modify-profile">create or modify profile</h2>
+
+<pre><code>aws configure --profile PROFILE
+aws configure set default.s3.signature_version s3v4
+aws configure set profile.your_profile_name.s3.signature_version s3v4
+</code></pre>
+
+<h2 id="create-key-pairs">create key pairs</h2>
+
+<pre><code>aws --profile PROFILE --region REGION ec2 create-key-pair --key-name KEYNAME
+</code></pre>
+
+<h2 id="create-iam-users-and-permission">create IAM users and permission</h2>
+
+<pre><code>aws --profile PROFILE iam create-user --user-name USERNAME
+aws --profile PROFILE iam create-access-key --user-name USERNAME
+aws --profile PROFILE iam put-user-policy --user-name USERNAME --policy-name POLICYNAME --policy-document  file://POLICYDOCUMENT
+aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTNAME XXXX
+</code></pre>
+
+<h2 id="ses-sns">SES, SNS</h2>
+
+<pre><code>- aws --profile PROFILE --region REGION ses verify-email-identity --email-address YOUR@MAIL.ADDR
+- aws --profile PROFILE --region REGION sns create-topic --name TOPICNAME
+- aws --profile PROFILE --region REGION ses set-identity-notification-topic --identity YOUR@MAIL.ADDR --notification-type [Bounce, Complaint, Delivery] --sns-topic arn:aws:sns:us-east-1:EXAMPLE65304:MyTopic
+- aws --profile PROFILE --region REGION sns subscribe --topic-arn arn:aws:sns:us-east-1:EXAMPLE65304:MyTopic --protocol email --notification-endpoint YOUR@MAIL.ADDR
+</code></pre>
+
+<h2 id="dynamodb">DynamoDB</h2>
+
+<pre><code>aws --profile PROFILE --region REGION s3api dynamodb create-table --table-name TABLENAME --cli-input-json  file://JSONFILE
+</code></pre>
+
+<h2 id="create-vpc-subnet-internet-gateway-route-table-security-group-and-associate">Create VPC, Subnet, internet gateway, route-table, security-group, and associate</h2>
+
+<pre><code>- aws ec2 --profile PROFILE--region REGION create-vpc --cidr-block 10.10.0.0/16
+- aws ec2 --profile PROFILE--region REGION create-tags â€“resources vpc-xxxx -tags Key=Name,Value=$ENV_$LOCATION_VPC01
+- aws ec2 --profile PROFILE--region REGION modify-vpc-attribute --vpc-id vpc-xxxx --enable-dns-hostnames
+- aws ec2 --profile PROFILE--region REGION create-subnet --vpc-id vpc-xxxx --cidr-block 10.10.1.0/24
+- aws ec2 --profile PROFILE--region REGION create-tags â€“resources subnet-xxxx â€“tags Key=Name,Value=$ENV_$LOCATION_VPC01_10.10.1.0
+- aws ec2 --profile PROFILE--region REGION create-internet-gateway
+- aws ec2 --profile PROFILE--region REGION create-tags -resources igw-xxxx -tag Key=Name,Value=$ENV_$LOCATION_VPC01_GW01
+- aws ec2 --profile PROFILE--region REGION attach-internet-gateway --internet-gateway-id igw-xxxx --vpc-id vpc-xxxx
+- aws ec2 --profile PROFILE--region REGION create-route-table â€“vpc-id vpc-xxxx
+- aws ec2 --profile PROFILE--region REGION create-route --route-table-id rtb-xxxx --destination-cidr-block 0.0.0.0/0 --gateway-id igw-xxxx
+- aws ec2 --profile PROFILE--region REGION associate-route-table --route-table-id rtb-xxxx --subnet-id subnet-xxxx
+- aws ec2 --profile PROFILE--region REGION create-security-group --group-name $ENV_$LOCATION_VPC01_SG01 --description $ENV_$LOCATION_VPC01_SG01
+- aws ec2 --profile PROFILE--region REGION authorize-security-group-ingress --group-name MySecurityGroup --protocol tcp --port 22 --cidr 203.0.113.0/24
+- aws ec2 --profile PROFILE--region REGION run-instances --image-id ami-xxxx --count 1 --instance-type m4.xlarge --key-name MyKeyPair --security-group-ids sg-xxxx --subnet-id subnet-xxxx
+- aws ec2 --profile PROFILE--region REGION allocate-address
+- aws ec2 --profile PROFILE--region REGION describe-instances --instance-id i-xxx --query 'Reservations[\*].Instances[\*].NetworkInterfaces[*].NetworkInterfaceId' --output text
+- aws --profile mp ec2 describe-instances --region us-west-2 --filters &quot;Name=instance-state-name,Values=running&quot; --query &quot;Reservations[*].Instances[*].[Tags[?Key=='Name'].Value,PublicIpAddress]&quot; --output text
+- aws ec2 --profile PROFILE--region REGION associate-address --instance-id i-xxx --public-ip xxxx --network-interface-id eni-xxxx
+</code></pre>
+
+<h2 id="s3">S3</h2>
+
+<h3 id="list-buckets">list buckets</h3>
+
+<pre><code>aws --profile PROFILE --region REGION s3api list-buckets
+</code></pre>
+
+<h3 id="create-bucket">create bucket</h3>
+
+<pre><code>aws --profile PROFILE s3api create-bucket --acl private --bucket qa-fw-ead98f12 --region REGION --create-bucket-configuration LocationConstraint=ap-northeast-1
+</code></pre>
+
+<h3 id="set-bucket-acl">set bucket acl</h3>
+
+<pre><code>aws --profile PROFILE --region REGION s3api put-bucket-acl --bucket qa-fw-ead98f12 --access-control-policy file://D:\workspace\Your\jsons\file.json
+</code></pre>
+
+<h3 id="enable-bucket-log">enable bucket log</h3>
+
+<pre><code>aws --profile PROFILE --region REGION s3api put-bucket-logging --bucket qa-fw-ead98f12 --bucket-logging-status file://D:\workspace\Your\jsons\file.json
+</code></pre>
+
+<h3 id="set-bucket-lifecycle">set bucket lifecycle</h3>
+
+<pre><code>aws --profile PROFILE --region REGION s3api put-bucket-lifecycle-configuration --bucket qa-fw-ead98f12 --lifecycle-configuration  file://D:\workspace\Your\jsons\file.json
+</code></pre>
+
+<h3 id="create-folders">create folders</h3>
+
+<pre><code>aws --profile PROFILE --region eu-west-1 s3api put-object --bucket mp-eu-ead98f12 --key [8e15, dfa9, e94d, 487f, event]/
+</code></pre>
+
+<h3 id="upload-file-to-bucket">upload file to bucket</h3>
+
+<pre><code>aws --profile PROFILE --region REGION s3 cp FILEPATH/FILENAME s3://BUCKETNAME/FILENAME --acl public-read
+</code></pre>
+
+<h3 id="bucket-policy-for-elb-access-logs-and-iam-users">bucket policy for elb access logs, and IAM users</h3>
+
+<ul>
+<li>rererence <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html</a></li>
+</ul>
+
+<pre><code>    {
+      &quot;Id&quot;: &quot;Policy1429136655940&quot;,
+      &quot;Version&quot;: &quot;2012-10-17&quot;,
+      &quot;Statement&quot;: [
+        {
+          &quot;Sid&quot;: &quot;Stmt1429136633762&quot;,
+          &quot;Action&quot;: [
+            &quot;s3:PutObject&quot;
+          ],
+          &quot;Effect&quot;: &quot;Allow&quot;,
+          &quot;Resource&quot;: &quot;arn:aws:s3:::BUCKETNAME/FOLDERNAME/AWSLogs/AWSACCOUNTID_OF_ELB/*&quot;,
+          &quot;Principal&quot;: {
+            &quot;AWS&quot;: [
+              &quot;ELBACCOUNTID&quot;
+            ]
+          }
+        }
+      ]
+    }
+</code></pre>
+
+<h3 id="for-cross-account-access">for Cross-Account Access</h3>
+
+<ul>
+<li>reference <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html</a></li>
+</ul>
+
+<pre><code>aws account A ID number 111111111111 (resources owner)
+create a IAM role, Role Type = Role for Cross-Account Access, Provide access between AWS accounts you own, input another account ID, and Attach Policy, final copy Role ARN
+
+aws account B ID number 222222222222 (resources accessor)
+create a IAM Custom Policy for allow
+
+{
+  &quot;Version&quot;: &quot;2012-10-17&quot;,
+  &quot;Statement&quot;: {
+    &quot;Effect&quot;: &quot;Allow&quot;,
+    &quot;Action&quot;: &quot;sts:AssumeRole&quot;,
+    &quot;Resource&quot;: &quot;arn:aws:iam::111111111111:role/RoleARN&quot;
+  }
+}
+
+create a IAM Custom Policy for deny
+{
+  &quot;Version&quot;: &quot;2012-10-17&quot;,
+  &quot;Statement&quot;: {
+    &quot;Effect&quot;: &quot;Deny&quot;,
+    &quot;Action&quot;: &quot;sts:AssumeRole&quot;,
+    &quot;Resource&quot;: &quot;arn:aws:iam::111111111111:role/RoleARN&quot;
+  }
+}
+
+#Apply Allow Policy to resources access group, and apply Deny Policy to non-resources access group
+</code></pre>
+
+<h2 id="elb-classic-load-balancer">ELB(Classic Load Balancer)</h2>
+
+<h3 id="create">create</h3>
+
+<pre><code>aws elb create-load-balancer --load-balancer-name my-load-balancer --listeners &quot;Protocol=HTTP,LoadBalancerPort=80,InstanceProtocol=HTTP,InstancePort=80&quot; --availability-zones us-west-2a us-west-2b
+
+aws elb create-load-balancer --load-balancer-name my-load-balancer --listeners &quot;Protocol=HTTP,LoadBalancerPort=80,InstanceProtocol=HTTP,InstancePort=80&quot; &quot;Protocol=HTTPS,LoadBalancerPort=443,InstanceProtocol=HTTP,InstancePort=80,SSLCertificateId=arn:aws:iam::123456789012:server-certificate/my-server-cert&quot; --availability-zones us-west-2a us-west-2b
+</code></pre>
+
+<h3 id="modify-attribute">modify attribute</h3>
+
+<pre><code>aws elb modify-load-balancer-attributes --load-balancer-name XXXX --load-balancer-attributes CrossZoneLoadBalancing={Enabled=boolean},AccessLog={Enabled=boolean,S3BucketName=string,EmitInterval=integer,S3BucketPrefix=string},ConnectionDraining={Enabled=boolean,Timeout=integer},ConnectionSettings={IdleTimeout=integer},AdditionalAttributes=[{Key=string,Value=string},{Key=string,Value=string}]
+</code></pre>
+
+<h2 id="rds">RDS</h2>
+
+<h3 id="create-snapshot">create snapshot</h3>
+
+<pre><code>aws --profile PROFILE --region REGION rds delete-db-instance --db-instance-identifier mp-op-rds --no-skip-final-snapshot --final-db-snapshot-identifier mp-op-rds-final-snapshot
+</code></pre>
+
+<h3 id="restore-from-snapshot">restore from snapshot</h3>
+
+<pre><code>aws --profile PROFILE --region REGION rds restore-db-instance-from-db-snapshot --db-instance-identifier mp-op-rds --db-snapshot-identifier mp-op-rds-final-snapshot --db-instance-class db.m3.large --db-subnet-group-name mp-op-rds-subg --no-multi-az --no-publicly-accessible --no-auto-minor-version-upgrade
+</code></pre>
+
+<h3 id="wait-rds-available">wait rds available</h3>
+
+<pre><code>aws --profile PROFILE --region REGION rds wait db-instance-available --db-instance-identifier mp-op-rds
+</code></pre>
+
+<h3 id="change-parameter-group">change parameter group</h3>
+
+<pre><code>aws --profile PROFILE --region REGION rds modify-db-instance --db-instance-identifier RDSNAME --db-parameter-group-name PGNAME --vpc-security-group-ids SGID --apply-immediately)
+</code></pre>
+
+<h3 id="modify-parameter-group">modify parameter group</h3>
+
+<pre><code>- aws --profile PROFILE --region REGION rds modify-db-parameter-group --db-parameter-group-name PGNAME --cli-input-json
+</code></pre>
+
+<h2 id="route53">Route53</h2>
+
+<h3 id="list-hosted-zones">list hosted zones</h3>
+
+<pre><code>aws --profile PROFILE --region REGION route53 list-hosted-zones
+</code></pre>
+
+<h3 id="get-hosted-zone-info">get hosted zone info</h3>
+
+<pre><code>aws --profile PROFILE --region REGION route53 get-hosted-zone --id &quot;xxxxxxxxxxxx&quot;
+</code></pre>
+
+<h3 id="list-record-sets-of-hosted-zone">list record sets of hosted zone</h3>
+
+<pre><code>aws --profile PROFILE --region REGION route53 list-resource-record-sets --hosted-zone-id &quot;xxxxxxxxxxxx&quot;
+
+aws --profile mp --region REGION route53 list-resource-record-sets --hosted-zone-id Z3FV870FH3DCS4 &gt; &quot;D:\workspace\MP\aws_r53_auto_before_dcd_rcd_modify.json&quot;
+aws --profile mp --region REGION route53 list-resource-record-sets --hosted-zone-id Z1L8DNQYY69L2Z &gt; &quot;D:\workspace\MP\aws_r53_local_before_dcd_rcd_modify.json&quot;
+</code></pre>
+
+<h3 id="change-resource-record-sets">change resource record sets</h3>
+
+<pre><code>aws --profile PROFILE --region REGION route53 change-resource-record-sets --hosted-zone-id &quot;xxxxxxxxxxxx&quot; --change-batch file://C:\awscli\route53\change-resource-record-sets.json
+
+JSON Syntax:
+
+{
+  &quot;Comment&quot;: &quot;string&quot;,
+  &quot;Changes&quot;: [
+    {
+      &quot;Action&quot;: &quot;CREATE&quot;|&quot;DELETE&quot;|&quot;UPSERT&quot;,
+      &quot;ResourceRecordSet&quot;: {
+        &quot;Name&quot;: &quot;string&quot;,
+        &quot;Type&quot;: &quot;SOA&quot;|&quot;A&quot;|&quot;TXT&quot;|&quot;NS&quot;|&quot;CNAME&quot;|&quot;MX&quot;|&quot;NAPTR&quot;|&quot;PTR&quot;|&quot;SRV&quot;|&quot;SPF&quot;|&quot;AAAA&quot;,
+        &quot;SetIdentifier&quot;: &quot;string&quot;,
+        &quot;Weight&quot;: long,
+        &quot;Region&quot;: &quot;us-east-1&quot;|&quot;us-east-2&quot;|&quot;us-west-1&quot;|&quot;us-west-2&quot;|&quot;ca-central-1&quot;|&quot;eu-west-1&quot;|&quot;eu-west-2&quot;|&quot;eu-central-1&quot;|&quot;ap-southeast-1&quot;|&quot;ap-southeast-2&quot;|&quot;ap-northeast-1&quot;|&quot;ap-northeast-2&quot;|&quot;sa-east-1&quot;|&quot;cn-north-1&quot;|&quot;ap-south-1&quot;,
+        &quot;GeoLocation&quot;: {
+          &quot;ContinentCode&quot;: &quot;string&quot;,
+          &quot;CountryCode&quot;: &quot;string&quot;,
+          &quot;SubdivisionCode&quot;: &quot;string&quot;
+        },
+        &quot;Failover&quot;: &quot;PRIMARY&quot;|&quot;SECONDARY&quot;,
+        &quot;TTL&quot;: long,
+        &quot;ResourceRecords&quot;: [
+          {
+            &quot;Value&quot;: &quot;string&quot;
+          }
+          ...
+        ],
+        &quot;AliasTarget&quot;: {
+          &quot;HostedZoneId&quot;: &quot;string&quot;,
+          &quot;DNSName&quot;: &quot;string&quot;,
+          &quot;EvaluateTargetHealth&quot;: true|false
+        },
+        &quot;HealthCheckId&quot;: &quot;string&quot;,
+        &quot;TrafficPolicyInstanceId&quot;: &quot;string&quot;
+      }
+    }
+    ...
+  ]
+}
+</code></pre>
+
+<h2 id="cloudwatch">CloudWatch</h2>
+
+<h3 id="list-metrics">list-metrics</h3>
+
+<pre><code>aws cloudwatch list-metrics --namespace &quot;AWS/ELB&quot;
+#AWS Namespaces
+http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-namespaces.html
+</code></pre>
+
+<h3 id="get-metrics-statistics">get-metrics-statistics</h3>
+
+<pre><code>aws cloudwatch get-metric-statistics --metric-name CPUUtilization --start-time 2014-04-08T23:18:00 --end-time 2014-04-09T23:18:00 --period 3600 --namespace AWS/EC2 --statistics Maximum --dimensions Name=InstanceId,Value=i-abcdef
+</code></pre>
+
+<h2 id="decode-authorization-message">decode-authorization-message</h2>
+
+<pre><code>aws sts decode-authorization-message &quot;MESSAGES&quot;
+</code></pre>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/post/git/" title="Git"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/post/apache-http-advanced/" title="Apache Http Advanced" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1528491832"></script>
+    <script src="/js/perfect-scrollbar.min.js?1528491832"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1528491832"></script>
+    <script src="/js/jquery.sticky.js?1528491832"></script>
+    <script src="/js/featherlight.min.js?1528491832"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1528491832"></script>
+    <script src="/js/highlight.pack.js?1528491832"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1528491832"></script>
+    <script src="/js/learn.js?1528491832"></script>
+    <script src="/js/hugo-learn.js?1528491832"></script>
+
+    <link href="/mermaid/mermaid.css?1528491832" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1528491832"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+
