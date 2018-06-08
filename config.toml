@@ -1,38 +1,73 @@
-baseURL = "/"
-languageCode = "en-us"
-title = "William's Blog"
-theme = "mainroad"
-disqusShortname = "" # Enable comments by entering your Disqus shortname
-googleAnalytics = "" # Enable Google Analytics by entering your tracking id
-canonifyurls = true
-paginate = 5
+baseURL = "https://blog.twasa.cf/"
+languageCode = "en-US"
+defaultContentLanguage = "en"
 
-[Author] # Used in authorbox
-  name = "William Wang"
+title = "Hugo Learn Documentation"
+theme = "hugo-theme-learn"
+themesdir = "./themes"
+metaDataFormat = "yaml"
+defaultContentLanguageInSubdir= true
 
 [params]
-  description = "William's Blog"
-  readmore = true # Show "Read more" button in list if true
-  leftsidebar = false # Move sidebar to the left side if true
-  authorbox = true # Show authorbox at bottom of pages if true
-  opengraph = true
-  post_navigation = true # Show post navigation at bottom of pages if true
-  postSections = ["post"] # the section pages to show on home page and the "Recent articles" widget
-  #postSections = ["blog", "news"] # alternative that shows more than one section's pages
-  #dateformat = "2006-01-02" # change the format of dates
+  editURL = "https://blog.twasa.cf"
+  description = "William's blog"
+  author = "Mathieu Cornic"
+  showVisitedLinks = true
+  pluralizeListTitles = false
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
 
-[Params.widgets]
-  search = true # Enable "Search" widget
-  recent_articles = true # Enable "Recent articles" widget
-  recent_articles_num = 5 # Set the number of articles in the "Recent articles" widget
-  categories = true # Enable "Categories" widget
-  tags = true # Enable "Tags" widget
-  tags_counter = false # Enable counter for each tag in "Tags" widget (disabled by default)
+[Languages]
+[Languages.en]
+title = "William's blog"
+weight = 1
+languageName = "English"
 
-  # Enable "Social" widget, if any of "social_*" set a value
-  #social_facebook = "username"
-  #social_twitter = "username"
-  #social_linkedin = "username"
-  social_github = "twasa"
-  #social_email = "example@example.com"
-  #social_google_plus = "profileid"
+[[Languages.en.menu.shortcuts]] 
+name = "<i class='fa fa-fw fa-github'></i> Github repo"
+identifier = "ds"
+url = "https://github.com/twasa"
+weight = 10
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fa fa-fw fa-camera'></i> Showcases"
+url = "showcase"
+weight = 11
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fa fa-fw fa-bookmark'></i> Hugo Documentation"
+identifier = "hugodoc"
+url = "https://gohugo.io/"
+weight = 20
+
+#[[Languages.en.menu.shortcuts]]
+#name = "<i class='fa fa-fw fa-bullhorn'></i> Credits"
+#url = "/credits"
+#weight = 30
+
+#[Languages.fr]
+#title = "Documentation du thème Hugo Learn"
+#weight = 2
+#languageName = "Français"
+#
+#[[Languages.fr.menu.shortcuts]]
+#name = "<i class='fa fa-fw fa-github'></i> Repo Github"
+#identifier = "ds"
+#url = "https://github.com/matcornic/hugo-theme-learn"
+#weight = 10
+#
+#[[Languages.fr.menu.shortcuts]]
+#name = "<i class='fa fa-fw fa-camera'></i> Vitrine"
+#url = "/showcase"
+#weight = 11
+#
+#[[Languages.fr.menu.shortcuts]]
+#name = "<i class='fa fa-fw fa-bookmark'></i> Documentation Hugo"
+#identifier = "hugodoc"
+#url = "https://gohugo.io/"
+#weight = 20
+#
+#[[Languages.fr.menu.shortcuts]]
+#name = "<i class='fa fa-fw fa-bullhorn'></i> Crédits"
+#url = "/credits"
+#weight = 30
