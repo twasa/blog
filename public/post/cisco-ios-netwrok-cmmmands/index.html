@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.39" />
+    <meta name="description" content="William&#39;s blog">
+<meta name="author" content="Mathieu Cornic">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <title>Cisco Ios Netwrok Cmmmands :: William&#39;s blog</title>
+    
+    
+    <link href="/css/nucleus.css?1529424680" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1529424680" rel="stylesheet">
+    <link href="/css/hybrid.css?1529424680" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1529424680" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1529424680" rel="stylesheet">
+    <link href="/css/auto-complete.css?1529424680" rel="stylesheet">
+    <link href="/css/theme.css?1529424680" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1529424680" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1529424680"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/post/cisco-ios-netwrok-cmmmands/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1529424680"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1529424680"></script>
+<script type="text/javascript">
+    
+        var baseurl = '\/';
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1529424680"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/post/" title="Posts" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/post/">
+          Posts
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/consul/" title="Consul" class="dd-item ">
+        <a href="/post/consul/">
+        Consul
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/powershell/" title="Powershell" class="dd-item ">
+        <a href="/post/powershell/">
+        Powershell
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/docker/" title="Docker Memo(drafting)" class="dd-item ">
+        <a href="/post/docker/">
+        Docker Memo(drafting)
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/jupyterhub/" title="Jupyterhub" class="dd-item ">
+        <a href="/post/jupyterhub/">
+        Jupyterhub
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/git/" title="Git" class="dd-item ">
+        <a href="/post/git/">
+        Git
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/aws-cli/" title="Aws Cli" class="dd-item ">
+        <a href="/post/aws-cli/">
+        Aws Cli
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/apache-http-advanced/" title="Apache Http Advanced" class="dd-item ">
+        <a href="/post/apache-http-advanced/">
+        Apache Http Advanced
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/cisco-ios-netwrok-cmmmands/" title="Cisco Ios Netwrok Cmmmands" class="dd-item active">
+        <a href="/post/cisco-ios-netwrok-cmmmands/">
+        Cisco Ios Netwrok Cmmmands
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/apache-tomcat/" title="Apache Tomcat" class="dd-item ">
+        <a href="/post/apache-tomcat/">
+        Apache Tomcat
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/lnmp/" title="CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP" class="dd-item ">
+        <a href="/post/lnmp/">
+        CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/flask-quick-start-guide/" title="Flask Quick Start Guide" class="dd-item ">
+        <a href="/post/flask-quick-start-guide/">
+        Flask Quick Start Guide
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/hugo-how-to/" title="Hugo A Fast and Flexible Website Generator" class="dd-item ">
+        <a href="/post/hugo-how-to/">
+        Hugo A Fast and Flexible Website Generator
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/mdadm-rescue/" title="" class="dd-item ">
+        <a href="/post/mdadm-rescue/">
+        
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/programing/" title="Programings" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/programing/">
+          Programings
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/tools/vscode-sync/" title="Vscode Sync" class="dd-item ">
+        <a href="/programing/tools/vscode-sync/">
+        Vscode Sync
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-timezone-convert/" title="Python Timezone Convert example code" class="dd-item ">
+        <a href="/programing/python/python-timezone-convert/">
+        Python Timezone Convert example code
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-web-automation-test/" title="Python Web Automation Test" class="dd-item ">
+        <a href="/programing/python/python-web-automation-test/">
+        Python Web Automation Test
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-soap-client-suds/" title="A Python SOAP client sample code" class="dd-item ">
+        <a href="/programing/python/python-soap-client-suds/">
+        A Python SOAP client sample code
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-package/" title="Python Package" class="dd-item ">
+        <a href="/programing/python/python-package/">
+        Python Package
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-virtualenv/" title="Python Virtualenv" class="dd-item ">
+        <a href="/programing/python/python-virtualenv/">
+        Python Virtualenv
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-html-entity/" title="Python HTML Entity decode and encode" class="dd-item ">
+        <a href="/programing/python/python-html-entity/">
+        Python HTML Entity decode and encode
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/linux/" title="Linuxes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/linux/">
+          Linuxes
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/openssl/" title="openssl" class="dd-item ">
+        <a href="/linux/openssl/">
+        openssl
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/logrotation/" title="Linux Logrotation" class="dd-item ">
+        <a href="/linux/logrotation/">
+        Linux Logrotation
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/sed/" title="sed" class="dd-item ">
+        <a href="/linux/sed/">
+        sed
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/regexp/" title="Regular Expression" class="dd-item ">
+        <a href="/linux/regexp/">
+        Regular Expression
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/find/" title="find" class="dd-item ">
+        <a href="/linux/find/">
+        find
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/xargs/" title="xargs" class="dd-item ">
+        <a href="/linux/xargs/">
+        xargs
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/grep/" title="Grep" class="dd-item ">
+        <a href="/linux/grep/">
+        Grep
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/db/" title="DBs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/db/">
+          DBs
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/db/mongodb/" title="Mongodb basic" class="dd-item ">
+        <a href="/db/mongodb/">
+        Mongodb basic
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/db/my-db/" title="MySQL and MariaDB memo" class="dd-item ">
+        <a href="/db/my-db/">
+        MySQL and MariaDB memo
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/devops/" title="DevOps" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devops/">
+          DevOps
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/ansible/" title="Ansible" class="dd-item ">
+        <a href="/devops/ansible/">
+        Ansible
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/twasa"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://blog.twasa.cf/showcase"><i class='fa fa-fw fa-camera'></i> Showcases</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://gohugo.io/"><i class='fa fa-fw fa-bookmark'></i> Hugo Documentation</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+       
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fa fa-fw fa-history"></i> Clear History</a></li>         
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fa fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://blog.twasa.cfpost/cisco-ios-netwrok-cmmmands.md" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>About</a> > <a href='/post/'>Posts</a> > Cisco Ios Netwrok Cmmmands
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#狀態查看">狀態查看</a></li>
+<li><a href="#基本操作">基本操作</a></li>
+<li><a href="#設定">設定</a></li>
+<li><a href="#連線管理設定">連線管理設定</a></li>
+<li><a href="#aaa設定">AAA設定</a></li>
+<li><a href="#權限設定">權限設定</a></li>
+<li><a href="#config-file-backup-to-ftp-設定">config file backup to FTP 設定</a></li>
+<li><a href="#連線測試">連線測試</a></li>
+<li><a href="#netflow-ce-設定">NetFlow CE 設定</a></li>
+<li><a href="#router-gre-tunnel-設定">Router GRE Tunnel 設定</a></li>
+<li><a href="#nhrp-ce-設定">NHRP CE 設定</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Cisco Ios Netwrok Cmmmands</h1>
+          
+
+        
+
+
+
+
+<h2 id="狀態查看">狀態查看</h2>
+
+<ul>
+<li>show startup-config</li>
+<li>show running-config</li>
+<li>show version</li>
+<li>show vlan id</li>
+<li>show ip route</li>
+<li>show ip nhrp</li>
+<li>show crypto engine connection active</li>
+<li>sh run | inc ip route</li>
+<li>查看連線的TCP session
+<code>
+show ip sockets detail
+</code></li>
+<li>查IP流量
+<code>
+conf t
+interface xxx
+ip accounting
+end
+sh ip accounting
+備註, 查完記得no掉, 否則會增加cpu的負擔!
+conf t
+interface xxx
+no ip accounting
+</code></li>
+</ul>
+
+<h2 id="基本操作">基本操作</h2>
+
+<ul>
+<li>從User Mode進入Privileged Mode</li>
+<li>enable</li>
+<li>從Privileged Mode進入Global Configuration Mode</li>
+<li>configure terminal</li>
+<li>儲存設定
+<code>
+write
+or 
+copy running-config startup-config
+</code></li>
+</ul>
+
+<h2 id="設定">設定</h2>
+
+<ul>
+<li>介面IP設定</li>
+<li>interface fastEthernet 0/0</li>
+<li>ip address IP位置 子網路遮罩</li>
+
+<li><p>no shutdown</p></li>
+
+<li><p>路由設定</p></li>
+
+<li><p>ip route IP位置 子網路遮罩 路由IP位置</p></li>
+
+<li><p>ip route IP位置 子網路遮罩 介面名稱</p></li>
+
+<li><p>PPPoE設定</p></li>
+
+<li><p>interface Dialer1</p></li>
+
+<li><p>mtu 1492</p></li>
+
+<li><p>ip address negotiated</p></li>
+
+<li><p>ip nat outside</p></li>
+
+<li><p>no ip virtual-reassembly</p></li>
+
+<li><p>encapsulation ppp</p></li>
+
+<li><p>ip tcp adjust-mss 1300</p></li>
+
+<li><p>dialer pool 1</p></li>
+
+<li><p>dialer-group 1</p></li>
+
+<li><p>ppp pap sent-username XXXX password 0 XXXX</p></li>
+
+<li><p>exit</p></li>
+
+<li><p>interface FastEthernet x/x</p></li>
+
+<li><p>description PPPOE</p></li>
+
+<li><p>no ip address</p></li>
+
+<li><p>duplex auto</p></li>
+
+<li><p>speed auto</p></li>
+
+<li><p>pppoe enable group global</p></li>
+
+<li><p>pppoe-client dial-pool-number 1</p></li>
+</ul>
+
+<h2 id="連線管理設定">連線管理設定</h2>
+
+<ul>
+<li>line vty 0 4</li>
+<li>tra in telnet ssh</li>
+</ul>
+
+<h2 id="aaa設定">AAA設定</h2>
+
+<ul>
+<li>aaa new-model</li>
+<li>aaa authentication login AAAXXX local group radius</li>
+<li>aaa authorization console</li>
+<li>aaa authorization exec AAAXXX  local group radius</li>
+<li>aaa session-id common</li>
+<li>radius-server host A.B.C.D auth-port XXXX acct-port XXXX</li>
+<li>radius-server key 7 XXXXXX</li>
+<li>line vty 0 4</li>
+<li>authorization exec AAAXXX</li>
+<li>login authentication AAAXXX</li>
+<li>exit</li>
+<li>line vty 5 15</li>
+<li>authorization exec AAAXXX</li>
+<li>login authentication AAAXXX</li>
+<li>exit</li>
+<li>ip radius source-interface 介面名稱</li>
+</ul>
+
+<h2 id="權限設定">權限設定</h2>
+
+<ul>
+<li>privilege exec level 7 telnet</li>
+<li>privilege exec level 7 ping ip</li>
+<li>privilege exec level 7 ping</li>
+<li>privilege exec level 7 show startup-config</li>
+<li>privilege exec level 7 show running-config</li>
+<li>privilege exec level 7 show</li>
+</ul>
+
+<h2 id="config-file-backup-to-ftp-設定">config file backup to FTP 設定</h2>
+
+<ul>
+<li>archive</li>
+<li>path <a href="ftp://10.192.1.139/SOME_PATH/$h">ftp://10.192.1.139/SOME_PATH/$h</a></li>
+<li>write-memory</li>
+<li>time-period 1440</li>
+<li>exit</li>
+<li>ip ftp source-interface 介面名稱</li>
+<li>ip ftp username XXXX</li>
+<li>ip ftp password 7 XXXXXXXX</li>
+<li>exit</li>
+</ul>
+
+<h2 id="連線測試">連線測試</h2>
+
+<ul>
+<li>ping 10.192.1.4 source 介面名稱</li>
+<li>ping 10.192.1.139 source 介面名稱</li>
+</ul>
+
+<h2 id="netflow-ce-設定">NetFlow CE 設定</h2>
+
+<ul>
+<li>snmp-server community cnlinktw RO</li>
+<li>show ip flow export : Shows the current NetFlow configuration</li>
+<li>interface Loopback0</li>
+<li>description Netflow</li>
+<li>ip address A.B.C.D 255.255.255.255</li>
+<li>ip flow-export source Loopback0</li>
+<li>ip flow-export version 5</li>
+<li>ip flow-export destination collectorIP位址collectorPort</li>
+</ul>
+
+<h2 id="router-gre-tunnel-設定">Router GRE Tunnel 設定</h2>
+
+<ul>
+<li>interface Tunnel xxx</li>
+<li>description &ldquo;Primary Tunnel description&rdquo;</li>
+<li>ip address IP位址 子網路遮罩</li>
+<li>tunnel source IP位址</li>
+<li>tunnel destination IP位址</li>
+</ul>
+
+<h2 id="nhrp-ce-設定">NHRP CE 設定</h2>
+
+<ul>
+<li>interface Tunnel1009</li>
+<li>description &ldquo;NHRP description&rdquo;</li>
+<li>ip address NHCsPrivateIP位址 255.255.255.252</li>
+<li>no ip redirects</li>
+<li>ip nhrp authentication tp001542</li>
+<li>ip nhrp map 10.195.252.26 NHSsPublicIP位址</li>
+<li>ip nhrp map multicast NHSsPublicIP位址</li>
+<li>ip nhrp network-id 1542</li>
+<li>ip nhrp holdtime 60</li>
+<li>ip nhrp nhs NHSsIP</li>
+<li>ip tcp adjust-mss 1460</li>
+<li>tunnel source 介面名稱</li>
+<li>tunnel mode gre multipoint</li>
+<li>tunnel key 1542</li>
+</ul>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/post/apache-http-advanced/" title="Apache Http Advanced"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/post/apache-tomcat/" title="Apache Tomcat" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1529424680"></script>
+    <script src="/js/perfect-scrollbar.min.js?1529424680"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1529424680"></script>
+    <script src="/js/jquery.sticky.js?1529424680"></script>
+    <script src="/js/featherlight.min.js?1529424680"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1529424680"></script>
+    <script src="/js/highlight.pack.js?1529424680"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1529424680"></script>
+    <script src="/js/learn.js?1529424680"></script>
+    <script src="/js/hugo-learn.js?1529424680"></script>
+
+    <link href="/mermaid/mermaid.css?1529424680" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1529424680"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

@@ -1,0 +1,1942 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.39" />
+    <meta name="description" content="William&#39;s blog">
+<meta name="author" content="Mathieu Cornic">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <title>Ansible :: William&#39;s blog</title>
+    
+    
+    <link href="/css/nucleus.css?1529424680" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1529424680" rel="stylesheet">
+    <link href="/css/hybrid.css?1529424680" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1529424680" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1529424680" rel="stylesheet">
+    <link href="/css/auto-complete.css?1529424680" rel="stylesheet">
+    <link href="/css/theme.css?1529424680" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1529424680" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1529424680"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/devops/ansible/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1529424680"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1529424680"></script>
+<script type="text/javascript">
+    
+        var baseurl = '\/';
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1529424680"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/post/" title="Posts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/post/">
+          Posts
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/consul/" title="Consul" class="dd-item ">
+        <a href="/post/consul/">
+        Consul
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/powershell/" title="Powershell" class="dd-item ">
+        <a href="/post/powershell/">
+        Powershell
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/docker/" title="Docker Memo(drafting)" class="dd-item ">
+        <a href="/post/docker/">
+        Docker Memo(drafting)
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/jupyterhub/" title="Jupyterhub" class="dd-item ">
+        <a href="/post/jupyterhub/">
+        Jupyterhub
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/git/" title="Git" class="dd-item ">
+        <a href="/post/git/">
+        Git
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/aws-cli/" title="Aws Cli" class="dd-item ">
+        <a href="/post/aws-cli/">
+        Aws Cli
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/apache-http-advanced/" title="Apache Http Advanced" class="dd-item ">
+        <a href="/post/apache-http-advanced/">
+        Apache Http Advanced
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/cisco-ios-netwrok-cmmmands/" title="Cisco Ios Netwrok Cmmmands" class="dd-item ">
+        <a href="/post/cisco-ios-netwrok-cmmmands/">
+        Cisco Ios Netwrok Cmmmands
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/apache-tomcat/" title="Apache Tomcat" class="dd-item ">
+        <a href="/post/apache-tomcat/">
+        Apache Tomcat
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/lnmp/" title="CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP" class="dd-item ">
+        <a href="/post/lnmp/">
+        CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/flask-quick-start-guide/" title="Flask Quick Start Guide" class="dd-item ">
+        <a href="/post/flask-quick-start-guide/">
+        Flask Quick Start Guide
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/hugo-how-to/" title="Hugo A Fast and Flexible Website Generator" class="dd-item ">
+        <a href="/post/hugo-how-to/">
+        Hugo A Fast and Flexible Website Generator
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/mdadm-rescue/" title="" class="dd-item ">
+        <a href="/post/mdadm-rescue/">
+        
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/programing/" title="Programings" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/programing/">
+          Programings
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/tools/vscode-sync/" title="Vscode Sync" class="dd-item ">
+        <a href="/programing/tools/vscode-sync/">
+        Vscode Sync
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-timezone-convert/" title="Python Timezone Convert example code" class="dd-item ">
+        <a href="/programing/python/python-timezone-convert/">
+        Python Timezone Convert example code
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-web-automation-test/" title="Python Web Automation Test" class="dd-item ">
+        <a href="/programing/python/python-web-automation-test/">
+        Python Web Automation Test
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-soap-client-suds/" title="A Python SOAP client sample code" class="dd-item ">
+        <a href="/programing/python/python-soap-client-suds/">
+        A Python SOAP client sample code
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-package/" title="Python Package" class="dd-item ">
+        <a href="/programing/python/python-package/">
+        Python Package
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-virtualenv/" title="Python Virtualenv" class="dd-item ">
+        <a href="/programing/python/python-virtualenv/">
+        Python Virtualenv
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-html-entity/" title="Python HTML Entity decode and encode" class="dd-item ">
+        <a href="/programing/python/python-html-entity/">
+        Python HTML Entity decode and encode
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/linux/" title="Linuxes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/linux/">
+          Linuxes
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/openssl/" title="openssl" class="dd-item ">
+        <a href="/linux/openssl/">
+        openssl
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/logrotation/" title="Linux Logrotation" class="dd-item ">
+        <a href="/linux/logrotation/">
+        Linux Logrotation
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/sed/" title="sed" class="dd-item ">
+        <a href="/linux/sed/">
+        sed
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/regexp/" title="Regular Expression" class="dd-item ">
+        <a href="/linux/regexp/">
+        Regular Expression
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/find/" title="find" class="dd-item ">
+        <a href="/linux/find/">
+        find
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/xargs/" title="xargs" class="dd-item ">
+        <a href="/linux/xargs/">
+        xargs
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/grep/" title="Grep" class="dd-item ">
+        <a href="/linux/grep/">
+        Grep
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/db/" title="DBs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/db/">
+          DBs
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/db/mongodb/" title="Mongodb basic" class="dd-item ">
+        <a href="/db/mongodb/">
+        Mongodb basic
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/db/my-db/" title="MySQL and MariaDB memo" class="dd-item ">
+        <a href="/db/my-db/">
+        MySQL and MariaDB memo
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/devops/" title="DevOps" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/devops/">
+          DevOps
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/ansible/" title="Ansible" class="dd-item active">
+        <a href="/devops/ansible/">
+        Ansible
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/twasa"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://blog.twasa.cf/showcase"><i class='fa fa-fw fa-camera'></i> Showcases</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://gohugo.io/"><i class='fa fa-fw fa-bookmark'></i> Hugo Documentation</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+       
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fa fa-fw fa-history"></i> Clear History</a></li>         
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fa fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://blog.twasa.cfDevOps/ansible.md" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>About</a> > <a href='/devops/'>DevOps</a> > Ansible
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li><a href="#concept">Concept</a></li>
+<li><a href="#requirement">Requirement</a></li>
+<li><a href="#nameing">Nameing</a></li>
+<li><a href="#ssh-connection-issue">SSH connection issue</a></li>
+<li><a href="#module">module</a>
+<ul>
+<li><a href="#module-name-and-arguments">module_name and arguments</a></li>
+<li><a href="#inventory-for-all-hosts-ssh-settings">inventory for all hosts ssh settings</a></li>
+<li><a href="#inventory-for-differentiate-staging-vs-production">inventory for Differentiate Staging vs Production</a></li>
+</ul></li>
+<li><a href="#syntax">syntax</a>
+<ul>
+<li><a href="#ansible-syntax">ansible syntax</a></li>
+<li><a href="#example">example</a></li>
+<li><a href="#ansible-playbook-syntax">ansible-playbook syntax</a></li>
+<li><a href="#ansible-vault-syntax">ansible-vault syntax</a></li>
+<li><a href="#ansible-playboox-examples">ansible playboox examples</a>
+<ul>
+<li><a href="#service">service</a></li>
+<li><a href="#shell">shell</a></li>
+<li><a href="#copy-unzip-file">copy, unzip, file</a></li>
+<li><a href="#handlers-if-nothing-notifies-a-handler-it-will-not-run">Handlers,  If nothing notifies a handler, it will not run</a></li>
+<li><a href="#retry-task">retry task</a></li>
+</ul></li>
+<li><a href="#ansible-playbook-with-sudo-and-vaults">ansible-playbook with sudo and vaults</a></li>
+<li><a href="#toc_20">```</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Ansible</h1>
+          
+
+        
+
+
+
+
+<h1 id="concept">Concept</h1>
+
+<ul>
+<li>功能：IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates.</li>
+<li>管理方式：<strong>push-based</strong> Ansible manages machines in an <strong>agent-less</strong> manner. Ansible by default manages machines <strong>over the SSH protocol</strong>. Because OpenSSH is one of the most peer-reviewed open source components, security exposure is greatly reduced.</li>
+</ul>
+
+<h1 id="requirement">Requirement</h1>
+
+<ul>
+<li>Control Machine: SSH client and Linux system</li>
+<li>Managed Node: Python 2.5+ and SSH service, or windows supprt winrm</li>
+</ul>
+
+<h1 id="nameing">Nameing</h1>
+
+<ul>
+<li>Control Machine</li>
+<li>Managed Node</li>
+<li>inventory
+
+<ul>
+<li>定義Managed Node主機位址與群組</li>
+<li>設定SSH 連線資訊、SSH金鑰、使用者名稱&hellip;.等</li>
+</ul></li>
+<li>Ad-Hoc command: 簡短一次性的指令</li>
+<li>PlayBook: 使用YAML格式撰寫的腳本，可使用Jinja(template系統)
+
+<ul>
+<li>一個PlayBook可有多個Play跟Task</li>
+<li>Play: 要跑的大項目標，與Managed Node</li>
+<li>Task: 要做的工作細項</li>
+<li>module: 已寫好的自動化模組</li>
+<li>Roles: 是一種分類 &amp; 重用的概念，透過將 vars, tasks, files, templates, handler … 等等根據不同的目的(例如：web server、db server)，規劃後至於獨立目錄中，後續便可以利用 include 的概念來使用。</li>
+</ul></li>
+<li>Galayx:  是一個搜尋、分享與下載 roles的網站</li>
+<li>facts: 實際上是ansible的setup module功能，用來取得Managed Node的系統變數資訊</li>
+</ul>
+
+<h1 id="ssh-connection-issue">SSH connection issue</h1>
+
+<ul>
+<li>關閉SSH key host 檢查：在ansible.cfg內 host_key_checking = False</li>
+<li>關閉gathering facts: 所有playbook不管有沒有設定gathering facts tasks，都會執行，可以在playbook中加入 gather_facts: no</li>
+<li>SSH PIPElinING: 預設為關閉，所以關閉的原因是要相容不同的 sudo設定，若不使用sudo可以在ansible.cfg內開啟 pipelining=True</li>
+<li>ControlPersist: 即持久化socket一次驗證，多次通信，只需要修改SSH client也就是Ansible Control Machine本身的SSH 設定
+
+<ul>
+<li>~/.ssh/config</li>
+</ul></li>
+</ul>
+
+<pre><code>Host *
+Compression yes
+TCPKeepAlive yes
+ServerAliveInterval 120
+ServerAliveCountMax 5
+ControlMaster auto
+ControlPath ~/.ssh/sockets/%r@%h-%p
+ControlPersist 1200
+
+</code></pre>
+
+<h1 id="module">module</h1>
+
+<h2 id="module-name-and-arguments">module_name and arguments</h2>
+
+<pre><code>ping            無參數
+comand          -a 'ifconfig'
+user            -a 'name= state={present(創建)|absent(刪除)} force=(是否強制操作刪除傢目錄) system= uid= shell= home='
+group           -a 'name= state={present|absent} gid= system=(系統組)'
+cron            -a 'name= state= minute= hour= day= month= weekday= job='
+file            -a 'path= mode= owner= group= state={file|directory|link|hard|touch|absent} src=(link，鏈接至何處)'
+copy            -a 'dest=(遠程主機上路徑) src=(本地主機路徑) content=(直接指明內容) owner= group= mode='
+yum             -a 'name= state={present(已安裝)|latest(最新版)|absent(未安裝)}'
+service         -a 'name= state=started|restarted|stopped|reloaded'
+unarchive       -a 'src= dest= remote_src={True|False}'
+lineinfile      -a ''
+setup           無參數
+</code></pre>
+
+<h2 id="inventory-for-all-hosts-ssh-settings">inventory for all hosts ssh settings</h2>
+
+<pre><code>[all:vars]
+ansible_connection=ssh
+ansible_ssh_user='{{ user }}'
+ansible_ssh_pass='{{ password }}'
+ansible_become_pass='{{ password }}'
+</code></pre>
+
+<h2 id="inventory-for-differentiate-staging-vs-production">inventory for Differentiate Staging vs Production</h2>
+
+<pre><code># file: production
+
+[atlanta-webservers]
+www-atl-1.example.com
+www-atl-2.example.com
+
+[boston-webservers]
+www-bos-1.example.com
+www-bos-2.example.com
+
+[atlanta-dbservers]
+db-atl-1.example.com
+db-atl-2.example.com
+
+[boston-dbservers]
+db-bos-1.example.com
+
+# webservers in all geos
+[webservers:children]
+atlanta-webservers
+boston-webservers
+
+# dbservers in all geos
+[dbservers:children]
+atlanta-dbservers
+boston-dbservers
+
+# everything in the atlanta geo
+[atlanta:children]
+atlanta-webservers
+atlanta-dbservers
+
+# everything in the boston geo
+[boston:children]
+boston-webservers
+boston-dbservers
+</code></pre>
+
+<h1 id="syntax">syntax</h1>
+
+<h2 id="ansible-syntax">ansible syntax</h2>
+
+<pre><code>ansible &lt;Patterns&gt; -m &lt;module_name&gt; -a &lt;arguments&gt; &lt;Options&gt;
+
+Options:
+--list-hosts        outputs a list of matching hosts
+--module-name       module name to execute (default=command)
+--args              module arguments
+--user              connect as this user
+--ask-pass          Prompt for the connection password
+--become            Use privilege escalation
+--ask-become-pass   Ask for privilege escalation password
+--inventory         The PATH to the inventory, which defaults to /etc/ansible/hosts
+--limit             further limit selected hosts to an additional pattern or comma separated host list.
+--check             Check mode is just a simulation it will not make any changes on remote systems
+--verbose           verbose mode (-vvv for more, -vvvv to enable connection debugging)
+--background=       run asynchronously, failing after X seconds(default=N/A)
+--poll              set the poll interval if using -B (default=15)
+--forks             specify number of parallel processes to use(default=5)
+--extra-vars        Extra variables to inject into a playbook, in key=value key=value format or as quoted YAML/JSON (hashes and arrays). To load variables from a file, specify the file preceded by @ (e.g. @vars.yml).
+</code></pre>
+
+<h2 id="example">example</h2>
+
+<pre><code>ansible localhost -m ping #連本機自己,無須驗證
+ansible localhost -m ping -i &quot;localhost,&quot; -u 帳號 -k 密碼 --key-file=私鑰檔案
+</code></pre>
+
+<h2 id="ansible-playbook-syntax">ansible-playbook syntax</h2>
+
+<pre><code>ansible-playbook playbook.yml &lt;Options&gt;
+
+Options:
+--check             Check mode is just a simulation it will not make any changes on remote systems
+--inventory         The PATH to the inventory, which defaults to /etc/ansible/hosts
+--limit             further limit selected hosts to an additional pattern
+--list-hosts        outputs a list of matching hosts
+--syntax-check      perform a syntax check on the playbook, but do not execute it
+--tags=TAGS         only run plays and tasks tagged with these values
+--flush-cache       clear the fact cache
+</code></pre>
+
+<h2 id="ansible-vault-syntax">ansible-vault syntax</h2>
+
+<pre><code>ansible-vault [create|decrypt|edit|encrypt|rekey|view] [--help] [options] vaultfile.yml
+
+Options:
+create foo.yml      建立加密 (Encrypted) 檔案。
+edit foo.yml        編輯加密檔案內容。
+rekey foo.yml       更換加密金鑰 (密碼)。
+encrypt foo.yml     對已存在的明文檔案進行加密
+decrypt foo.yml     解開 (Decrypt) 已加密檔案。
+view foo.yml        檢視已加密的檔案內容。
+</code></pre>
+
+<h2 id="ansible-playboox-examples">ansible playboox examples</h2>
+
+<h3 id="service">service</h3>
+
+<pre><code>---
+- hosts: all
+  gather_facts: no
+  tasks:
+  - name: ensure enable_twrd is running
+    service: name=enable_twrd state=started
+</code></pre>
+
+<h3 id="shell">shell</h3>
+
+<pre><code>---
+- hosts: all
+  gather_facts: no
+  tasks:
+  - name: enable twrd account
+    shell: /etc/init.d/enable_twrd start
+  - name: check twrd status
+    shell: /etc/init.d/enable_twrd status
+    register: ps
+  - debug: var=ps.stdout_lines
+</code></pre>
+
+<h3 id="copy-unzip-file">copy, unzip, file</h3>
+
+<pre><code>---
+- hosts: all
+  gather_facts: no
+  tasks:
+  - name: copy news archive file to target news path
+    copy:
+      src: /root/news.zip
+      dest: /mydlink/portal/web/_news/news.zip
+  - name: unzip news archive file to target news path
+    unarchive:
+      src: /mydlink/portal/web/_news/news.zip
+      dest: /mydlink/portal/web/_news/
+      remote_src: True
+  - name: change owner and permission to news files
+    file:
+      path: /mydlink/portal/web/_news/
+      owner: webuser
+      group: daemon
+      mode: 0750
+      recurse: yes
+</code></pre>
+
+<h3 id="handlers-if-nothing-notifies-a-handler-it-will-not-run">Handlers,  If nothing notifies a handler, it will not run</h3>
+
+<pre><code>- name: template configuration file
+  template: src=template.j2 dest=/etc/foo.conf
+  notify:
+     - restart memcached
+     - restart apache
+
+  handlers:
+    - name: restart memcached
+      service: name=memcached state=restarted
+    - name: restart apache
+      service: name=apache state=restarted
+</code></pre>
+
+<h3 id="retry-task">retry task</h3>
+
+<ul>
+<li>Retry task 10 times with interval 1 second until return code of the command will not be 0. Ignore if even all tries will fail.
+```
+&mdash;</li>
+<li>hosts: all
+connection: local
+tasks:
+
+<ul>
+<li>shell: exit 1
+register: task_result
+until: task_result.rc == 0
+retries: 10
+delay: 1
+ignore_errors: yes</li>
+</ul></li>
+</ul>
+
+<pre><code>
+### Delegation, Rolling Updates, and Local Actions
+- By default, Ansible will try to manage all of the machines referenced in a play in parallel. For a rolling updates use case, you can define how many hosts Ansible should manage at a single time by using the ‘’serial’’ keyword:
+- examples:
+
+</code></pre>
+
+<hr />
+
+<ul>
+<li>name: test play
+hosts: webservers
+service: name=httpd state=started
+serial: &ldquo;30%&rdquo;
+&mdash;</li>
+<li>name: test play
+hosts: webservers
+service: name=httpd state=started
+serial: 3
+&mdash;</li>
+<li>name: test play
+hosts: webservers
+serial:
+
+<ul>
+<li>1</li>
+<li>5</li>
+<li>&ldquo;20%&rdquo;
+```</li>
+</ul></li>
+</ul>
+
+<h2 id="ansible-playbook-with-sudo-and-vaults">ansible-playbook with sudo and vaults</h2>
+
+<ul>
+<li><p>hosts</p>
+
+<pre><code>[all:vars]
+ansible_connection=ssh
+ansible_ssh_user='{{ ansible_ssh_user }}'
+ansible_ssh_pass='{{ ansible_ssh_pass }}'
+ansible_become_pass='{{ ansible_become_pass }}'
+</code></pre></li>
+
+<li><p>yml</p>
+
+<h2 id="toc_20">```</h2>
+
+<ul>
+<li>hosts: all
+gather_facts: no
+tasks:</li>
+<li>name: restart sshd service
+shell: /etc/init.d/sshd restart</li>
+<li>name: check sshd status
+```</li>
+</ul></li>
+
+<li><p>vaults</p>
+
+<ul>
+<li>ansible-vault edit YOUR-VAULT-FILE
+<code>
+ansible_ssh_user: YOUR_USER_NAME
+ansible_ssh_pass: 'YOUR_PASSWORD'
+ansible_become_pass: 'YOUR_SUDO_PASSWORD'
+</code></li>
+</ul></li>
+
+<li><p>run playbook with log output</p>
+
+<pre><code>echo &quot;`ansible-playbook YOUR_PLAYBOOK.yml --inventory &quot;localhost,&quot; --user --ask-ssh-pass --become --ask-become-pass --ask-vault-pass -e@YOUR_VAULT_FILE -vvv`&quot; | tee -a LOG-FILE-PATH
+</code></pre></li>
+</ul>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/devops/" title="DevOps"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/post/" title="Posts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1529424680"></script>
+    <script src="/js/perfect-scrollbar.min.js?1529424680"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1529424680"></script>
+    <script src="/js/jquery.sticky.js?1529424680"></script>
+    <script src="/js/featherlight.min.js?1529424680"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1529424680"></script>
+    <script src="/js/highlight.pack.js?1529424680"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1529424680"></script>
+    <script src="/js/learn.js?1529424680"></script>
+    <script src="/js/hugo-learn.js?1529424680"></script>
+
+    <link href="/mermaid/mermaid.css?1529424680" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1529424680"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

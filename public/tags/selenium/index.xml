@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Selenium on William&#39;s blog</title>
+    <link>https://blog.twasa.cf/tags/selenium/</link>
+    <description>Recent content in Selenium on William&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 11 Sep 2017 13:40:40 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.twasa.cf/tags/selenium/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python Web Automation Test</title>
+      <link>https://blog.twasa.cf/programing/python/python-web-automation-test/</link>
+      <pubDate>Mon, 11 Sep 2017 13:40:40 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/programing/python/python-web-automation-test/</guid>
+      <description> Requirements  Python Selenium webdriver HTMLTestRunner  Sample code, test login to bugtracker and create html report from selenium import webdriver import unittest import time import HTMLTestRunner class test_class(unittest.TestCase): def setUp(self): self.verificationErrors=[] self.test=webdriver.Ie() self.url=&amp;quot;http://your.bugtracker.com/bug/&amp;quot; def test_login(self): pa=self.test pa.get(self.url) user=pa.find_element_by_id(&#39;username&#39;) user.send_keys(&#39;使用者帳號&#39;) passwd=pa.find_element_by_id(&#39;password&#39;) passwd.send_keys(&#39;密碼&#39;) pa.execute_script(&#39;loginsubmit()&#39;) time.sleep(10) def tearDown(self): pass if __name__==&amp;quot;__main__&amp;quot;: testsuite=unittest.TestSuite() testsuite.addTest(test_class(&amp;quot;test_login&amp;quot;)) filename=&amp;quot;r:\\result.html&amp;quot; fp=file(filename,&#39;wb&#39;) runner=HTMLTestRunner.HTMLTestRunner(stream=fp,title=&#39;Result&#39;,description=&#39;Test_Report&#39;) runner.run(testsuite)  </description>
+    </item>
+    
+  </channel>
+</rss>

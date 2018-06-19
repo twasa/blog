@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Regular Expression on William&#39;s blog</title>
+    <link>https://blog.twasa.cf/categories/regular-expression/</link>
+    <description>Recent content in Regular Expression on William&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 11 Sep 2017 11:46:21 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.twasa.cf/categories/regular-expression/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Regular Expression</title>
+      <link>https://blog.twasa.cf/linux/regexp/</link>
+      <pubDate>Mon, 11 Sep 2017 11:46:21 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/linux/regexp/</guid>
+      <description>Regula Express  reference :     說明及範例 比對不成立之字串     /a/ 含字母 “a” 的字串，例如 “ab”, “bac”, “cba” “xyz”   /a./ 含字母 “a” 以及其後任一個字元的字串，例如 “ab”, “bac”（若要比對.，請使用 .） “a”, “ba”   /^xy/ 以 “xy” 開始的字串，例如 “xyz”, “xyab”（若要比對 ^，請使用 \^） “axy”, “bxy”   /xy$/ 以 “xy” 結尾的字串，例如 “axy”, “abxy”以 “xy” 結尾的字串，例如 “axy”, “abxy” （若要比對 $，請使用 \$） “xya”, “xyb”   [13579] 包含 “1” 或 “3” 或 “5” 或 “7” 或 “9” 的字串，例如：”a3b”, “1xy” “y2k”   [0-9] 含數字之字串 不含數字之字串   [a-z0-9] 含數字或小寫字母之字串 不含數字及小寫字母之字串   [a-zA-Z0-9] 含數字或字母之字串 不含數字及字母之字串   b[aeiou]t “bat”, “bet”, “bit”, “bot”, “but” “bxt”, “bzt”   [^0-9] 不含數字之字串（若要比對 ^，請使用 \^） 含數字之字串   [^aeiouAEIOU] 不含母音之字串（若要比對 ^，請使用 \^） 含母音之字串   [^\^] 不含 “^” 之字串，例如 “xyz”, “abc” “xy^”, “a^bc”       正規表示式的特定字元 說明 等效的正規表示式     \d 數字 [0-9]   \D 非數字 [^0-9]   \w 數字、字母、底線 [a-zA-Z0-9_]   \W 非 \w [^a-zA-Z0-9_]   \s 空白字元 [ \r\t\n\f]   \S 非空白字元 [^ \r\t\n\f]       正規表示式 說明     /a?</description>
+    </item>
+    
+  </channel>
+</rss>

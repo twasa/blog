@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cisco on William&#39;s blog</title>
+    <link>https://blog.twasa.cf/tags/cisco/</link>
+    <description>Recent content in Cisco on William&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 11 Sep 2017 13:00:03 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.twasa.cf/tags/cisco/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cisco Ios Netwrok Cmmmands</title>
+      <link>https://blog.twasa.cf/post/cisco-ios-netwrok-cmmmands/</link>
+      <pubDate>Mon, 11 Sep 2017 13:00:03 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/post/cisco-ios-netwrok-cmmmands/</guid>
+      <description>狀態查看  show startup-config show running-config show version show vlan id show ip route show ip nhrp show crypto engine connection active sh run | inc ip route 查看連線的TCP session  show ip sockets detail  查IP流量  conf t interface xxx ip accounting end sh ip accounting 備註, 查完記得no掉, 否則會增加cpu的負擔! conf t interface xxx no ip accounting   基本操作  從User Mode進入Privileged Mode enable 從Privileged Mode進入Global Configuration Mode configure terminal 儲存設定  write or copy running-config startup-config   設定  介面IP設定 interface fastEthernet 0/0 ip address IP位置 子網路遮罩 no shutdown</description>
+    </item>
+    
+  </channel>
+</rss>

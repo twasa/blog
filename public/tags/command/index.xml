@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Command on William&#39;s blog</title>
+    <link>https://blog.twasa.cf/tags/command/</link>
+    <description>Recent content in Command on William&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 11 Sep 2017 12:54:56 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.twasa.cf/tags/command/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>sed</title>
+      <link>https://blog.twasa.cf/linux/sed/</link>
+      <pubDate>Mon, 11 Sep 2017 12:54:56 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/linux/sed/</guid>
+      <description> reference  https://www.gnu.org/software/sed/manual/sed.html http://www.gnu.org/software/sed/manual/sed.html#Examples  syntax sed OPTIONS... [SCRIPT] [INPUTFILE...] STDOUT | sed OPTIONS... [SCRIPT]  OPTIONS -i edited in-place  SCRIPT format &#39;起始行數,結束行數 指令/要被取代的字串/新字串/旗標&#39;  指令： s 搜尋並取代
+旗標 g 取代全部 c 取代前詢問是否confirm I 忽略 pattern 大小寫
+example modify CentOS linux hostname sed -i &#39;s/HOSTNAME\=.*/HOSTNAME\=NEWHOSTNAME/g&#39; /etc/sysconfig/network  change default delimiter 改用 &amp;ldquo;:&amp;rdquo; sed &#39;s:orig:NEW:&#39;  改用 &amp;ldquo;#&amp;rdquo; 當delimiter sed -e &#39;s#/#\\#g&#39;  </description>
+    </item>
+    
+    <item>
+      <title>find</title>
+      <link>https://blog.twasa.cf/linux/find/</link>
+      <pubDate>Mon, 11 Sep 2017 11:43:41 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/linux/find/</guid>
+      <description>find description  search for files in a directory hierarchy  syntax find [options] [path...] [expression] --newerXY Compares the timestamp of the current file with reference. The reference argument is normally the name of a file (and one of its timestamps is used for the comparison) but it may also be a string describing an absolute time. X and Y are placeholders for other letters, and these letters select which time belonging to how reference is used for the comparison find file modified newer than some daytimes find /var/log -newermt &#39;2016-06-01T00:00:00&#39; -name pattern Base of file name (the path with the leading directories removed) matches shell pattern pattern.</description>
+    </item>
+    
+    <item>
+      <title>xargs</title>
+      <link>https://blog.twasa.cf/linux/xargs/</link>
+      <pubDate>Mon, 11 Sep 2017 11:32:12 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/linux/xargs/</guid>
+      <description>xargs description  build and execute command lines from standard input  syntax and examples  Find all .log files in or below the current directory and process them  find . -name &amp;quot;*.log&amp;quot; -type f -print | xargs tar -cvf logs.tar find . -name &amp;quot;*.log&amp;quot; -type f -print | xargs -i -p cp -a {} /some/place find . -name &amp;quot;*.log&amp;quot; -type f -print | xargs -I [] cp -a [] /some/place -p Prompt the user about whether to run each command line and read a line from the terminal.</description>
+    </item>
+    
+    <item>
+      <title>Grep</title>
+      <link>https://blog.twasa.cf/linux/grep/</link>
+      <pubDate>Mon, 11 Sep 2017 10:52:53 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/linux/grep/</guid>
+      <description>description  prints lines that contain a match for a pattern reference  https://www.gnu.org/software/grep/manual/grep.html   syntax grep [OPTIONS] PATTERN [FILE...] grep multiple patterns OR grep &#39;pattern1\|pattern2\|pattern3&#39; AND grep -E &#39;pattern1.*pattern2.*pattern3&#39; filename -v, --invert-match Invert the sense of matching, to select non-matching lines. (-v is specified by POSIX .) grep -v &#39;unwanted_word&#39; -i, --ignore-case Ignore case distinctions in both the PATTERN and the input files. (-i is specified by POSIX .</description>
+    </item>
+    
+  </channel>
+</rss>

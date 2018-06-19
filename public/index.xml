@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About on William&#39;s blog</title>
+    <link>https://blog.twasa.cf/</link>
+    <description>Recent content in About on William&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 11 Sep 2017 02:31:16 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.twasa.cf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Consul</title>
+      <link>https://blog.twasa.cf/post/consul/</link>
+      <pubDate>Sat, 28 Apr 2018 06:24:00 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/post/consul/</guid>
+      <description>Consul Description Consul has multiple components, but as a whole, it is a tool for discovering and configuring services in your infrastructure.
+Features  Service Discovery: Clients of Consul can provide a service, such as api or mysql, and other clients can use Consul to discover providers of a given service. Using either DNS or HTTP, applications can easily find the services they depend upon. Health Checking: Consul clients can provide any number of health checks, either associated with a given service (&amp;ldquo;is the webserver returning 200 OK&amp;rdquo;), or with the local node (&amp;ldquo;is memory utilization below 90%&amp;rdquo;).</description>
+    </item>
+    
+    <item>
+      <title>Powershell</title>
+      <link>https://blog.twasa.cf/post/powershell/</link>
+      <pubDate>Sat, 21 Apr 2018 17:33:21 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/post/powershell/</guid>
+      <description>Powershell PowerShell Core is a cross-platform (Windows, Linux, and macOS) automation and configuration tool/framework that works well with your existing tools and is optimized for dealing with structured data (e.g. JSON, CSV, XML, etc.), REST APIs, and object models. It includes a command-line shell, an associated scripting language and a framework for processing cmdlets.
+cmdlet  get all cmdlet  Get-Command Get-Command -Name *IP* Get-Command -Module ISE -Name *IP* Get-Help Get-Process Get-Member Get-Process | Where-Object {$_.</description>
+    </item>
+    
+    <item>
+      <title>Vscode Sync</title>
+      <link>https://blog.twasa.cf/programing/tools/vscode-sync/</link>
+      <pubDate>Sun, 19 Nov 2017 00:16:07 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/programing/tools/vscode-sync/</guid>
+      <description>Visual Studio Code Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications. basic Configuration  &amp;quot;editor.wordWrap&amp;quot;: &amp;quot;off&amp;quot;, &amp;quot;[markdown]&amp;quot;: { &amp;quot;editor.wordWrap&amp;quot;: &amp;quot;off&amp;quot;, &amp;quot;editor.quickSuggestions&amp;quot;: false }, &amp;quot;markdown.extension.preview.autoShowPreviewToSide&amp;quot;: true, &amp;quot;workbench.colorCustomizations&amp;quot;: { &amp;quot;tab.activeBackground&amp;quot;: &amp;quot;#0300aa&amp;quot; }  Extensions  Markdown All in One Settings Sync Copy Relative Path Path Intellisense Markdown table prettifier Microsoft Python extension  Settings sync using github  Settings &amp;gt; Developer settings &amp;gt; Personal access tokens &amp;gt; Generate new token Give your token a descriptive name like vscode, check gist and click Generate token.</description>
+    </item>
+    
+    <item>
+      <title>Docker Memo(drafting)</title>
+      <link>https://blog.twasa.cf/post/docker/</link>
+      <pubDate>Fri, 22 Sep 2017 10:57:01 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/post/docker/</guid>
+      <description>Docker Description  is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud Containers vs. virtual machines  Virtual Machine diagram    Container diagram  docker concept  Image : a lightweight, stand-alone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files.</description>
+    </item>
+    
+    <item>
+      <title>Python Timezone Convert example code</title>
+      <link>https://blog.twasa.cf/programing/python/python-timezone-convert/</link>
+      <pubDate>Mon, 11 Sep 2017 17:49:51 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/programing/python/python-timezone-convert/</guid>
+      <description>Requirement  Python python-dateutil  example code from datetime import datetime from dateutil import tz # METHOD Auto-detect zones: #from_zone = tz.tzutc() #to_zone = tz.tzlocal() from_zone = raw_input(&amp;quot;From Timezone: &amp;quot;) to_zone = raw_input(&amp;quot;To Timezone: &amp;quot;) from_zone = tz.gettz(from_zone) to_zone = tz.gettz(to_zone) def datainput(): # utc = datetime.utcnow() year = raw_input(&amp;quot;Year (A.D.): &amp;quot;) month = raw_input(&amp;quot;Month: &amp;quot;) day = raw_input(&amp;quot;day: &amp;quot;) hour = raw_input(&amp;quot;hour: &amp;quot;) minute = raw_input(&amp;quot;minute: &amp;quot;) datetimestring = year + &#39;-&#39; + month + &#39;-&#39; + day + &#39; &#39; + hour + &#39;:&#39; + minute + &#39;:00&#39; return datetimestring dtstr = datainput() utc = datetime.</description>
+    </item>
+    
+    <item>
+      <title>openssl</title>
+      <link>https://blog.twasa.cf/linux/openssl/</link>
+      <pubDate>Mon, 11 Sep 2017 17:12:29 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/linux/openssl/</guid>
+      <description> create private key openssl genrsa -out server.key 2048  create Certificate Signing Request openssl req -sha512 -new -key server.key -out server.csr -subj &amp;quot;/C=TW/ST=Taipei/L=Taipei/O=example/OU=Personal/CN=www.example.com&amp;quot;  check csr info openssl req -in server.csr -noout -text  Self-Sign Certificate openssl x509 -sha512 -req -days 3650 -in server.csr -signkey server.key -out server.crt  encrypt private key -a 表示檔案使用 base64 編碼 -salt 加雜湊值，增加安全性 openssl aes-256-cbc -a -salt -in server.key -out server.encrypt.key  </description>
+    </item>
+    
+    <item>
+      <title>Linux Logrotation</title>
+      <link>https://blog.twasa.cf/linux/logrotation/</link>
+      <pubDate>Mon, 11 Sep 2017 17:08:34 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/linux/logrotation/</guid>
+      <description> config options rotate count  rotate n  permission  create 0664 USER GROUP  by interval  daily weekly monthly yearly  by size  size 100k size 100M size 100G  archive  compress nocompress  Postrotate postrotate /usr/sbin/apachectl restart &amp;gt; /dev/null endscript
+script  prerotate：executed before the log file is rotated postrotate：在做完 logrotate 之後啟動的指令，例如重新啟動 (kill -1 或 kill -HUP) 某個服務;  postrotate /bin/kill -HUP `cat /var/run/syslogd.pid 2&amp;gt; /dev/null` 2&amp;gt; /dev/null || true endscript }   others  missingok：If the log file is missing, go on to the next one without issu-ing an error message  </description>
+    </item>
+    
+    <item>
+      <title>Jupyterhub</title>
+      <link>https://blog.twasa.cf/post/jupyterhub/</link>
+      <pubDate>Mon, 11 Sep 2017 17:05:01 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/post/jupyterhub/</guid>
+      <description>JupyterHub on CentOS 7 requirement  a Linux/Unix based system Python 3.4 or greater wget pip npm  install  yum search python3 yum -y install python3X yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel npm npm install -g configurable-http-proxy wget https://bootstrap.pypa.io/get-pip.py python3.X get-pip.py yum -y install python-devel python3X-devel pip3 install jupyterhub ipython[notebook]  startup  jupyterhub &amp;ndash;ip 0.0.0.0 &amp;ndash;port 8443 &amp;ndash;ssl-key my_ssl.key &amp;ndash;ssl-cert my_ssl.</description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://blog.twasa.cf/post/git/</link>
+      <pubDate>Mon, 11 Sep 2017 16:46:58 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/post/git/</guid>
+      <description>Git的基本使用 Config  在每一次的 Git commit (提交，我們稍後會提到) 都會記錄作者的訊息像是 name 及 email，因此我們使用下面的指令來設定：
+git config --global user.name &amp;quot;你的姓名&amp;quot; git config --global user.email &amp;quot;你的@email位址&amp;quot;  加上 &amp;ndash;global 表示是全域的設定。你可以使用 git config &amp;ndash;list 這個指令來看你的 Git 設定內容
+ Git 也有提供 alias 的功能，例如你可以將 git status 縮寫為 git st，git checkout 縮寫為 git co 等，你只要這樣設定，這樣一來只要打 git st 就等同於打 git status
+git config --global alias.st status git config --global alias.ck checkout git config --global alias.rst reset HEAD  忽略空白</description>
+    </item>
+    
+    <item>
+      <title>Mongodb basic</title>
+      <link>https://blog.twasa.cf/db/mongodb/</link>
+      <pubDate>Mon, 11 Sep 2017 15:54:35 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/db/mongodb/</guid>
+      <description>install  Create a /etc/yum.repos.d/mongodb-org-3.4.repo  [mongodb-org-3.4] name=MongoDB Repository baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.4/x86_64/ gpgcheck=1 enabled=1 gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc   yum  yum install -y mongodb-org  config  default path /etc/mongod.
+# security db.createUser( { user: &amp;quot;帳號&amp;quot;, pwd: &amp;quot;密碼&amp;quot;, roles: [ { role: &amp;quot;userAdminAnyDatabase&amp;quot;, db: &amp;quot;admin&amp;quot; } ] } ) security.authorization : enabled   selinux semanage port -a -t mongod_port_t -p tcp 27017  shell connection mongo --port 27017 -u &amp;quot;unitadmin&amp;quot; -p &amp;quot;xyz123&amp;quot; --authenticationDatabase &amp;quot;test&amp;quot;  list current using db db  列出資料庫清單 show dbs  切換資料庫 use 資料庫名稱  驗證 db.</description>
+    </item>
+    
+    <item>
+      <title>Aws Cli</title>
+      <link>https://blog.twasa.cf/post/aws-cli/</link>
+      <pubDate>Mon, 11 Sep 2017 15:52:27 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/post/aws-cli/</guid>
+      <description>AWS CLI referneces syntax aws [options] \&amp;lt;command&amp;gt; \&amp;lt;subcommand&amp;gt; [\&amp;lt;subcommand&amp;gt; ...] [parameters] options: --region --profile --filters &amp;quot;Name=instance-state-name,Values=running&amp;quot; --query  create or modify profile aws configure --profile PROFILE aws configure set default.s3.signature_version s3v4 aws configure set profile.your_profile_name.s3.signature_version s3v4  create key pairs aws --profile PROFILE --region REGION ec2 create-key-pair --key-name KEYNAME  create IAM users and permission aws --profile PROFILE iam create-user --user-name USERNAME aws --profile PROFILE iam create-access-key --user-name USERNAME aws --profile PROFILE iam put-user-policy --user-name USERNAME --policy-name POLICYNAME --policy-document file://POLICYDOCUMENT aws --profile PROFILE iam get-server-certificate --server-certificate-name CERTNAME XXXX  SES, SNS - aws --profile PROFILE --region REGION ses verify-email-identity --email-address YOUR@MAIL.</description>
+    </item>
+    
+    <item>
+      <title>Apache Http Advanced</title>
+      <link>https://blog.twasa.cf/post/apache-http-advanced/</link>
+      <pubDate>Mon, 11 Sep 2017 15:50:54 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/post/apache-http-advanced/</guid>
+      <description>http rewrite  syntax  &amp;lt;IfModule mod_rewrite.c&amp;gt; RewriteEngine On #啟用 RewriteBase /路徑 RewriteCond 變數 開關 RewriteCond 變數 條件 [選項] RewriteRule 規則 [選項] &amp;lt;/IfModule&amp;gt; # 開關 on, off # 選項 NC (no case) 不區分大小寫 F (force URL to be forbidden) 禁用URL,返回403HTTP狀態碼。 R[=code] (force redirect) 強制外部重定向 code 預設302, 最好使用301 G (force URL to be gone) 強制URL為GONE，返回410HTTP狀態碼 P (force proxy) 強制使用代理轉發。 N (next round) 重新從第一條規則開始運行重寫過程。 C (chained with next rule) 與下一條規則關聯 AND OR #if ( (A OR B) AND (C OR D) ) RewriteCond A [or] RewriteCond B [or] RewriteCond C RewriteCond D L (last rule) 表明當前規則是最後一條規則，停止分析以後規則的重寫 # 變數 - %{HTTP_HOST} !</description>
+    </item>
+    
+    <item>
+      <title>Ansible</title>
+      <link>https://blog.twasa.cf/devops/ansible/</link>
+      <pubDate>Mon, 11 Sep 2017 15:48:07 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/devops/ansible/</guid>
+      <description>Concept  功能：IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates. 管理方式：push-based Ansible manages machines in an agent-less manner. Ansible by default manages machines over the SSH protocol. Because OpenSSH is one of the most peer-reviewed open source components, security exposure is greatly reduced.  Requirement  Control Machine: SSH client and Linux system Managed Node: Python 2.</description>
+    </item>
+    
+    <item>
+      <title>Python Web Automation Test</title>
+      <link>https://blog.twasa.cf/programing/python/python-web-automation-test/</link>
+      <pubDate>Mon, 11 Sep 2017 13:40:40 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/programing/python/python-web-automation-test/</guid>
+      <description> Requirements  Python Selenium webdriver HTMLTestRunner  Sample code, test login to bugtracker and create html report from selenium import webdriver import unittest import time import HTMLTestRunner class test_class(unittest.TestCase): def setUp(self): self.verificationErrors=[] self.test=webdriver.Ie() self.url=&amp;quot;http://your.bugtracker.com/bug/&amp;quot; def test_login(self): pa=self.test pa.get(self.url) user=pa.find_element_by_id(&#39;username&#39;) user.send_keys(&#39;使用者帳號&#39;) passwd=pa.find_element_by_id(&#39;password&#39;) passwd.send_keys(&#39;密碼&#39;) pa.execute_script(&#39;loginsubmit()&#39;) time.sleep(10) def tearDown(self): pass if __name__==&amp;quot;__main__&amp;quot;: testsuite=unittest.TestSuite() testsuite.addTest(test_class(&amp;quot;test_login&amp;quot;)) filename=&amp;quot;r:\\result.html&amp;quot; fp=file(filename,&#39;wb&#39;) runner=HTMLTestRunner.HTMLTestRunner(stream=fp,title=&#39;Result&#39;,description=&#39;Test_Report&#39;) runner.run(testsuite)  </description>
+    </item>
+    
+    <item>
+      <title>A Python SOAP client sample code</title>
+      <link>https://blog.twasa.cf/programing/python/python-soap-client-suds/</link>
+      <pubDate>Mon, 11 Sep 2017 13:37:20 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/programing/python/python-soap-client-suds/</guid>
+      <description>suds API references
+ https://pypi.python.org/pypi/suds https://fedorahosted.org/suds/wiki/Documentation  example code
+  import logging logging.basicConfig(level=logging.INFO) logging.getLogger(&#39;suds.client&#39;).setLevel(logging.DEBUG) username = &#39;&#39; password = &#39;&#39; no = 20787 def b64enc(username, password): import base64 base64string = base64.encodestring(&#39;%s:%s&#39; % (username, password)).replace(&#39;\n&#39;, &#39;&#39;) authenticationHeader = {&amp;quot;SOAPAction&amp;quot; : &amp;quot;ActionName&amp;quot;, &amp;quot;Authorization&amp;quot; : &amp;quot;Basic %s&amp;quot; % base64string } return authenticationHeader def xmlout(xmlstr): filename = &#39;%s.xml&#39; % no f = open(filename, &amp;quot;w&amp;quot;) f.write(xmlstr.encode(&#39;utf8&#39;)) def main(): from suds.client import Client wsdl_url = &#39;http://example.</description>
+    </item>
+    
+    <item>
+      <title>Python Package</title>
+      <link>https://blog.twasa.cf/programing/python/python-package/</link>
+      <pubDate>Mon, 11 Sep 2017 13:21:51 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/programing/python/python-package/</guid>
+      <description>description  套件 (package) 是 Python 用資料夾組織模組 (module) 檔案的方式  例如我們寫了三個模組 module01.py module02.py module03.py
+三個模組檔案放在 package01資料夾中，package01就是套件名稱 這時package01資料夾需要有額外一個 init.py init.py 可以不需要有任何內容 因為需要這個檔案，直譯器才能辨識package01為套件
+另外寫一個 main.py 來利用 package01 中 module01.py 所定義的class(類別)或function(函數) 注意main.py 必須放在與 package 相同路徑下檔案結構如下
+c:\packagedemo\package\module01.py c:\packagedemo\package\module03.py c:\packagedemo\package\module04.py c:\packagedemo\main.py  在main.py引入套件的部份，XXX可以是module01裡面的class(類別)或function(函數) from package.module01 import XXX
+那麼 init.py 除了讓直譯器識別資料夾為套件之外有什麼作用呢？這裡，我們可以在 init.py 裡提供一個 all 變數，如下 all = [&amp;ldquo;module01&amp;rdquo;, &amp;ldquo;module02&amp;rdquo;, &amp;ldquo;module03&amp;rdquo;];
+當 all 被定義後，寫 from package import *
+才能保證 module01 、 module02 及 module03 三個模組都被引入。</description>
+    </item>
+    
+    <item>
+      <title>Cisco Ios Netwrok Cmmmands</title>
+      <link>https://blog.twasa.cf/post/cisco-ios-netwrok-cmmmands/</link>
+      <pubDate>Mon, 11 Sep 2017 13:00:03 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/post/cisco-ios-netwrok-cmmmands/</guid>
+      <description>狀態查看  show startup-config show running-config show version show vlan id show ip route show ip nhrp show crypto engine connection active sh run | inc ip route 查看連線的TCP session  show ip sockets detail  查IP流量  conf t interface xxx ip accounting end sh ip accounting 備註, 查完記得no掉, 否則會增加cpu的負擔! conf t interface xxx no ip accounting   基本操作  從User Mode進入Privileged Mode enable 從Privileged Mode進入Global Configuration Mode configure terminal 儲存設定  write or copy running-config startup-config   設定  介面IP設定 interface fastEthernet 0/0 ip address IP位置 子網路遮罩 no shutdown</description>
+    </item>
+    
+    <item>
+      <title>sed</title>
+      <link>https://blog.twasa.cf/linux/sed/</link>
+      <pubDate>Mon, 11 Sep 2017 12:54:56 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/linux/sed/</guid>
+      <description> reference  https://www.gnu.org/software/sed/manual/sed.html http://www.gnu.org/software/sed/manual/sed.html#Examples  syntax sed OPTIONS... [SCRIPT] [INPUTFILE...] STDOUT | sed OPTIONS... [SCRIPT]  OPTIONS -i edited in-place  SCRIPT format &#39;起始行數,結束行數 指令/要被取代的字串/新字串/旗標&#39;  指令： s 搜尋並取代
+旗標 g 取代全部 c 取代前詢問是否confirm I 忽略 pattern 大小寫
+example modify CentOS linux hostname sed -i &#39;s/HOSTNAME\=.*/HOSTNAME\=NEWHOSTNAME/g&#39; /etc/sysconfig/network  change default delimiter 改用 &amp;ldquo;:&amp;rdquo; sed &#39;s:orig:NEW:&#39;  改用 &amp;ldquo;#&amp;rdquo; 當delimiter sed -e &#39;s#/#\\#g&#39;  </description>
+    </item>
+    
+    <item>
+      <title>Apache Tomcat</title>
+      <link>https://blog.twasa.cf/post/apache-tomcat/</link>
+      <pubDate>Mon, 11 Sep 2017 12:34:25 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/post/apache-tomcat/</guid>
+      <description>參考文件  https://tomcat.apache.org/tomcat-8.0-doc/index.html https://tomcat.apache.org/tomcat-8.0-doc/config/  install java, check it running and version yum install java-1.8.0-openjdk or curl -v -j -k -L -H &amp;quot;Cookie: oraclelicense=accept-securebackup-cookie&amp;quot; http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm &amp;gt; jdk-8u112-linux-x64.rpm &amp;amp;&amp;amp; rpm -Uvh jdk-8u112-linux-x64.rpm java -version  create a nologin user for running tomcat useradd -s /sbin/nologin tomcat  download from apache tomcat cd /home/tomcat wget http://apache.stu.edu.tw/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz tar zxvf apache-tomcat-8.0.28.tar.gz  setenv.sh  設定運行參數如記憶體、垃圾回收機制等參數
+JAVA_OPTS=&amp;quot;-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true -server -Xms1024m -Xmx1024m -Xmn128m -Xss2m -XX:+UseParallelGC&amp;quot;  設定Tomcat JMX remote 監控</description>
+    </item>
+    
+    <item>
+      <title>MySQL and MariaDB memo</title>
+      <link>https://blog.twasa.cf/db/my-db/</link>
+      <pubDate>Mon, 11 Sep 2017 12:24:19 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/db/my-db/</guid>
+      <description>第一次安裝完成，設定root的密碼 mysqladmin -u root -p &amp;lsquo;密碼&amp;rsquo; or mysql_secure_installation
+重設root密碼 /etc/init.d/mysql stop mysqld_safe --skip-grant-tables &amp;amp; mysql -u root mysql&amp;gt; use mysql; mysql&amp;gt; UPDATE user SET Password=PASSWORD(&amp;quot;密碼&amp;quot;) WHERE User=&#39;root&#39;; mysql&amp;gt; flush privileges; mysql&amp;gt; quit /etc/init.d/mysql stop /etc/init.d/mysql start  連線管理資料庫 mysqladmin -u root -p Enter password: 此時再輸入密碼(建議採用) 修改使用者密碼 方法一 使用有權限或要修改的使用者本身登入mysql mysql&amp;gt; SET PASSWORD FOR &#39;目標使用者&#39;@&#39;主機&#39; = PASSWORD(&#39;密碼&#39;); mysql&amp;gt; flush privileges 方法二 使用有權限的使用者登入mysql 修改使用者密碼，只改 root 的密碼，如果沒有用 where ，則表示改全部 user 的密碼 mysql&amp;gt; use mysql; mysql&amp;gt; UPDATE user SET password=password(&#39;密碼&#39;) where user=&#39;root&#39;; mysql&amp;gt; FLUSH PRIVILEGES; 上面是不分主機位址的修改，若要像方法一區分主機的話再加上Host條件，例如 mysql&amp;gt; UPDATE user SET Password=PASSWORD(&amp;quot;密碼&amp;quot;) WHERE User=&#39;root&#39; AND Host = &#39;localhost&#39;; mysql&amp;gt; FLUSH PRIVILEGES; 方法三 同樣利用mysqladmin指令可以修改root或其他使用者密碼，但該使用者必須有SUPER權限 mysqladmin -u 使用者 -p&#39;舊密碼&#39; password &#39;新密碼&#39; 忘記密碼重設 /etc/init.</description>
+    </item>
+    
+    <item>
+      <title>Regular Expression</title>
+      <link>https://blog.twasa.cf/linux/regexp/</link>
+      <pubDate>Mon, 11 Sep 2017 11:46:21 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/linux/regexp/</guid>
+      <description>Regula Express  reference :     說明及範例 比對不成立之字串     /a/ 含字母 “a” 的字串，例如 “ab”, “bac”, “cba” “xyz”   /a./ 含字母 “a” 以及其後任一個字元的字串，例如 “ab”, “bac”（若要比對.，請使用 .） “a”, “ba”   /^xy/ 以 “xy” 開始的字串，例如 “xyz”, “xyab”（若要比對 ^，請使用 \^） “axy”, “bxy”   /xy$/ 以 “xy” 結尾的字串，例如 “axy”, “abxy”以 “xy” 結尾的字串，例如 “axy”, “abxy” （若要比對 $，請使用 \$） “xya”, “xyb”   [13579] 包含 “1” 或 “3” 或 “5” 或 “7” 或 “9” 的字串，例如：”a3b”, “1xy” “y2k”   [0-9] 含數字之字串 不含數字之字串   [a-z0-9] 含數字或小寫字母之字串 不含數字及小寫字母之字串   [a-zA-Z0-9] 含數字或字母之字串 不含數字及字母之字串   b[aeiou]t “bat”, “bet”, “bit”, “bot”, “but” “bxt”, “bzt”   [^0-9] 不含數字之字串（若要比對 ^，請使用 \^） 含數字之字串   [^aeiouAEIOU] 不含母音之字串（若要比對 ^，請使用 \^） 含母音之字串   [^\^] 不含 “^” 之字串，例如 “xyz”, “abc” “xy^”, “a^bc”       正規表示式的特定字元 說明 等效的正規表示式     \d 數字 [0-9]   \D 非數字 [^0-9]   \w 數字、字母、底線 [a-zA-Z0-9_]   \W 非 \w [^a-zA-Z0-9_]   \s 空白字元 [ \r\t\n\f]   \S 非空白字元 [^ \r\t\n\f]       正規表示式 說明     /a?</description>
+    </item>
+    
+    <item>
+      <title>find</title>
+      <link>https://blog.twasa.cf/linux/find/</link>
+      <pubDate>Mon, 11 Sep 2017 11:43:41 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/linux/find/</guid>
+      <description>find description  search for files in a directory hierarchy  syntax find [options] [path...] [expression] --newerXY Compares the timestamp of the current file with reference. The reference argument is normally the name of a file (and one of its timestamps is used for the comparison) but it may also be a string describing an absolute time. X and Y are placeholders for other letters, and these letters select which time belonging to how reference is used for the comparison find file modified newer than some daytimes find /var/log -newermt &#39;2016-06-01T00:00:00&#39; -name pattern Base of file name (the path with the leading directories removed) matches shell pattern pattern.</description>
+    </item>
+    
+    <item>
+      <title>xargs</title>
+      <link>https://blog.twasa.cf/linux/xargs/</link>
+      <pubDate>Mon, 11 Sep 2017 11:32:12 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/linux/xargs/</guid>
+      <description>xargs description  build and execute command lines from standard input  syntax and examples  Find all .log files in or below the current directory and process them  find . -name &amp;quot;*.log&amp;quot; -type f -print | xargs tar -cvf logs.tar find . -name &amp;quot;*.log&amp;quot; -type f -print | xargs -i -p cp -a {} /some/place find . -name &amp;quot;*.log&amp;quot; -type f -print | xargs -I [] cp -a [] /some/place -p Prompt the user about whether to run each command line and read a line from the terminal.</description>
+    </item>
+    
+    <item>
+      <title>Grep</title>
+      <link>https://blog.twasa.cf/linux/grep/</link>
+      <pubDate>Mon, 11 Sep 2017 10:52:53 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/linux/grep/</guid>
+      <description>description  prints lines that contain a match for a pattern reference  https://www.gnu.org/software/grep/manual/grep.html   syntax grep [OPTIONS] PATTERN [FILE...] grep multiple patterns OR grep &#39;pattern1\|pattern2\|pattern3&#39; AND grep -E &#39;pattern1.*pattern2.*pattern3&#39; filename -v, --invert-match Invert the sense of matching, to select non-matching lines. (-v is specified by POSIX .) grep -v &#39;unwanted_word&#39; -i, --ignore-case Ignore case distinctions in both the PATTERN and the input files. (-i is specified by POSIX .</description>
+    </item>
+    
+    <item>
+      <title>CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP</title>
+      <link>https://blog.twasa.cf/post/lnmp/</link>
+      <pubDate>Mon, 11 Sep 2017 10:14:51 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/post/lnmp/</guid>
+      <description>Build a Linux, Nginx, MariaDB, PHP environment in CentOS 7 install rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm yum install nginx php php-fpm mariadb mariadb-server  firewalld for http, https access only firewall-cmd --zone=public --list-all firewall-cmd --permanent --zone=public --add-service=http firewall-cmd --permanent --zone=public --add-service=https firewall-cmd --reload firewall-cmd --zone=public --list-all  Nginx config basic config, edit /etc/nginx/nginx.conf user nginx; worker_processes 2; #by your cpu error_log /var/log/nginx/error.log warn; pid /var/run/nginx.pid; events { worker_connections 1024; } http { include /etc/nginx/mime.</description>
+    </item>
+    
+    <item>
+      <title>Python Virtualenv</title>
+      <link>https://blog.twasa.cf/programing/python/python-virtualenv/</link>
+      <pubDate>Sun, 10 Sep 2017 17:00:56 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/programing/python/python-virtualenv/</guid>
+      <description> Virtualenv的好處  可以隔離函數庫需求不同的專案，讓它們不會互相影響。在建立並啟動虛擬環境後，透過 pip 安裝的套件會被放在虛擬環境中，專案就可以擁有一個獨立的環境。 在沒有權限的情況下安裝新套件 不同專案可以使用不同版本的相同套件 套件版本升級時不會影響其他專案  安裝 pip install virtualenv  建立專案資料夾 mkdir myproject cd myproject  初始化 virtualenv 虛擬環境名稱  activate the corresponding environment #linux . 虛擬環境名稱/bin/activate #windows 虛擬環境名稱\scripts\activate  這時候再裝要使用的Python Package pip install XXXX  回到實際環境 deactivate  若因為專案資料夾搬移或更名,請重新locate cd /path/to/your_project_new_dir virtualenv --relocatable your_virtualenv_name  </description>
+    </item>
+    
+    <item>
+      <title>Python HTML Entity decode and encode</title>
+      <link>https://blog.twasa.cf/programing/python/python-html-entity/</link>
+      <pubDate>Sun, 10 Sep 2017 16:14:36 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/programing/python/python-html-entity/</guid>
+      <description>–– coding: utf-8 – #decode import HTMLParser h = HTMLParser.HTMLParser() print h.unescape(&#39;&amp;amp;#35377;&amp;amp;#21151;&amp;amp;#33995;&#39;) 許功蓋 #encode a = u&#39;許功蓋&#39; a.encode(&#39;ascii&#39;, &#39;xmlcharrefreplace&#39;) &#39;&amp;amp;#35377;&amp;amp;#21151;&amp;amp;#33995;&#39;  </description>
+    </item>
+    
+    <item>
+      <title>Flask Quick Start Guide</title>
+      <link>https://blog.twasa.cf/post/flask-quick-start-guide/</link>
+      <pubDate>Sun, 10 Sep 2017 15:47:02 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/post/flask-quick-start-guide/</guid>
+      <description>#Flask Quickstart
+Requirements  Python Pip virtualenv Flask : a web development framework Werkzeug：a toolkit for WSGI Jinja2：renders templates  virtualenv：multiple side-by-side installations of Python  安裝：pip install virtualenv 基本使用方式：  ### 先建立專案資料夾 mkdir myproject cd myproject ### 初始化 virtualenv env ### activate the corresponding environment . venv/bin/activate or venv\scripts\activate ### 這時候再裝Flask pip install Flask ### 回到實際環境 deactivate ### 若因為目錄搬移或更名 需重新locate cd /path/to/your_project_new_dir virtualenv --relocatable your_virtualenv_name  建立第一個app(記得啟動venv), save it as hello.</description>
+    </item>
+    
+    <item>
+      <title>Hugo A Fast and Flexible Website Generator</title>
+      <link>https://blog.twasa.cf/post/hugo-how-to/</link>
+      <pubDate>Fri, 08 Sep 2017 19:12:41 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/post/hugo-how-to/</guid>
+      <description>Quick Start Guide  Hugo download
+ https://github.com/gohugoio/hugo/releases  Install Hugo
+ https://gohugo.io/getting-started/installing/  Create a blog folder
+  hugo new site blog   go in to the blog folder and modify config.toml for your github url  baseURL = &amp;quot;https://&amp;lt;your-github-account&amp;gt;.github.io/&amp;quot;   create new page  hugo new about.md   create new post  hugo new post/first.md   install a theme  cd themes git clone https://github.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://blog.twasa.cf/post/mdadm-rescue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.twasa.cf/post/mdadm-rescue/</guid>
+      <description>mdadm --assemble /dev/md6 /dev/sde3 mount iscsiadm history clear exit exit df df cat /proc/mdstat mount mdadm -Sf /dev/md6 mdadm -Af /dev/md6 /dev/sde3 cat /proc/mdstat synospace --map-file -d synocheckshare synocheckiscsitrg synocheckiscsitrg  </description>
+    </item>
+    
+  </channel>
+</rss>
