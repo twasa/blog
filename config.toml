@@ -14,6 +14,8 @@ defaultContentLanguageInSubdir= true
   author = "Mathieu Cornic"
   showVisitedLinks = true
   pluralizeListTitles = false
+  themeVariant = "blue"
+
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
 
