@@ -1,0 +1,1949 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.39" />
+    <meta name="description" content="William&#39;s blog">
+<meta name="author" content="Mathieu Cornic">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <title>Regular Expression :: William&#39;s blog</title>
+    
+    
+    <link href="/css/nucleus.css?1529425716" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1529425716" rel="stylesheet">
+    <link href="/css/hybrid.css?1529425716" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1529425716" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1529425716" rel="stylesheet">
+    <link href="/css/auto-complete.css?1529425716" rel="stylesheet">
+    <link href="/css/theme.css?1529425716" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1529425716" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1529425716"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/linux/regexp/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1529425716"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1529425716"></script>
+<script type="text/javascript">
+    
+        var baseurl = '\/';
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1529425716"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/post/" title="Posts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/post/">
+          Posts
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/consul/" title="Consul" class="dd-item ">
+        <a href="/post/consul/">
+        Consul
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/powershell/" title="Powershell" class="dd-item ">
+        <a href="/post/powershell/">
+        Powershell
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/docker/" title="Docker Memo(drafting)" class="dd-item ">
+        <a href="/post/docker/">
+        Docker Memo(drafting)
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/jupyterhub/" title="Jupyterhub" class="dd-item ">
+        <a href="/post/jupyterhub/">
+        Jupyterhub
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/git/" title="Git" class="dd-item ">
+        <a href="/post/git/">
+        Git
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/aws-cli/" title="Aws Cli" class="dd-item ">
+        <a href="/post/aws-cli/">
+        Aws Cli
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/apache-http-advanced/" title="Apache Http Advanced" class="dd-item ">
+        <a href="/post/apache-http-advanced/">
+        Apache Http Advanced
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/cisco-ios-netwrok-cmmmands/" title="Cisco Ios Netwrok Cmmmands" class="dd-item ">
+        <a href="/post/cisco-ios-netwrok-cmmmands/">
+        Cisco Ios Netwrok Cmmmands
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/apache-tomcat/" title="Apache Tomcat" class="dd-item ">
+        <a href="/post/apache-tomcat/">
+        Apache Tomcat
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/lnmp/" title="CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP" class="dd-item ">
+        <a href="/post/lnmp/">
+        CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/flask-quick-start-guide/" title="Flask Quick Start Guide" class="dd-item ">
+        <a href="/post/flask-quick-start-guide/">
+        Flask Quick Start Guide
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/hugo-how-to/" title="Hugo A Fast and Flexible Website Generator" class="dd-item ">
+        <a href="/post/hugo-how-to/">
+        Hugo A Fast and Flexible Website Generator
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/mdadm-rescue/" title="" class="dd-item ">
+        <a href="/post/mdadm-rescue/">
+        
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/programing/" title="Programings" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/programing/">
+          Programings
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/tools/vscode-sync/" title="Vscode Sync" class="dd-item ">
+        <a href="/programing/tools/vscode-sync/">
+        Vscode Sync
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-timezone-convert/" title="Python Timezone Convert example code" class="dd-item ">
+        <a href="/programing/python/python-timezone-convert/">
+        Python Timezone Convert example code
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-web-automation-test/" title="Python Web Automation Test" class="dd-item ">
+        <a href="/programing/python/python-web-automation-test/">
+        Python Web Automation Test
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-soap-client-suds/" title="A Python SOAP client sample code" class="dd-item ">
+        <a href="/programing/python/python-soap-client-suds/">
+        A Python SOAP client sample code
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-package/" title="Python Package" class="dd-item ">
+        <a href="/programing/python/python-package/">
+        Python Package
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-virtualenv/" title="Python Virtualenv" class="dd-item ">
+        <a href="/programing/python/python-virtualenv/">
+        Python Virtualenv
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-html-entity/" title="Python HTML Entity decode and encode" class="dd-item ">
+        <a href="/programing/python/python-html-entity/">
+        Python HTML Entity decode and encode
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/linux/" title="Linuxes" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/linux/">
+          Linuxes
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/openssl/" title="openssl" class="dd-item ">
+        <a href="/linux/openssl/">
+        openssl
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/logrotation/" title="Linux Logrotation" class="dd-item ">
+        <a href="/linux/logrotation/">
+        Linux Logrotation
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/sed/" title="sed" class="dd-item ">
+        <a href="/linux/sed/">
+        sed
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/regexp/" title="Regular Expression" class="dd-item active">
+        <a href="/linux/regexp/">
+        Regular Expression
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/find/" title="find" class="dd-item ">
+        <a href="/linux/find/">
+        find
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/xargs/" title="xargs" class="dd-item ">
+        <a href="/linux/xargs/">
+        xargs
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/grep/" title="Grep" class="dd-item ">
+        <a href="/linux/grep/">
+        Grep
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/db/" title="DBs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/db/">
+          DBs
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/db/mongodb/" title="Mongodb basic" class="dd-item ">
+        <a href="/db/mongodb/">
+        Mongodb basic
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/db/my-db/" title="MySQL and MariaDB memo" class="dd-item ">
+        <a href="/db/my-db/">
+        MySQL and MariaDB memo
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/devops/" title="DevOps" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devops/">
+          DevOps
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/ansible/" title="Ansible" class="dd-item ">
+        <a href="/devops/ansible/">
+        Ansible
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/twasa"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://blog.twasa.cf/showcase"><i class='fa fa-fw fa-camera'></i> Showcases</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://gohugo.io/"><i class='fa fa-fw fa-bookmark'></i> Hugo Documentation</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+       
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fa fa-fw fa-history"></i> Clear History</a></li>         
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fa fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://blog.twasa.cfLinux/regexp.md" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>About</a> > <a href='/linux/'>Linuxes</a> > Regular Expression
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li><a href="#regula-express">Regula Express</a></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Regular Expression</h1>
+          
+
+        
+
+
+
+
+<h1 id="regula-express">Regula Express</h1>
+
+<ul>
+<li>reference :</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>說明及範例</th>
+<th>比對不成立之字串</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>/a/</td>
+<td>含字母 “a” 的字串，例如 “ab”, “bac”, “cba” “xyz”</td>
+</tr>
+
+<tr>
+<td>/a./</td>
+<td>含字母 “a” 以及其後任一個字元的字串，例如 “ab”, “bac”（若要比對.，請使用 .） “a”, “ba”</td>
+</tr>
+
+<tr>
+<td>/^xy/</td>
+<td>以 “xy” 開始的字串，例如 “xyz”, “xyab”（若要比對 ^，請使用 \^）  “axy”, “bxy”</td>
+</tr>
+
+<tr>
+<td>/xy$/</td>
+<td>以 “xy” 結尾的字串，例如 “axy”, “abxy”以 “xy” 結尾的字串，例如 “axy”, “abxy” （若要比對 $，請使用 \$）  “xya”, “xyb”</td>
+</tr>
+
+<tr>
+<td>[13579]</td>
+<td>包含 “1” 或 “3” 或 “5” 或 “7” 或 “9” 的字串，例如：”a3b”, “1xy”    “y2k”</td>
+</tr>
+
+<tr>
+<td>[0-9]</td>
+<td>含數字之字串    不含數字之字串</td>
+</tr>
+
+<tr>
+<td>[a-z0-9]</td>
+<td>含數字或小寫字母之字串   不含數字及小寫字母之字串</td>
+</tr>
+
+<tr>
+<td>[a-zA-Z0-9]</td>
+<td>含數字或字母之字串 不含數字及字母之字串</td>
+</tr>
+
+<tr>
+<td>b[aeiou]t</td>
+<td>“bat”, “bet”, “bit”, “bot”, “but” “bxt”, “bzt”</td>
+</tr>
+
+<tr>
+<td>[^0-9]</td>
+<td>不含數字之字串（若要比對 ^，請使用 \^）    含數字之字串</td>
+</tr>
+
+<tr>
+<td>[^aeiouAEIOU]</td>
+<td>不含母音之字串（若要比對 ^，請使用 \^）    含母音之字串</td>
+</tr>
+
+<tr>
+<td>[^\^]</td>
+<td>不含 “^” 之字串，例如 “xyz”, “abc”    “xy^”, “a^bc”</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>正規表示式的特定字元</th>
+<th>說明</th>
+<th>等效的正規表示式</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>\d</td>
+<td>數字</td>
+<td>[0-9]</td>
+</tr>
+
+<tr>
+<td>\D</td>
+<td>非數字</td>
+<td>[^0-9]</td>
+</tr>
+
+<tr>
+<td>\w</td>
+<td>數字、字母、底線</td>
+<td>[a-zA-Z0-9_]</td>
+</tr>
+
+<tr>
+<td>\W</td>
+<td>非 \w</td>
+<td>[^a-zA-Z0-9_]</td>
+</tr>
+
+<tr>
+<td>\s</td>
+<td>空白字元</td>
+<td>[ \r\t\n\f]</td>
+</tr>
+
+<tr>
+<td>\S</td>
+<td>非空白字元</td>
+<td>[^ \r\t\n\f]</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>正規表示式</th>
+<th>說明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>/a?/</td>
+<td>零或一個 a（若要比對? 字元，請使用 \?）</td>
+</tr>
+
+<tr>
+<td>/a+/</td>
+<td>一或多個 a（若要比對+ 字元，請使用 +）</td>
+</tr>
+
+<tr>
+<td>/a*/</td>
+<td>零或多個 a（若要比對* 字元，請使用 *）</td>
+</tr>
+
+<tr>
+<td>/a{4}/</td>
+<td>四個 a</td>
+</tr>
+
+<tr>
+<td>/a{5,10}/</td>
+<td>五至十個 a</td>
+</tr>
+
+<tr>
+<td>/a{5,}/</td>
+<td>至少五個 a</td>
+</tr>
+
+<tr>
+<td>/a{,3}/</td>
+<td>至多三個 a</td>
+</tr>
+
+<tr>
+<td>/a.{5}b/</td>
+<td>a 和 b中間夾五個（非換行）字元</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>字元</th>
+<th>說明</th>
+<th>簡單範例</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td></td>
+<td>避開特殊字元</td>
+<td>/A*/ 可用於比對 “A*”，其中 * 是一個特殊字元，為避開其特殊意義，所以必須加上 “\”</td>
+</tr>
+
+<tr>
+<td>^</td>
+<td>比對輸入列的啟始位置</td>
+<td>/^A/ 可比對 “Abcd” 中的 “A”，但不可比對 “aAb”</td>
+</tr>
+
+<tr>
+<td>$</td>
+<td>比對輸入列的結束位置</td>
+<td>/A$/ 可比對 “bcdA” 中的 “A”，但不可比對 “aAb”</td>
+</tr>
+
+<tr>
+<td>*</td>
+<td>比對前一個字元零次或更多次</td>
+<td>/bo*/ 可比對 “Good boook” 中的 “booo”，亦可比對 “Good bk” 中的 “b”</td>
+</tr>
+
+<tr>
+<td>+</td>
+<td>比對前一個字元一次或更多次，等效於 {1,}</td>
+<td>/a+/ 可比對 “caaandy” 中的 “aaa”，但不可比對 “cndy”</td>
+</tr>
+
+<tr>
+<td>?</td>
+<td>比對前一個字元零次或一次</td>
+<td>/e?l/ 可比對 “angel” 中的 “el”，也可以比對 “angle” 中的 “l”</td>
+</tr>
+
+<tr>
+<td>.</td>
+<td>比對任何一個字元（但換行符號不算）</td>
+<td>/.n/ 可比對 “nay, an apple is on the tree” 中的 “an” 和 “on”，但不可比對 “nay”</td>
+</tr>
+
+<tr>
+<td>(x)</td>
+<td>比對 x 並將符合的部分存入一個變數</td>
+<td>/(a<em>) and (b</em>)/ 可比對 “aaa and bb” 中的 “aaa” 和 “bb”，並將兩個比對得到的字串設定至變數 RegExp.$1 和 RegExp.$2。</td>
+</tr>
+
+<tr>
+<td>xy</td>
+<td>比對 x 或 y</td>
+<td>/a<em>b</em>/g 可比對 “aaa and bb” 中的 “aaa” 和 “bb”</td>
+</tr>
+
+<tr>
+<td>{n}</td>
+<td>比對前一個字元 n 次，n 為一個正整數</td>
+<td>/a{3}/ 可比對 “lllaaalaa” 其中的 “aaa”，但不可比對 “aa”</td>
+</tr>
+
+<tr>
+<td>{n,}</td>
+<td>比對前一個字元至少 n 次，n 為一個正整數</td>
+<td>/a{3,}/ 可比對 “aa aaa aaaa” 其中的 “aaa” 及 “aaaa”，但不可比對 “aa”</td>
+</tr>
+
+<tr>
+<td>{n,m}</td>
+<td>比對前一個字元至少 n 次，至多 m 次，m、n 均為正整數</td>
+<td>/a{3,4}/ 可比對 “aa aaa aaaa aaaaa” 其中的 “aaa” 及 “aaaa”，但不可比對 “aa” 及 “aaaaa”</td>
+</tr>
+
+<tr>
+<td>[xyz]</td>
+<td>比對中括弧內的任一個字元</td>
+<td>/[ecm]/ 可比對 “welcome” 中的 “e” 或 “c” 或 “m”</td>
+</tr>
+
+<tr>
+<td>[^xyz]</td>
+<td>比對不在中括弧內出現的任一個字元</td>
+<td>/[^ecm]/ 可比對 “welcome” 中的 “w”、”l”、”o”，可見出其與 [xyz] 功能相反。（同時請注意 /^/ 與 [^] 之間功能的不同。）</td>
+</tr>
+
+<tr>
+<td>[\b]</td>
+<td>比對退位字元（Backspace character）</td>
+<td>可以比對一個 backspace ，也請注意 [\b] 與 \b 之間的差別</td>
+</tr>
+
+<tr>
+<td>\b</td>
+<td>比對英文字的邊界，例如空格</td>
+<td>例如 /\bn\w/ 可以比對 “noonday” 中的 ‘no’ ; /\wy\b/ 可比對 “possibly yesterday.” 中的 ‘ly’</td>
+</tr>
+
+<tr>
+<td>\B</td>
+<td>比對非「英文字的邊界」</td>
+<td>例如, /\w\Bn/ 可以比對 “noonday” 中的 ‘on’ , 另外 /y\B\w/ 可以比對 “possibly yesterday.” 中的 ‘ye’</td>
+</tr>
+
+<tr>
+<td>\cX</td>
+<td>比對控制字元（Control character），其中 X 是一個控制字元</td>
+<td>/\cM/ 可以比對 一個字串中的 control-M</td>
+</tr>
+
+<tr>
+<td>\d</td>
+<td>比對任一個數字，等效於 [0-9]</td>
+<td>/[\d]/ 可比對 由 “0” 至 “9” 的任一數字 但其餘如字母等就不可比對</td>
+</tr>
+
+<tr>
+<td>\D</td>
+<td>比對任一個非數字，等效於 [^0-9]</td>
+<td>/[\D]/ 可比對 “w” “a”… 但不可比對如 “7” “1” 等數字</td>
+</tr>
+
+<tr>
+<td>\f</td>
+<td>比對 form-feed</td>
+<td>若是在文字中有發生 “換頁” 的行為 則可以比對成功</td>
+</tr>
+
+<tr>
+<td>\n</td>
+<td>比對換行符號</td>
+<td>若是在文字中有發生 “換行” 的行為 則可以比對成功</td>
+</tr>
+
+<tr>
+<td>\r</td>
+<td>比對 carriage return</td>
+<td></td>
+</tr>
+
+<tr>
+<td>\s</td>
+<td>比對任一個空白字元（White space character），等效於 [ \f\n\r\t\v]</td>
+<td>/\s\w*/ 可比對 “A b” 中的 “b”</td>
+</tr>
+
+<tr>
+<td>\S</td>
+<td>比對任一個非空白字元，等效於 [^ \f\n\r\t\v]</td>
+<td>/\S/\w* 可比對 “A b” 中的 “A”</td>
+</tr>
+
+<tr>
+<td>\t</td>
+<td>比對定位字元（Tab）</td>
+<td></td>
+</tr>
+
+<tr>
+<td>\v</td>
+<td>比對垂直定位字元（Vertical tab）</td>
+<td></td>
+</tr>
+
+<tr>
+<td>\w</td>
+<td>比對數字字母字元（Alphanumerical characters）或底線字母（”<em>”），等效於 [A-Za-z0-9</em>]</td>
+<td>/\w/ 可比對 “.A _!9” 中的 “A”、”_”、”9″。</td>
+</tr>
+
+<tr>
+<td>\W</td>
+<td>比對非「數字字母字元或底線字母」，等效於 [^A-Za-z0-9_]</td>
+<td>/\W/ 可比對 “.A _!9” 中的 “.”、” “、”!”，可見其功能與 /\w/ 恰好相反。</td>
+</tr>
+
+<tr>
+<td>\ooctal</td>
+<td>比對八進位，其中octal是八進位數目</td>
+<td>/\oocetal123/ 可比對 與 八進位的ASCII中 “123” 所相對應的字元值。</td>
+</tr>
+
+<tr>
+<td>\xhex</td>
+<td>比對十六進位，其中hex是十六進位數目</td>
+<td>/\xhex38/ 可比對 與 16進位的ASCII中 “38” 所相對應的字元。</td>
+</tr>
+</tbody>
+</table>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/linux/sed/" title="sed"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/linux/find/" title="find" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1529425716"></script>
+    <script src="/js/perfect-scrollbar.min.js?1529425716"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1529425716"></script>
+    <script src="/js/jquery.sticky.js?1529425716"></script>
+    <script src="/js/featherlight.min.js?1529425716"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1529425716"></script>
+    <script src="/js/highlight.pack.js?1529425716"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1529425716"></script>
+    <script src="/js/learn.js?1529425716"></script>
+    <script src="/js/hugo-learn.js?1529425716"></script>
+
+    <link href="/mermaid/mermaid.css?1529425716" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1529425716"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

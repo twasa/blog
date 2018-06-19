@@ -1,0 +1,2247 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.39" />
+    <meta name="description" content="William&#39;s blog">
+<meta name="author" content="Mathieu Cornic">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <title>Docker Memo(drafting) :: William&#39;s blog</title>
+    
+    
+    <link href="/css/nucleus.css?1529425716" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1529425716" rel="stylesheet">
+    <link href="/css/hybrid.css?1529425716" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1529425716" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1529425716" rel="stylesheet">
+    <link href="/css/auto-complete.css?1529425716" rel="stylesheet">
+    <link href="/css/theme.css?1529425716" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1529425716" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1529425716"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/post/docker/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1529425716"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1529425716"></script>
+<script type="text/javascript">
+    
+        var baseurl = '\/';
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1529425716"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/post/" title="Posts" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/post/">
+          Posts
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/consul/" title="Consul" class="dd-item ">
+        <a href="/post/consul/">
+        Consul
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/powershell/" title="Powershell" class="dd-item ">
+        <a href="/post/powershell/">
+        Powershell
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/docker/" title="Docker Memo(drafting)" class="dd-item active">
+        <a href="/post/docker/">
+        Docker Memo(drafting)
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/jupyterhub/" title="Jupyterhub" class="dd-item ">
+        <a href="/post/jupyterhub/">
+        Jupyterhub
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/git/" title="Git" class="dd-item ">
+        <a href="/post/git/">
+        Git
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/aws-cli/" title="Aws Cli" class="dd-item ">
+        <a href="/post/aws-cli/">
+        Aws Cli
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/apache-http-advanced/" title="Apache Http Advanced" class="dd-item ">
+        <a href="/post/apache-http-advanced/">
+        Apache Http Advanced
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/cisco-ios-netwrok-cmmmands/" title="Cisco Ios Netwrok Cmmmands" class="dd-item ">
+        <a href="/post/cisco-ios-netwrok-cmmmands/">
+        Cisco Ios Netwrok Cmmmands
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/apache-tomcat/" title="Apache Tomcat" class="dd-item ">
+        <a href="/post/apache-tomcat/">
+        Apache Tomcat
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/lnmp/" title="CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP" class="dd-item ">
+        <a href="/post/lnmp/">
+        CentOS7 Linux&#43;Nginx&#43;MariaDB&#43;PHP
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/flask-quick-start-guide/" title="Flask Quick Start Guide" class="dd-item ">
+        <a href="/post/flask-quick-start-guide/">
+        Flask Quick Start Guide
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/hugo-how-to/" title="Hugo A Fast and Flexible Website Generator" class="dd-item ">
+        <a href="/post/hugo-how-to/">
+        Hugo A Fast and Flexible Website Generator
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/mdadm-rescue/" title="" class="dd-item ">
+        <a href="/post/mdadm-rescue/">
+        
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/programing/" title="Programings" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/programing/">
+          Programings
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/tools/vscode-sync/" title="Vscode Sync" class="dd-item ">
+        <a href="/programing/tools/vscode-sync/">
+        Vscode Sync
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-timezone-convert/" title="Python Timezone Convert example code" class="dd-item ">
+        <a href="/programing/python/python-timezone-convert/">
+        Python Timezone Convert example code
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-web-automation-test/" title="Python Web Automation Test" class="dd-item ">
+        <a href="/programing/python/python-web-automation-test/">
+        Python Web Automation Test
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-soap-client-suds/" title="A Python SOAP client sample code" class="dd-item ">
+        <a href="/programing/python/python-soap-client-suds/">
+        A Python SOAP client sample code
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-package/" title="Python Package" class="dd-item ">
+        <a href="/programing/python/python-package/">
+        Python Package
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-virtualenv/" title="Python Virtualenv" class="dd-item ">
+        <a href="/programing/python/python-virtualenv/">
+        Python Virtualenv
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/programing/python/python-html-entity/" title="Python HTML Entity decode and encode" class="dd-item ">
+        <a href="/programing/python/python-html-entity/">
+        Python HTML Entity decode and encode
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/linux/" title="Linuxes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/linux/">
+          Linuxes
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/openssl/" title="openssl" class="dd-item ">
+        <a href="/linux/openssl/">
+        openssl
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/logrotation/" title="Linux Logrotation" class="dd-item ">
+        <a href="/linux/logrotation/">
+        Linux Logrotation
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/sed/" title="sed" class="dd-item ">
+        <a href="/linux/sed/">
+        sed
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/regexp/" title="Regular Expression" class="dd-item ">
+        <a href="/linux/regexp/">
+        Regular Expression
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/find/" title="find" class="dd-item ">
+        <a href="/linux/find/">
+        find
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/xargs/" title="xargs" class="dd-item ">
+        <a href="/linux/xargs/">
+        xargs
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/grep/" title="Grep" class="dd-item ">
+        <a href="/linux/grep/">
+        Grep
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/db/" title="DBs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/db/">
+          DBs
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/db/mongodb/" title="Mongodb basic" class="dd-item ">
+        <a href="/db/mongodb/">
+        Mongodb basic
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/db/my-db/" title="MySQL and MariaDB memo" class="dd-item ">
+        <a href="/db/my-db/">
+        MySQL and MariaDB memo
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/devops/" title="DevOps" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devops/">
+          DevOps
+          
+            <i class="fa fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/ansible/" title="Ansible" class="dd-item ">
+        <a href="/devops/ansible/">
+        Ansible
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/twasa"><i class='fa fa-fw fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://blog.twasa.cf/showcase"><i class='fa fa-fw fa-camera'></i> Showcases</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://gohugo.io/"><i class='fa fa-fw fa-bookmark'></i> Hugo Documentation</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+       
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fa fa-fw fa-history"></i> Clear History</a></li>         
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fa fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://blog.twasa.cfpost/docker.md" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>About</a> > <a href='/post/'>Posts</a> > Docker Memo(drafting)
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li><a href="#docker">Docker</a>
+<ul>
+<li><a href="#description">Description</a></li>
+<li><a href="#docker-concept">docker concept</a></li>
+<li><a href="#requirement">Requirement</a></li>
+<li><a href="#installation">installation</a></li>
+<li><a href="#commands-and-syntax">commands and syntax</a>
+<ul>
+<li><a href="#commands-examples">commands examples</a></li>
+<li><a href="#using-dockerfile">Using Dockerfile</a></li>
+<li><a href="#using-docker-compose-for-docker-stack-deploy">Using docker-compose for docker stack deploy</a></li>
+<li><a href="#install-docker-machine">install docker-machine</a></li>
+<li><a href="#swarm-clusters">Swarm clusters</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Docker Memo(drafting)</h1>
+          
+
+        
+
+
+
+
+<h1 id="docker">Docker</h1>
+
+<h2 id="description">Description</h2>
+
+<ul>
+<li>is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud</li>
+<li>Containers vs. virtual machines
+
+<ul>
+<li>Virtual Machine diagram</li>
+</ul></li>
+</ul>
+
+<p><img src="https://www.docker.com/sites/default/files/VM@2x.png" alt="Alt text" title="Virtual Machine" /></p>
+
+<ul>
+<li>Container diagram</li>
+</ul>
+
+<p><img src="https://www.docker.com/sites/default/files/Container@2x.png" alt="Alt text" title="Virtual Machine" /></p>
+
+<h2 id="docker-concept">docker concept</h2>
+
+<ul>
+<li><p>Image : a lightweight, stand-alone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files.</p></li>
+
+<li><p>Container : a runtime instance of an imageâ€”what the image becomes in memory when actually executed. It runs completely isolated from the host environment by default, only accessing host files and ports if configured to do so.</p></li>
+
+<li><p>registries : a place to store and distribute Docker images, like Docker Hub</p></li>
+
+<li><p>Repository : a collection of different versions for a single Docker image</p></li>
+
+<li><p>Dockerfile : a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession.</p></li>
+
+<li><p>Docker Machine : a tool that lets you install Docker Engine on virtual hosts, and manage the hosts with docker-machine commands. You can use Machine to create Docker hosts on your local Mac or Windows box, on your company network, in your data center, or on cloud providers like Azure, AWS, or Digital Ocean.</p></li>
+
+<li><p>Compose : a tool for defining and running multi-container Docker applications</p></li>
+
+<li><p>Docker Swarm (1.12.0 or later) : enables you to create a cluster of one or more Docker Engines called a swarm. A swarm consists of one or more nodes: physical or virtual machines running Docker Engine 1.12 or later in swarm mode.
+<img src="https://docs.docker.com/engine/swarm/images/swarm-diagram.png" alt="Alt text" title="Virtual Machine" /></p></li>
+</ul>
+
+<h2 id="requirement">Requirement</h2>
+
+<ul>
+<li>64bit environment</li>
+<li>Linux kernel &gt; 3.10</li>
+</ul>
+
+<h2 id="installation">installation</h2>
+
+<ul>
+<li>reference <a href="https://docs.docker.com/engine/installation/">https://docs.docker.com/engine/installation/</a></li>
+
+<li><p>Ubuntu</p>
+
+<pre><code>atp-get update
+curl -fsSL https://get.docker.com/ | sh
+</code></pre></li>
+
+<li><p>CentOS 6</p>
+
+<pre><code>yum install epel-release
+yum install docker-io
+</code></pre></li>
+
+<li><p>CentOS 7</p>
+
+<pre><code>yum install -y yum-utils device-mapper-persistent-data lvm2
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum-config-manager --enable docker-ce-edge
+yum install docker-ce
+systemctl enable docker
+systemctl start docker
+</code></pre></li>
+</ul>
+
+<h2 id="commands-and-syntax">commands and syntax</h2>
+
+<ul>
+<li>Usage:</li>
+</ul>
+
+<pre><code>docker [OPTIONS] COMMAND [ARG...]
+docker [ --help | -v | --version ]
+
+A self-sufficient runtime for containers.
+
+Options:
+      --config string      Location of client config files (default &quot;/root/.docker&quot;)
+  -D, --debug              Enable debug mode
+      --help               Print usage
+  -H, --host value         Daemon socket(s) to connect to (default [])
+  -l, --log-level string   Set the logging level (&quot;debug&quot;|&quot;info&quot;|&quot;warn&quot;|&quot;error&quot;|&quot;fatal&quot;) (default &quot;info&quot;)
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default &quot;/root/.docker/ca.pem&quot;)
+      --tlscert string     Path to TLS certificate file (default &quot;/root/.docker/cert.pem&quot;)
+      --tlskey string      Path to TLS key file (default &quot;/root/.docker/key.pem&quot;)
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+</code></pre>
+
+<ul>
+<li>Commands</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>docker attach</td>
+<td>Attach local standard input, output, and error streams to a running container</td>
+</tr>
+
+<tr>
+<td>docker build</td>
+<td>Build an image from a Dockerfile</td>
+</tr>
+
+<tr>
+<td>docker checkpoint</td>
+<td>Manage checkpoints</td>
+</tr>
+
+<tr>
+<td>docker commit</td>
+<td>Create a new image from a container’s changes</td>
+</tr>
+
+<tr>
+<td>docker config</td>
+<td>Manage Docker configs</td>
+</tr>
+
+<tr>
+<td>docker container</td>
+<td>Manage containers</td>
+</tr>
+
+<tr>
+<td>docker cp</td>
+<td>Copy files/folders between a container and the local filesystem</td>
+</tr>
+
+<tr>
+<td>docker create</td>
+<td>Create a new container</td>
+</tr>
+
+<tr>
+<td>docker deploy</td>
+<td>Deploy a new stack or update an existing stack</td>
+</tr>
+
+<tr>
+<td>docker diff</td>
+<td>Inspect changes to files or directories on a container’s filesystem</td>
+</tr>
+
+<tr>
+<td>docker events</td>
+<td>Get real time events from the server</td>
+</tr>
+
+<tr>
+<td>docker exec</td>
+<td>Run a command in a running container</td>
+</tr>
+
+<tr>
+<td>docker export</td>
+<td>Export a container’s filesystem as a tar archive</td>
+</tr>
+
+<tr>
+<td>docker history</td>
+<td>Show the history of an image</td>
+</tr>
+
+<tr>
+<td>docker image</td>
+<td>Manage images</td>
+</tr>
+
+<tr>
+<td>docker images</td>
+<td>List images</td>
+</tr>
+
+<tr>
+<td>docker import</td>
+<td>Import the contents from a tarball to create a filesystem image</td>
+</tr>
+
+<tr>
+<td>docker info</td>
+<td>Display system-wide information</td>
+</tr>
+
+<tr>
+<td>docker inspect</td>
+<td>Return low-level information on Docker objects</td>
+</tr>
+
+<tr>
+<td>docker kill</td>
+<td>Kill one or more running containers</td>
+</tr>
+
+<tr>
+<td>docker load</td>
+<td>Load an image from a tar archive or STDIN</td>
+</tr>
+
+<tr>
+<td>docker login</td>
+<td>Log in to a Docker registry</td>
+</tr>
+
+<tr>
+<td>docker logout</td>
+<td>Log out from a Docker registry</td>
+</tr>
+
+<tr>
+<td>docker logs</td>
+<td>Fetch the logs of a container</td>
+</tr>
+
+<tr>
+<td>docker network</td>
+<td>Manage networks</td>
+</tr>
+
+<tr>
+<td>docker node</td>
+<td>Manage Swarm nodes</td>
+</tr>
+
+<tr>
+<td>docker pause</td>
+<td>Pause all processes within one or more containers</td>
+</tr>
+
+<tr>
+<td>docker plugin</td>
+<td>Manage plugins</td>
+</tr>
+
+<tr>
+<td>docker port</td>
+<td>List port mappings or a specific mapping for the container</td>
+</tr>
+
+<tr>
+<td>docker ps</td>
+<td>List containers</td>
+</tr>
+
+<tr>
+<td>docker pull</td>
+<td>Pull an image or a repository from a registry</td>
+</tr>
+
+<tr>
+<td>docker push</td>
+<td>Push an image or a repository to a registry</td>
+</tr>
+
+<tr>
+<td>docker rename</td>
+<td>Rename a container</td>
+</tr>
+
+<tr>
+<td>docker restart</td>
+<td>Restart one or more containers</td>
+</tr>
+
+<tr>
+<td>docker rm</td>
+<td>Remove one or more containers</td>
+</tr>
+
+<tr>
+<td>docker rmi</td>
+<td>Remove one or more images</td>
+</tr>
+
+<tr>
+<td>docker run</td>
+<td>Run a command in a new container</td>
+</tr>
+
+<tr>
+<td>docker save</td>
+<td>Save one or more images to a tar archive (streamed to STDOUT by default)</td>
+</tr>
+
+<tr>
+<td>docker search</td>
+<td>Search the Docker Hub for images</td>
+</tr>
+
+<tr>
+<td>docker secret</td>
+<td>Manage Docker secrets</td>
+</tr>
+
+<tr>
+<td>docker service</td>
+<td>Manage services</td>
+</tr>
+
+<tr>
+<td>docker stack</td>
+<td>Manage Docker stacks</td>
+</tr>
+
+<tr>
+<td>docker start</td>
+<td>Start one or more stopped containers</td>
+</tr>
+
+<tr>
+<td>docker stats</td>
+<td>Display a live stream of container(s) resource usage statistics</td>
+</tr>
+
+<tr>
+<td>docker stop</td>
+<td>Stop one or more running containers</td>
+</tr>
+
+<tr>
+<td>docker swarm</td>
+<td>Manage Swarm</td>
+</tr>
+
+<tr>
+<td>docker system</td>
+<td>Manage Docker</td>
+</tr>
+
+<tr>
+<td>docker tag</td>
+<td>Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE</td>
+</tr>
+
+<tr>
+<td>docker top</td>
+<td>Display the running processes of a container</td>
+</tr>
+
+<tr>
+<td>docker unpause</td>
+<td>Unpause all processes within one or more containers</td>
+</tr>
+
+<tr>
+<td>docker update</td>
+<td>Update configuration of one or more containers</td>
+</tr>
+
+<tr>
+<td>docker version</td>
+<td>Show the Docker version information</td>
+</tr>
+
+<tr>
+<td>docker volume</td>
+<td>Manage volumes</td>
+</tr>
+
+<tr>
+<td>docker wait</td>
+<td>Block until one or more containers stop, then print their exit codes</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="commands-examples">commands examples</h3>
+
+<ul>
+<li><p>docker run hello-world</p>
+
+<pre><code>docker run hello-world
+</code></pre></li>
+
+<li><p>check docker version</p>
+
+<pre><code>docker --version
+</code></pre></li>
+
+<li><p>check docker images</p>
+
+<pre><code>docker images
+</code></pre></li>
+</ul>
+
+<h3 id="using-dockerfile">Using Dockerfile</h3>
+
+<ul>
+<li>Create your project directory</li>
+<li>Change directories (cd) into the directory</li>
+<li>create a file called Dockerfile, sample code as below</li>
+</ul>
+
+<pre><code># Use an official Python runtime as a parent image
+FROM python:2.7-slim
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+ADD . /app
+
+# Install any needed packages specified in requirements.txt
+RUN pip install -r requirements.txt
+
+# Make port 80 available to the world outside this container
+EXPOSE 80
+
+# Define environment variable
+ENV NAME World
+
+# Run app.py when the container launches
+CMD [&quot;python&quot;, &quot;app.py&quot;]
+</code></pre>
+
+<ul>
+<li>Create a requirements.txt</li>
+</ul>
+
+<pre><code>Flask
+Redis
+</code></pre>
+
+<ul>
+<li>Create a app.py</li>
+</ul>
+
+<pre><code>from flask import Flask
+from redis import Redis, RedisError
+import os
+import socket
+
+# Connect to Redis
+redis = Redis(host=&quot;redis&quot;, db=0, socket_connect_timeout=2, socket_timeout=2)
+
+app = Flask(__name__)
+
+@app.route(&quot;/&quot;)
+def hello():
+    try:
+        visits = redis.incr(&quot;counter&quot;)
+    except RedisError:
+        visits = &quot;&lt;i&gt;cannot connect to Redis, counter disabled&lt;/i&gt;&quot;
+
+    html = &quot;&lt;h3&gt;Hello {name}!&lt;/h3&gt;&quot; \
+           &quot;&lt;b&gt;Hostname:&lt;/b&gt; {hostname}&lt;br/&gt;&quot; \
+           &quot;&lt;b&gt;Visits:&lt;/b&gt; {visits}&quot;
+    return html.format(name=os.getenv(&quot;NAME&quot;, &quot;world&quot;), hostname=socket.gethostname(), visits=visits)
+
+if __name__ == &quot;__main__&quot;:
+    app.run(host='0.0.0.0', port=80)
+
+</code></pre>
+
+<ul>
+<li>Build the app</li>
+</ul>
+
+<pre><code>docker build -t friendlyhello .
+</code></pre>
+
+<ul>
+<li>check the docker image</li>
+</ul>
+
+<pre><code>docker images
+REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
+friendlyhello           latest              2af32fdfad1d        9 seconds ago       195.4 MB
+docker.io/python        2.7-slim            8b88f06b72d7        8 days ago          183.6 MB
+docker.io/hello-world   latest              05a3bd381fc2        2 weeks ago         1.84 kB
+</code></pre>
+
+<ul>
+<li>run the app</li>
+</ul>
+
+<pre><code>docker run -p 4000:80 friendlyhello
+</code></pre>
+
+<ul>
+<li>run the app in the background, in detached mode:</li>
+</ul>
+
+<pre><code>docker run -d -p 4000:80 friendlyhello
+</code></pre>
+
+<ul>
+<li>get running container</li>
+</ul>
+
+<pre><code>docker ps
+docker container ls #v1.3 or upper only
+</code></pre>
+
+<ul>
+<li>stop the running container</li>
+</ul>
+
+<pre><code>docker stop &lt;CONTAINER ID&gt;
+</code></pre>
+
+<ul>
+<li>Tag the image</li>
+</ul>
+
+<pre><code>docker tag image username/repository:tag
+docker tag friendlyhello william/get-started:part2
+</code></pre>
+
+<ul>
+<li>Remove one or more images</li>
+</ul>
+
+<pre><code>docker rmi &lt;container id&gt;
+docker image rm &lt;image id&gt;
+</code></pre>
+
+<ul>
+<li>Publish the image</li>
+</ul>
+
+<pre><code>docker push username/repository:tag
+</code></pre>
+
+<ul>
+<li>Pull and run the image from the remote repository</li>
+</ul>
+
+<pre><code>docker run -p 4000:80 username/repository:tag
+</code></pre>
+
+<h3 id="using-docker-compose-for-docker-stack-deploy">Using docker-compose for docker stack deploy</h3>
+
+<ul>
+<li>create a docker-compose.yml tells Docker to do the following:</li>
+<li>Pull the image we uploaded in step 2 from the registry.</li>
+<li>Run 2 instances of that image as a service called web, limiting each one to use, at most, 10% of the CPU (across all cores), and 50MB of RAM.</li>
+<li>Immediately restart containers if one fails.</li>
+<li>Map port 4000 on the host to web’s port 80.</li>
+<li>Instruct web’s containers to share port 80 via a load-balanced network called webnet. (Internally, the containers themselves will publish to web’s port 80 at an ephemeral port.)</li>
+<li>Define the webnet network with the default settings (which is a load-balanced overlay network).</li>
+</ul>
+
+<pre><code>version: &quot;3&quot;
+services:
+  web:
+    # replace username/repo:tag with your name and image details
+    image: william/get-started:part2
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: &quot;0.1&quot;
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - &quot;4000:80&quot;
+    networks:
+      - webnet
+networks:
+  webnet:
+
+</code></pre>
+
+<ul>
+<li><p>for load-balance, run swarm init first</p>
+
+<pre><code>docker swarm init
+</code></pre></li>
+
+<li><p>run docker stack</p>
+
+<pre><code>docker stack deploy -c docker-compose.yml getstartedlab
+</code></pre></li>
+
+<li><p>Get the service ID for the one service in our application:</p>
+
+<pre><code>docker service ls
+</code></pre></li>
+
+<li><p>List the tasks</p>
+
+<pre><code>docker service ps &lt;service&gt;
+</code></pre></li>
+
+<li><p>check task information</p>
+
+<pre><code>docker inspect --format='{{.Status.ContainerStatus.ContainerID}}' &lt;task or containerid&gt;
+</code></pre></li>
+
+<li><p>Scale the app by changing the replicas value in docker-compose.yml, saving the change, and re-running the docker stack deploy command:</p>
+
+<pre><code>docker stack deploy -c docker-compose.yml getstartedlab
+</code></pre></li>
+
+<li><p>Take down the app and the swarm</p>
+
+<pre><code>docker stack rm getstartedlab
+docker swarm leave --force
+</code></pre></li>
+</ul>
+
+<h3 id="install-docker-machine">install docker-machine</h3>
+
+<ul>
+<li><p>install</p>
+
+<pre><code>curl -L https://github.com/docker/machine/releases/download/v0.12.2/docker-machine-`uname -s`-`uname -m` &gt;/tmp/docker-machine &amp;&amp;
+chmod +x /tmp/docker-machine &amp;&amp;
+sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
+</code></pre></li>
+
+<li><p>check version</p>
+
+<pre><code>docker-machine version
+</code></pre></li>
+
+<li><p>uninstall</p>
+
+<pre><code>rm $(which docker-machine)
+</code></pre></li>
+</ul>
+
+<h3 id="swarm-clusters">Swarm clusters</h3>
+
+<ul>
+<li><p>TCP port 2376 for secure Docker client communication. This port is required for Docker Machine to work. Docker Machine is used to orchestrate Docker hosts.</p></li>
+
+<li><p>TCP port 2377. This port is used for communication between the nodes of a Docker Swarm or cluster. It only needs to be opened on manager nodes.</p></li>
+
+<li><p>TCP and UDP port 7946 for communication among nodes (container network discovery).</p></li>
+
+<li><p>UDP port 4789 for overlay network traffic (container ingress networking).</p></li>
+
+<li><p>Manager :</p></li>
+
+<li><p>Worker(Node) :</p></li>
+</ul>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/post/powershell/" title="Powershell"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/post/jupyterhub/" title="Jupyterhub" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1529425716"></script>
+    <script src="/js/perfect-scrollbar.min.js?1529425716"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1529425716"></script>
+    <script src="/js/jquery.sticky.js?1529425716"></script>
+    <script src="/js/featherlight.min.js?1529425716"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1529425716"></script>
+    <script src="/js/highlight.pack.js?1529425716"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1529425716"></script>
+    <script src="/js/learn.js?1529425716"></script>
+    <script src="/js/hugo-learn.js?1529425716"></script>
+
+    <link href="/mermaid/mermaid.css?1529425716" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1529425716"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

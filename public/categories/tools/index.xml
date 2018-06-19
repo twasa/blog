@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on William&#39;s blog</title>
+    <link>https://blog.twasa.cf/categories/tools/</link>
+    <description>Recent content in Tools on William&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 19 Nov 2017 00:16:07 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.twasa.cf/categories/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vscode Sync</title>
+      <link>https://blog.twasa.cf/programing/tools/vscode-sync/</link>
+      <pubDate>Sun, 19 Nov 2017 00:16:07 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/programing/tools/vscode-sync/</guid>
+      <description>Visual Studio Code Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications. basic Configuration  &amp;quot;editor.wordWrap&amp;quot;: &amp;quot;off&amp;quot;, &amp;quot;[markdown]&amp;quot;: { &amp;quot;editor.wordWrap&amp;quot;: &amp;quot;off&amp;quot;, &amp;quot;editor.quickSuggestions&amp;quot;: false }, &amp;quot;markdown.extension.preview.autoShowPreviewToSide&amp;quot;: true, &amp;quot;workbench.colorCustomizations&amp;quot;: { &amp;quot;tab.activeBackground&amp;quot;: &amp;quot;#0300aa&amp;quot; }  Extensions  Markdown All in One Settings Sync Copy Relative Path Path Intellisense Markdown table prettifier Microsoft Python extension  Settings sync using github  Settings &amp;gt; Developer settings &amp;gt; Personal access tokens &amp;gt; Generate new token Give your token a descriptive name like vscode, check gist and click Generate token.</description>
+    </item>
+    
+  </channel>
+</rss>

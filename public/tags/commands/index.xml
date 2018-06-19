@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Commands on William&#39;s blog</title>
+    <link>https://blog.twasa.cf/tags/commands/</link>
+    <description>Recent content in Commands on William&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 11 Sep 2017 17:12:29 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.twasa.cf/tags/commands/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>openssl</title>
+      <link>https://blog.twasa.cf/linux/openssl/</link>
+      <pubDate>Mon, 11 Sep 2017 17:12:29 +0800</pubDate>
+      
+      <guid>https://blog.twasa.cf/linux/openssl/</guid>
+      <description> create private key openssl genrsa -out server.key 2048  create Certificate Signing Request openssl req -sha512 -new -key server.key -out server.csr -subj &amp;quot;/C=TW/ST=Taipei/L=Taipei/O=example/OU=Personal/CN=www.example.com&amp;quot;  check csr info openssl req -in server.csr -noout -text  Self-Sign Certificate openssl x509 -sha512 -req -days 3650 -in server.csr -signkey server.key -out server.crt  encrypt private key -a 表示檔案使用 base64 編碼 -salt 加雜湊值，增加安全性 openssl aes-256-cbc -a -salt -in server.key -out server.encrypt.key  </description>
+    </item>
+    
+  </channel>
+</rss>
