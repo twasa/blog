@@ -1,10 +1,8 @@
 ---
-title: "HTTPS certificates for your Synology NAS using acme.sh and cloudflare dns API"
+title: "How to install and auto update Let's encrypt wildcard certs on Synology NAS with cloudflare DNS API"
 date: 2018-07-05T02:25:04+08:00
 draft: true
 ---
-
-# How to install and auto update Let's encrypt wildcard certs on Synology NAS
 
 ## requirements
 - Synology ssh enabled and sudo permission
