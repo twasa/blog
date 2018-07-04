@@ -7,16 +7,19 @@ draft: true
 ---
 
 # Concept
+
 - 功能：IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates.
 - 管理方式：**push-based** Ansible manages machines in an **agent-less** manner. Ansible by default manages machines **over the SSH protocol**. Because OpenSSH is one of the most peer-reviewed open source components, security exposure is greatly reduced.
 
 
 # Requirement
+
 - Control Machine: SSH client and Linux system
 - Managed Node: Python 2.5+ and SSH service, or windows supprt winrm
 
 
-# Nameing
+# Glossary
+
 - Control Machine
 - Managed Node
 - inventory
@@ -34,13 +37,14 @@ draft: true
 
 
 # SSH connection issue
+
 - 關閉SSH key host 檢查：在ansible.cfg內 host_key_checking = False
 - 關閉gathering facts: 所有playbook不管有沒有設定gathering facts tasks，都會執行，可以在playbook中加入 gather_facts: no
 - SSH PIPElinING: 預設為關閉，所以關閉的原因是要相容不同的 sudo設定，若不使用sudo可以在ansible.cfg內開啟 pipelining=True
 - ControlPersist: 即持久化socket一次驗證，多次通信，只需要修改SSH client也就是Ansible Control Machine本身的SSH 設定
- - ~/.ssh/config
+- ~/.ssh/config
 
-```
+```txt
 Host *
 Compression yes
 TCPKeepAlive yes
@@ -49,14 +53,14 @@ ServerAliveCountMax 5
 ControlMaster auto
 ControlPath ~/.ssh/sockets/%r@%h-%p
 ControlPersist 1200
-
 ```
 
 
 # module
 
 ## module_name and arguments
-```
+
+```txt
 ping            無參數
 comand          -a 'ifconfig'
 user            -a 'name= state={present(創建)|absent(刪除)} force=(是否強制操作刪除傢目錄) system= uid= shell= home='
@@ -72,7 +76,8 @@ setup           無參數
 ```
 
 ## inventory for all hosts ssh settings
-```
+
+```txt
 [all:vars]
 ansible_connection=ssh
 ansible_ssh_user='{{ user }}'
@@ -81,7 +86,8 @@ ansible_become_pass='{{ password }}'
 ```
 
 ## inventory for Differentiate Staging vs Production
-```
+
+```txt
 # file: production
 
 [atlanta-webservers]
@@ -120,10 +126,11 @@ boston-webservers
 boston-dbservers
 ```
 
-
 # syntax
+
 ## ansible syntax
-```
+
+```txt
 ansible <Patterns> -m <module_name> -a <arguments> <Options>
 
 Options:
@@ -145,13 +152,15 @@ Options:
 ```
 
 ## example
-```
+
+```txt
 ansible localhost -m ping #連本機自己,無須驗證
 ansible localhost -m ping -i "localhost," -u 帳號 -k 密碼 --key-file=私鑰檔案
 ```
 
 ## ansible-playbook syntax
-```
+
+```txt
 ansible-playbook playbook.yml <Options>
 
 Options:
@@ -166,7 +175,8 @@ Options:
 
 
 ## ansible-vault syntax
-```
+
+```txt
 ansible-vault [create|decrypt|edit|encrypt|rekey|view] [--help] [options] vaultfile.yml
 
 Options:
@@ -179,9 +189,10 @@ view foo.yml        檢視已加密的檔案內容。
 ```
 
 ## ansible playboox examples
+
 ### service
-```
----
+
+```yaml
 - hosts: all
   gather_facts: no
   tasks:
@@ -190,8 +201,8 @@ view foo.yml        檢視已加密的檔案內容。
 ```
 
 ### shell
-```
----
+
+```yaml
 - hosts: all
   gather_facts: no
   tasks:
@@ -204,8 +215,8 @@ view foo.yml        檢視已加密的檔案內容。
 ```
 
 ### copy, unzip, file
-```
----
+
+```yaml
 - hosts: all
   gather_facts: no
   tasks:
@@ -228,7 +239,8 @@ view foo.yml        檢視已加密的檔案內容。
 ```
 
 ### Handlers,  If nothing notifies a handler, it will not run
-```
+
+```yaml
 - name: template configuration file
   template: src=template.j2 dest=/etc/foo.conf
   notify:
@@ -243,9 +255,10 @@ view foo.yml        檢視已加密的檔案內容。
 ```
 
 ### retry task
+
 - Retry task 10 times with interval 1 second until return code of the command will not be 0. Ignore if even all tries will fail.
-```
----
+
+```yaml
 - hosts: all
   connection: local
   tasks:
@@ -259,11 +272,11 @@ view foo.yml        檢視已加密的檔案內容。
 ```
 
 ### Delegation, Rolling Updates, and Local Actions
+
 - By default, Ansible will try to manage all of the machines referenced in a play in parallel. For a rolling updates use case, you can define how many hosts Ansible should manage at a single time by using the ‘’serial’’ keyword:
 - examples:
 
-```
----
+```yaml
 - name: test play
   hosts: webservers
   service: name=httpd state=started
@@ -283,8 +296,10 @@ view foo.yml        檢視已加密的檔案內容。
 ```
 
 ## ansible-playbook with sudo and vaults
+
 - hosts
-```
+
+```txt
 [all:vars]
 ansible_connection=ssh
 ansible_ssh_user='{{ ansible_ssh_user }}'
@@ -292,8 +307,8 @@ ansible_ssh_pass='{{ ansible_ssh_pass }}'
 ansible_become_pass='{{ ansible_become_pass }}'
 ```
 
-- yml
-```
+- play
+```yaml
   ---
   - hosts: all
     gather_facts: no
@@ -304,14 +319,16 @@ ansible_become_pass='{{ ansible_become_pass }}'
 ```
 
 - vaults
- - ansible-vault edit YOUR-VAULT-FILE
-```
+- ansible-vault edit YOUR-VAULT-FILE
+
+```txt
 ansible_ssh_user: YOUR_USER_NAME
 ansible_ssh_pass: 'YOUR_PASSWORD'
 ansible_become_pass: 'YOUR_SUDO_PASSWORD'
 ```
 
 - run playbook with log output
-```
+
+```shell
 echo "`ansible-playbook YOUR_PLAYBOOK.yml --inventory "localhost," --user --ask-ssh-pass --become --ask-become-pass --ask-vault-pass -e@YOUR_VAULT_FILE -vvv`" | tee -a LOG-FILE-PATH
 ```
