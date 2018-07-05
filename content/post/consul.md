@@ -50,7 +50,8 @@ consul [--version] [--help] <command> [<args>]
 - validate: Validate config files/directories
 - info: Provides debugging information for operators.
 
-#### agent command args
+### agent command args
+
 - datacenter: Datacenter of the agent.
 - dev: Starts the agent in development mode.
 - data-dir:  Path to a data directory to store agent state.
@@ -72,47 +73,64 @@ consul [--version] [--help] <command> [<args>]
 - key_file
 - cert_file
 - ca_file
-- retry-join: allows retrying a join if the first attempt fails.
-```
+- retry-join: allows retrying a join if the first attempt fails
+
+```shell
 consul agent -retry-join "provider=aws tag_key=... tag_value=..."
 consul agent -retry-join "provider=gce project_name=... tag_value=..."
 consul agent -retry-join "provider=aliyun region=... tag_key=consul tag_value=... access_key_id=... access_key_secret=..."
 ```
 
 ### Create the Necessary Directory and System Structure
+
 - Create the user now by typing:
-```
+
+```shell
 adduser consul
 ```
 
 - create the configuration hierarchy
-```
-mkdir -p /etc/consul.d/{bootstrap,server,client}
+
+```shell
+mkdir -p /opt/consul
 ```
 
 - create a location where consul can store persistent data
-```
-mkdir ./data
-chown consul:consul ./data
+
+```shell
+mkdir /opt/consul/data
+chown consul:consul /opt/consul/data
 ```
 
 ### Setting up consul server cluster
 
-- server1 + bootstrap + ui
+- in production environment, server should be 3-5
+- create server1 + bootstrap + ui
 
-```
+```shell
 consul keygen
 X4SYOinf2pTAcAHRhpj7dA==
 
-consul agent -server -client=0.0.0.0 -bootstrap-expect=3 -datacenter=gcp-asia-east -node=node1 -data-dir="/opt/consul/data" -config-dir="./conf" -enable-script-checks=true -encrypt="X4SYOinf2pTAcAHRhpj7dA=="
+consul agent  -server \
+              -client=0.0.0.0 \
+              -bind=0.0.0.0 \
+              -bootstrap-expect=3 \
+              -datacenter=gcp-asia-east \
+              -node=node1 \
+              -data-dir="/opt/consul/data" \
+              -config-dir="/opt/consul/conf" \
+              -enable-script-checks=true \
+              -encrypt="X4SYOinf2pTAcAHRhpj7dA=="
 
 or using config file
+mkdir /opt/consul/conf
+consul agent -server -config-dir="/opt/consul/conf"
 
-consul agent -server -config-dir="./conf"
-
-#./conf/default.json
+#/opt/consul/conf/default.json
 {
+  "server": true,
   "client": "0.0.0.0",
+  "bind_addr": "0.0.0.0",
   "ports": {
       "https": 8080
   }
@@ -120,48 +138,93 @@ consul agent -server -config-dir="./conf"
   "data_dir": "/opt/consul/data",
   "enable-script-checks": "true",
   "log_level": "INFO",
-  "node_name": "mycluster",
-  "server": true,
+  "node_name": "server1",
+  "bootstrap_expect": 3,
   "encrypt": "X4SYOinf2pTAcAHRhpj7dA==",
   "key_file": "/etc/pki/tls/private/my.key",
   "cert_file": "/etc/pki/tls/certs/my.crt",
   "ca_file": "/etc/pki/tls/certs/ca-bundle.crt"
 }
+
 ```
 
 - in server2 and server 3
-```
-consul agent -node=node2 -data-dir="/opt/consul/data" -config-dir="./conf" -enable-script-checks=true -retry-join 
-consul agent -node=node3 -data-dir="/opt/consul/data" -config-dir="./conf" -enable-script-checks=true -retry-join 
+
+```shell
+consul agent -node=server2 -data-dir="/opt/consul/data" -config-dir="/opt/consul/conf" -enable-script-checks=true -retry-join
+consul agent -node=server3 -data-dir="/opt/consul/data" -config-dir="/opt/consul/conf" -enable-script-checks=true -retry-join
 ```
 
+## consul service register
+
+- create a location where consul can store persistent data
+
+```shell
+mkdir /opt/consul/data
+```
+
+Consul支持兩種服務註冊的方式
+
+- Using Consul HTTP API
+
+- Using config document, example as below
+
+```json
+#/opt/consul/conf/default.json
+{
+  "service": {
+    "name": "web",
+    "tags": ["dev"],
+    "address": "192.168.113.175",
+    "port": 80,
+    "checks": [
+      {
+        "http": "http://192.168.113.175/_health/",
+        "interval": "10s"
+      }
+    ]
+  }
+}
+```
+
+- 啟動 consul agent
+
+```shell
+consul agent -data-dir /opt/consul/data -node=web1 -bind=192.168.113.175 -config-dir="/opt/consul/conf/" &
+```
+
+- agnet 加入 server
+
+```shell
+consul join {{ SERVER_FQDN_OR_IP }}
+```
 
 ## service discovery
+
 - Defining a Service
 
-```
-echo '{"service": {"name": "web", "tags": ["rails"], "port": 80, "interval": "10s"}}' | sudo tee ./conf/web.json
-
+```shell
+echo '{"service": {"name": "web", "tags": ["dev"], "port": 80, "interval": "10s"}}' | sudo tee ./conf/web.json
 ```
 
 - Querying Services
 
-```
+```shell
 dig @127.0.0.1 -p 8600 web.service.consul
 
 ;; QUESTION SECTION:
 ;web.service.consul.        IN  A
 
 ;; ANSWER SECTION:
-web.service.consul. 0   IN  A   172.20.20.11
+web.service.consul. 0   IN  A   192.168.113.175
 
-dig @127.0.0.1 -p 8600 rails.web.service.consul
+dig @127.0.0.1 -p 8600 dev.web.service.consul
 
 ;; QUESTION SECTION:
-;rails.web.service.consul.      IN  A
+;dev.web.service.consul.      IN  A
 
 ;; ANSWER SECTION:
-rails.web.service.consul.   0   IN  A   172.20.20.11
+dev.web.service.consul.   0   IN  A   192.168.113.175
 
 dig @127.0.0.1 -p 8600 web.service.consul SRV
 
@@ -169,8 +232,10 @@ dig @127.0.0.1 -p 8600 web.service.consul SRV
 ;web.service.consul.        IN  SRV
 
 ;; ANSWER SECTION:
-web.service.consul. 0   IN  SRV 1 1 80 Armons-MacBook-Air.node.dc1.consul.
+web.service.consul. 0   IN  SRV 1 1 80 web1.gcp-asia-east.consul.
+web.service.consul. 0   IN  SRV 1 1 80 web2.gcp-asia-east.consul.
 
 ;; ADDITIONAL SECTION:
-Armons-MacBook-Air.node.dc1.consul. 0 IN A  172.20.20.11
+web1.gcp-asia-east.consul. 0 IN A  192.168.113.175
+web2.gcp-asia-east.consul. 0 IN A  192.168.113.176
 ```
