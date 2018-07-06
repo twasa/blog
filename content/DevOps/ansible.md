@@ -23,18 +23,17 @@ draft: true
 - Control Machine
 - Managed Node
 - inventory
- - 定義Managed Node主機位址與群組
- - 設定SSH 連線資訊、SSH金鑰、使用者名稱....等
+  - 定義Managed Node主機位址與群組
+  - 設定SSH 連線資訊、SSH金鑰、使用者名稱....等
 - Ad-Hoc command: 簡短一次性的指令
 - PlayBook: 使用YAML格式撰寫的腳本，可使用Jinja(template系統)
- - 一個PlayBook可有多個Play跟Task
- - Play: 要跑的大項目標，與Managed Node
- - Task: 要做的工作細項
- - module: 已寫好的自動化模組
- - Roles: 是一種分類 & 重用的概念，透過將 vars, tasks, files, templates, handler … 等等根據不同的目的(例如：web server、db server)，規劃後至於獨立目錄中，後續便可以利用 include 的概念來使用。
+  - 一個PlayBook可有多個Play跟Task
+  - Play: 要跑的大項目標，與Managed Node
+  - Task: 要做的工作細項
+  - module: 已寫好的自動化模組
+  - Roles: 是一種分類 & 重用的概念，透過將 vars, tasks, files, templates, handler … 等等根據不同的目的(例如：web server、db server)，規劃後至於獨立目錄中，後續便可以利用 include 的概念來使用。
 - Galayx:  是一個搜尋、分享與下載 roles的網站
-- facts: 實際上是ansible的setup module功能，用來取得Managed Node的系統變數資訊
-
+- facts: 實際上是ansible的setup module功能，用來取得Managed Node的系統資訊
 
 # SSH connection issue
 
@@ -52,9 +51,66 @@ ServerAliveInterval 120
 ServerAliveCountMax 5
 ControlMaster auto
 ControlPath ~/.ssh/sockets/%r@%h-%p
-ControlPersist 1200
+ControlPersist 1m
 ```
 
+# Speed Up Ansible
+
+- SSH multiplexing
+
+```cfg
+[ssh_connection]
+ssh_args = -o ControlMaster=auto -o ControlPersist=60s
+```
+
+- Pipelining
+
+[ssh_connection]
+pipelining = true
+
+- UseDNS
+
+UseDNS is an SSH-server setting (/etc/ssh/sshd_config file) which forces a server to check a client's PTR-record upon connection. It may cause connection delays especially with slow DNS servers on the server side. In modern Linux distribution, this setting is turned off by default, which is correct.
+
+- PreferredAuthentications
+
+It is an SSH-client setting which informs server about preferred authentication methods. By default Ansible uses:
+
+```cfg
+-o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey
+```
+
+So if GSSAPIAuthenticationis enabled on the server (at the time of writing this it is turned on in RHEL EC2 AMI) it will be tried as the first option, forcing the client and server to make PTR-record lookups. But in most cases, we want to use only public key auth. We can force Ansible to do so by changing ansible.cfg:
+
+```cfg
+[ssh_connection]
+ssh_args = -o ControlMaster=auto -o ControlPersist=60s -o PreferredAuthentications=publickey
+```
+
+- Facts Gathering
+
+```cfg
+gather_facts: no
+```
+
+- Fork
+
+The default value is 5, which is quite conservative. You can experiment with this setting depending on your local CPU and network bandwidth resources.
+
+```cfg
+[defaults]
+forks = 20
+```
+
+- Poll Interval
+
+When module is executed on remote host, Ansible starts to poll for its result. The lower is interval between poll attempts, the higher is CPU load on Ansible control host. But we want to have CPU available for greater forks number (see above). You can tweak poll interval in  ansible.cfg:
+If you run "slow" jobs (like backups) on multiple hosts, you may want to increase the interval to 0.05   to use less CPU.
+
+```cfg
+[defaults]
+internal_poll_interval = 0.001
+```
 
 # module
 
