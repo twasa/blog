@@ -9,7 +9,7 @@ draft: true
 
 - Windows 10 Anniversary Update build 14316 or later!
 - Administrator permission
-- cmder(Options, for good color schema and powerline fonts support)
+- cmder(Optional, for good color schema and powerline fonts support)
 
 ## Install Subsystem Linux using powershell
 
@@ -79,27 +79,32 @@ source $ZSH/oh-my-zsh.sh
 ```
 
 ## cmder configurations
+- Install font on windows
 
-- Main console font: DejaVuSansMono Nerd Font
+https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DejaVuSansMono/Regular/complete/DejaVu%20Sans%20Mono%20Nerd%20Font%20Complete.ttf
 
-- Alternative font: DejaVuSansMono Nerd Font
+- config cmder
+  - Main console font: DejaVuSansMono Nerd Font
 
-- Add a Tsks WSL in Startup > Tasks
+  - Alternative font: DejaVuSansMono Nerd Font
 
-- WSL task parameters
+  - Add a Tsks WSL in Startup > Tasks
 
-```txt
--icon "%USERPROFILE%\AppData\Local\lxss\bash.ico"
-```
+  - WSL task parameters
 
-- WSL task commands
+  ```txt
+  -icon "%USERPROFILE%\AppData\Local\lxss\bash.ico"
+  ```
 
-```txt
-set "PATH=%ConEmuBaseDirShort%\wsl;%PATH%" & %ConEmuBaseDirShort%\conemu-cyg-64.exe --wsl -cur_console:pm -t zsh -l
-```
+  - WSL task commands
 
-- Startup Specified named task: {WSL}
+  ```txt
+  set "PATH=%ConEmuBaseDirShort%\wsl;%PATH%" &   %ConEmuBaseDirShort%\conemu-cyg-64.exe --wsl -cur_console:pm   -t zsh -l
+  ```
 
+  - Startup Specified named task: {WSL}
 
-## Result
-![Example image](/static/oh-my-zsh.png)
+- close and re-open cmder
+
+- Result
+![Example image](/img/oh-my-zsh.png)
