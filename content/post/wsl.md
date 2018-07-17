@@ -1,9 +1,9 @@
 ---
-title: "Windows Subsystem for Linux install and configuration"
+title: "WSL + zsh + oh-my-zsh + powerlevel9k + cmder"
 date: 2018-07-08T23:00:24+08:00
 draft: true
 ---
-# Introduction Windows Subsystem for Linux and Beautiful shell
+# Introduction install Windows Subsystem for Linux and Beautiful shell
 
 ## Required
 
@@ -79,6 +79,7 @@ source $ZSH/oh-my-zsh.sh
 ```
 
 ## cmder configurations
+
 - Install font on windows
 
 https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DejaVuSansMono/Regular/complete/DejaVu%20Sans%20Mono%20Nerd%20Font%20Complete.ttf
@@ -107,4 +108,5 @@ https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DejaVuSansMono
 - close and re-open cmder
 
 - Result
+
 ![Example image](/img/oh-my-zsh.png)

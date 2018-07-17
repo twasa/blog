@@ -189,7 +189,7 @@ def hello(name=None):
 
 - Here is an example template:
 
-```
+```html
 <!doctype html>
 <title>Hello from Flask</title>
 {% if name %}
@@ -201,7 +201,7 @@ def hello(name=None):
 
 ### Flask will look for templates in the templates folder. So if your application is a module, this folder is next to that module, if it’s a package it’s actually inside your package:
 
-```
+```txt
 Case 1: a module:
 /application.py
 /templates

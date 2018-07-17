@@ -6,13 +6,17 @@ categories: [ "Database"]
 draft: true
 ---
 
+# MariaDB
+
 ## 第一次安裝完成，設定root的密碼
+
 mysqladmin -u root -p '密碼'
 or
 mysql_secure_installation
 
 ## 重設root密碼
-```
+
+```shell
 /etc/init.d/mysql stop
 mysqld_safe --skip-grant-tables &
 mysql -u root
@@ -25,7 +29,8 @@ mysql> quit
 ```
 
 ## 連線管理資料庫
-```
+
+```shell
 mysqladmin -u root -p
 Enter password:  此時再輸入密碼(建議採用)
 
@@ -59,7 +64,8 @@ mysql -u root
 ```
 
 ## 新增root可遠端存取 %表示任何IP或只接輸入IP
-```
+
+```shell
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '密碼' WITH GRANT OPTION;
 mysql> FLUSH PRIVILEGES;
 
@@ -74,12 +80,14 @@ SELECT INSERT UPDATE
 ```
 
 ## 查詢現有User
-```
+
+```shell
 select user from mysql.user;
 ```
 
 ## 查詢MySQL 對 此帳號 開放(GRANT)哪些權限
-```
+
+```shell
 查詢 某 User 的權限
 
 SELECT User,Host FROM mysql.user; # 秀出系統現在有哪些 user
@@ -96,25 +104,29 @@ SHOW GRANTS FOR CURRENT_USER();
 ```
 
 ## 修改
-```
+
+```shell
 mysql> update db set Host='202.54.10.20' where Db='webdb';
 mysql> update user set Host='202.54.10.20' where user='webadmin';
 ```
 
 ## 刪除
-```
+
+```shell
 mysql> DELETE FROM mysql.user WHERE User = 'root' AND Host = '%';
 mysql> FLUSH PRIVILEGES;
 ```
 
 ## 刪除空帳號
-```
+
+```shell
 mysql> DELETE FROM user WHERE User = '';
 mysql> FLUSH PRIVILEGES;
 ```
 
 ## 建立新帳號
-```
+
+```shell
 GRANT SELECT,INSERT,UPDATE ON datab_name.* TO user@host IDENTIFIED BY 'passwd';
 GRANT ALL ON *.* TO root@'10.99.1.%' IDENTIFIED BY '密碼';
 
@@ -128,13 +140,15 @@ mysql> GRANT 權限 ON 資料庫或資料表 TO 使用者 IDENTIFIED BY '密碼'
 ```
 
 ## 範例 把 db35 這個資料庫(含其下的所有資料表)，授權給 s35，從 localhost 上來
-```
+
+```shell
 mysql> GRANT all ON bugdb.* TO bug@'localhost' IDENTIFIED BY '密碼';
 mysql -h host -u user -p
 ```
 
 ## 安全性設定(*.*為資料庫.資料表, @前面的*表示帳號, %可改成IP比如140.92.25.1)
-```
+
+```shell
 GRANT ALL PRIVILEGES ON *.* TO '*'@'%' IDENTIFIED BY '密碼' WITH GRANT OPTION;
 mysql> FLUSH PRIVILEGES;   （最後一定要強迫更新權限）
 
@@ -173,7 +187,8 @@ USAGE    Synonym for “no privileges”
 ```
 
 ## 顯示目前有幾個資料庫
-```
+
+```shell
 mysql> SHOW DATABASES;
 +--------------------+
 | Database           |
@@ -187,12 +202,14 @@ mysql> SHOW DATABASES;
 ```
 
 ## 列出該資料庫所有資料表名稱
-```
+
+```shell
 mysql> SHOW TABLES FROM 資料庫名 [LIKE ...];
 ```
 
 ## 列出該資料表所有欄位名稱
-```
+
+```shell
 mysql> SHOW COLUMNS FROM table_name [LIKE ...];
 mysql> SHOW COLUMNS FROM table_name FROM db_name  [LIKE ...];
 mysql> SHOW FIELDS FROM table_name [LIKE ...];
@@ -201,7 +218,8 @@ mysql> EXPLAIN table_name ;
 ```
 
 ## 查詢資料庫大小
-```
+
+```shell
 SELECT table_schema "DB Name", Round(Sum(data_length + index_length) / 1024 / 1024, 1) "DB Size in MB" FROM information_schema.tables GROUP BY table_schema;
 +--------------------+---------------+
 | DB Name            | DB Size in MB |
@@ -213,7 +231,8 @@ SELECT table_schema "DB Name", Round(Sum(data_length + index_length) / 1024 / 10
 ```
 
 ## 查詢MySQL VARIABLES
-```
+
+```shell
 mysql> SHOW VARIABLES LIKE '%log_bin%';
 +---------------------------------+-------------------------------------------------+
 | Variable_name                   | Value                                           |
@@ -228,22 +247,26 @@ mysql> SHOW VARIABLES LIKE '%log_bin%';
 ```
 
 ## 建立資料庫;
-```
+
+```shell
 CREATE DATABASE 資料庫名;
 ```
 
 ## 使用資料庫
-```
+
+```shell
 USE 資料庫名;
 ```
 
 ## 刪除資料庫 DROP DATABASE 資料庫名;
-```
+
+```shell
 DROP DATABASE [IF EXISTS] 資料庫名;
 ```
 
 ## 建立資料表 CREATE TABLE 資料表名 (欄位1 資料型態, 欄位2 資料型態, ......);
-```
+
+```shell
 CREATE TABLE 資料表名 (autono INT NOT NULL AUTO_INCREMENT PRIMARY KEY, RACKID varchar(10), RACKLEVEL varchar(10), KVMID varchar(10), CUSERY varchar(20), SERVERENAME varchar(50), SERVERCNAME varchar(50), SERVERTYPE varchar(50), OSTYPE varchar(50), IPADDRESS varchar(20), SERVICEINFO varchar(50), CPUTYPE varchar(50), RAM varchar(20), STORAGE varchar(20), CRID varchar(50), FNTYPE varchar(20));
 
 資料結構(type):
@@ -284,27 +307,32 @@ SET     一個SET最多能有64個成員。
 ```
 
 ## 顯示表格
-```
+
+```shell
 SHOW TABLES;
 ```
 
 ## 刪除資料表 DROP TABLE 資料表名;
-```
+
+```shell
 DROP TABLE [IF EXISTS] tbl_name [, tbl_name,...]
 ```
 
 ## 顯示表格結構
-```
+
+```shell
 DESCRIBE infolist;
 ```
 
 ## 新增資料
-```
+
+```shell
 INSERT INTO infolist (RACKID,RACKLEVEL,KVMID,CUSERY,SERVERENAME,SERVERCNAME,SERVERTYPE,OSTYPE,IPADDRESS,SERVICEINFO,CPUTYPE,RAM,STORAGE,CRID,FNTYPE) VALUES ('1','1','1','test','demo center','DynaManager-90','ASUS RS500-E6','CAKE v3.0.16 Alpha Final','140.92.25.6','Virtualization(DAS)','Intel(R) Xeon(R) CPU E5620  @ 2.40GH *2','24G','DAS 1TB','S/N:134IH11','DeSSerT');
 ```
 
 ## Using System Variables
-```
+
+```shell
 SHOW VARIABLES;
 SHOW VARIABLES LIKE 'wait_timeout';
 SHOW VARIABLES LIKE 'interactive_timeout';
@@ -312,67 +340,80 @@ SHOW VARIABLES LIKE 'connect_timeout';
 ```
 
 ## 備份某個資料庫
-```
+
+```shell
 mysqldump -u root -p -h 主機 資料庫名 > 資料庫備份檔名
 ```
 
 ## 備份all資料庫
-```
+
+```shell
 mysqldump -u root -p -h 主機 --all-databases
 ```
 
 ## 同時備份多個MySQL資料庫
-```
+
+```shell
 mysqldump -u root -p -h 主機 –databases 資料庫名1 資料庫名2 資料庫名3 > 資料庫備份檔名
 ```
 
 ## 備份MySQL資料庫為帶刪除表的格式,能夠讓該備份覆蓋已有資料庫而不需要手動刪除原有資料庫.
-```
+
+```shell
 mysqldump -h 主機 -u root -p -–add-drop-table 資料庫名 > 資料庫備份檔名
 ```
 
 ## 僅備份資料庫結構
-```
+
+```shell
 mysqldump -h 主機 -u root -p --no-data -–databases databasename1 databasename2 databasename3 > structurebackupfile.sql
 ```
 
 ## 備份MySQL資料庫某個(些)表
-```
+
+```shell
 mysqldump -h 主機 -u root -p 資料庫名 specific_table1 specific_table2 > backupfile.sql
 ```
 
 ## 刪除資料庫的所有TABLES(DROP remove tables)
-```
+
+```shell
 mysql -h 主機 -u root -p -Nse 'show tables' 資料庫名 | while read table; do mysql -u root -p -e "drop table $table" 資料庫名; done
 ```
 
 ## 清空資料庫的所有TABLES(Truncate empty tables)
-```
+
+```shell
 mysql -h 主機 -u root -p -Nse 'SHOW TABLES' 資料庫名 | while read table; do mysql -u root -p -e "truncate table $table" 資料庫名; done
 ```
 
 ## 復原一個資料庫 (需先建好資料庫)
-```
+
+```shell
 mysql -u root -p -h 主機 資料庫名 < 資料庫備份檔
 ```
 
 ## 還原壓縮的MySQL資料庫
-```
+
+```shell
 gunzip < 資料庫備份檔名.sql.gz | mysql -h 主機 -u root -p 資料庫名
 ```
 
 ## 將資料庫轉移到新伺服器
-```
+
+```shell
 mysqldump -u -p databasename | mysql –host=*.*.*.* -C databasename
 ```
 
 ## If you want to see only a specific variable, you can use this command. Obviously you’d want to replace the max_connect_errors in that command with the variable that you’re looking for.
-```
+
+```shell
 SHOW VARIABLES LIKE '%max_connect_errors%';
 ```
 
 ## If you want to change the current state of a variable, you can do so easily with a command similar to this one:
-```
+
+```shell
 SET GLOBAL max_connect_errors=10000;
 Mysql> FLUSH HOSTS;
 
@@ -380,7 +421,8 @@ mysqlbinlog –start-datetime="2016-03-01 00:00:00" –stop-datetime="2016-03-16
 ```
 
 ## tips
-```
+
+```shell
 You need to use the -p flag to send a password. And it's tricky because you must have no space between -p and the password.
 
 $ mysql -h "server-name" -u "root" "-pXXXXXXXX" "database-name" < "filename.sql"
@@ -409,7 +451,8 @@ $ mysql -h "server-name" "database-name" < "filename.sql"
 ```
 
 ## slow query
-```
+
+```shell
 查看Server設定 ：show variables ;
 
 其中兩個參數，一個是slow_launch_time，一個是long_query_time。

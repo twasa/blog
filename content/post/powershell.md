@@ -7,12 +7,14 @@ draft: true
 ---
 
 # Powershell
+
 PowerShell Core is a cross-platform (Windows, Linux, and macOS) automation and configuration tool/framework that works well with your existing tools and is optimized for dealing with structured data (e.g. JSON, CSV, XML, etc.), REST APIs, and object models. It includes a command-line shell, an associated scripting language and a framework for processing cmdlets.
 
 ## cmdlet
+
 - get all cmdlet
 
-```
+```powershell
 Get-Command
 Get-Command -Name *IP*
 Get-Command -Module ISE -Name *IP*
@@ -23,23 +25,28 @@ Get-Process | Where-Object {$_.Name -eq "powershell"} #$_ is the current pipelin
 ```
 
 - cmdlet combind example: find all file mode = a
-```
+
+```powershell
 Get-ChildItem $env:USERPROFILE -Recurse -Force | Where-Object {$_.Mode -like "*a*"}
 ```
 
 ## Using
+
 - get powershell profile path
-```
+
+```powershell
 Get-Variable profile | Format-List
 ```
 
 - set alias
-```
+
+```powershell
 Set-Alias ll Get-ChildItem
 ```
 
 - define variable
-```
+
+```powershell
 $sourcedir = "r:\MYDATA" #string
 $tmp1 = $sourcedir -join '.rar '
 $tmp2 = $tmp1 + ".rar"
@@ -48,12 +55,12 @@ $targetpath = "e:\", "x:\", "f:\", "y:\" #
 ```
 
 - get variable type
-```
+
+```powershell
 $variable.GetType().FullName
 ```
 
 - Comparison Operators
-
 
 | Purpose                  | Operator | Example                   |
 |--------------------------|----------|---------------------------|
@@ -65,9 +72,9 @@ $variable.GetType().FullName
 | Less than or equal to    | -le      | 2 -le 1+1 (Returns $true) |
 
 
+- statements: if els
 
-- statements: if else
-```
+```powershell
 if (Test-Path $item){
     if ($? -notmatch "True"){
         #do something
@@ -79,23 +86,25 @@ Else {
 ```
 
 - statements: For loop
-```
+
+```powershell
 For ($i=0; $i -le 10; $i++) {
     "10 * $i = " + (10 * $i)
 }
 ```
 
 - statements: foreach
-```
+
+```powershell
 $items = 1,2,3,4,5
 ForEach ($item in $items){
     #do something
-}    
+}
 ```
 
 - define function
 
-```
+```powershell
 function FunctionNAME {
     #do something
 }
@@ -115,7 +124,8 @@ function FunctionNAME([String] $parm1 = "hello"){
 ```
 
 - call function
-```
+
+```powershell
 FunctionNAME
 FunctionNAME "test"
 FunctionNAME -parm1 "echo"
@@ -123,7 +133,7 @@ FunctionNAME -parm1 "echo"
 
 - prevent external Windows subsystem based EXE, for each command to end before starting the next
 
-```
+```powershell
 <path to exe> | Out-Null
 
 Start-Process <path to exe> -NoNewWindow -Wait
@@ -135,7 +145,8 @@ Receive-Job $job
 ```
 
 - get ClipboardText
-```
+
+```powershell
 add-type -an system.windows.forms
 [System.Windows.Forms.Clipboard]::GetText()
 
@@ -148,7 +159,8 @@ Get-Clipboard
 ```
 
 - set ClipboardText
-```
+
+```powershell
 add-type -an system.windows.forms
 [System.Windows.Forms.Clipboard]::SetText('hello world')
 
@@ -163,4 +175,3 @@ Set-Clipboard
    [-Confirm]
    [<CommonParameters>]
 ```
-

@@ -7,9 +7,10 @@ draft: true
 ---
 
 ## install
+
 - Create a /etc/yum.repos.d/mongodb-org-3.4.repo
 
-```
+```txt
 [mongodb-org-3.4]
 name=MongoDB Repository
 baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.4/x86_64/
@@ -20,14 +21,15 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
 
 - yum
 
-```
+```shell
 yum install -y mongodb-org
 ```
 
-
 ## config
+
 - default path /etc/mongod.
-```
+
+```txt
 # security
 db.createUser(
    {
@@ -40,53 +42,63 @@ security.authorization : enabled
 ```
 
 ## selinux
-```
+
+```txt
 semanage port -a -t mongod_port_t -p tcp 27017
 ```
 
 ## shell
 ### connection
-```
+
+```txt
 mongo --port 27017 -u "unitadmin" -p "xyz123" --authenticationDatabase "test"
 ```
 
 ### list current using db
-```
+
+```txt
 db
 ```
 
 ### 列出資料庫清單
-```
+
+```txt
 show dbs
 ```
 
 ### 切換資料庫
-```
+
+```txt
 use 資料庫名稱
 ```
 
 ### 驗證
-```
+
+```txt
 db.auth('account', 'password')
 ```
 
 ### 顯示協助訊息
-```
+
+```txt
 help
 ```
 
 ### 列出資料表
-```
+
+```txt
 show collections
 ```
 
 ### 列出collection 資料筆數
-```
+
+```txt
 db.products.count()
 ```
 
 ### CRUD
-```
+
+```txt
 example:
 db.collectionname.find(
   {name: "william"},    #query
@@ -95,25 +107,29 @@ db.collectionname.find(
 ```
 
 ### mongo <dbname> --eval "db.dropDatabase()" 移除 database。 或者下面這種方式：
+
 ```
 > use mydb;
 > db.dropDatabase();
 ```
 
 ### 離開mongo Shell
-```
+
+```txt
 exit
 ```
 
 ### 直接執行
-```
+
+```shell
 mongo 資料庫名稱 --eval "語法"
 mongo test --eval "db.egame.findOne()"
 mongo test --eval 'db.egame.remove({"createDateTime" : {$lt : ISODate("2017-06-10T13:56:00.001Z")}})'
 ```
 
 ### 使用js file帶入語法
-```
+
+```txt
 mongo < script.js
 //script.js 內容
 db.mycollection.findOne()
@@ -123,13 +139,16 @@ db.getCollectionNames().forEach(function(collection) {
 ```
 
 ## account and permission
+
 ### show accounts
-```
+
+```txt
 show users
 ```
 
 ### create account for db backup
-```
+
+```txt
 use 要備份的資料庫名稱
 db.createUser(
   {
@@ -140,7 +159,8 @@ db.createUser(
 )
 ```
 ### for db only account
-```
+
+```txt
 use 資料庫名稱
 db.createUser({
   user: "帳號",
@@ -177,7 +197,8 @@ db.removeUser(帳號)
 ```
 
 ## enable on config file
-```
+
+```yaml
 security:
   authorization: enabled # 前面要空白,不然服務會無法啟動
 ```
@@ -189,11 +210,11 @@ security:
 | collections | tables |
 | documents   | rows   |
 
-
 ## backup and restore
+
 - backup
 
-```
+```shell
 mongodump --gzip --archive=backup-file-name --db db-name --collection collection-name -q ""
 mongodump -d 資料庫名稱 -c egame -q '{"createDateTime":{$gte:ISODate("2017-06-11T00:00:00.000Z")}}' --gzip --archive=/tmp/backup.tgz
 
@@ -210,15 +231,16 @@ query.json 內容
 
 - restore
 
-```
+```shell
 mongorestore --db db-name --collection collection-name filename
 mongorestore --archive=filename --gzip
 ```
 
 ## Roles
+
 - refernece https://docs.mongodb.com/manual/reference/built-in-roles/
 
-```
+```txt
 read：允許帳號讀取指定資料庫
 readWrite：允許帳號讀寫指定資料庫
 backup,retore:允許備份、還原，在db.createUser()方法中roles里面的db必須是admin資料庫，不然會錯誤
@@ -233,7 +255,8 @@ root：只在admin資料庫中可用。等於最高權限帳號
 ```
 
 ## remove
-```
+
+```shell
 yum erase $(rpm -qa | grep mongodb-org)
 rm -r /var/log/mongodb
 rm -r /var/lib/mongo

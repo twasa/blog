@@ -1,11 +1,10 @@
 ---
-title: "About"
+title: "About Hugo"
 date: 2017-09-11T02:31:16+08:00
 draft: true
 ---
 
 Hugo is a static site engine written in Go.
-
 
 It makes use of a variety of open source projects including:
 
@@ -16,7 +15,7 @@ It makes use of a variety of open source projects including:
 
 Learn more and contribute on [GitHub](https://github.com/spf13).
 
-## Setup
+# Setup
 
 Some fun facts about [Hugo](http://gohugo.io/):
 
