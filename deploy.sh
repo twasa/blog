@@ -8,4 +8,3 @@ cd public
 git add -A
 git commit -m "Blog update `date`"
 git push origin master
-
