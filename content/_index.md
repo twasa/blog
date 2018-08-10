@@ -1,13 +1,13 @@
 ---
-title: "About"
+title: "About me"
 date: 2017-09-11T02:31:16+08:00
 draft: true
 ---
 
-# William Wang
+# About me
 
 -------------------
-本名王偉儼，故取了個發音相似的William Wang來當英文姓名，個性極具有工程師特質，喜愛專注於最短時間產生最大的生產力，熟練使用腳本與自動化來提升工作效率，總是不斷學習與研究更佳的方案、策略與實踐方法。
+本名王偉儼，故取了個發音相似的 William Wang 來當英文名字，個性極具有工程師特質，喜愛專注於最短時間產生最大的生產力，熟練使用腳本與自動化來提升工作效率，總是不斷學習與研究更佳的方案、策略與實踐方法。
 
 ## Technical Experience
 
@@ -19,7 +19,7 @@ draft: true
 
 - Virtualization
   - VMware
-  - KVM
+  - Linux KVM
   - Docker
 
 - Broad Technical Background
@@ -40,7 +40,6 @@ draft: true
   - Aliyun
   - Cloudflare
 
-<!--
 ## Experience
 
 ### Cloud DevOps Engineer／摩速科技有限公司 2017 年 11 月 - 至今
@@ -91,5 +90,3 @@ draft: true
 3. Assistant for test environment and procedure tuning
 4. Virtualization POC, technical support and training
 5. Python script language programming
-
---!>
