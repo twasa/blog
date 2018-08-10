@@ -1,4 +1,5 @@
 #!/bin/bash
+
 workdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $workdir
 git add -A
