@@ -1,7 +1,7 @@
 ---
-title: "DBs"
+title: "Linux"
 date: 2017-09-11T02:31:16+08:00
 draft: true
 ---
 
-各種資料庫的文件
+Linux的一些常用指令

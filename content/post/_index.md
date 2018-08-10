@@ -1,7 +1,7 @@
 ---
-title: "DBs"
+title: "post"
 date: 2017-09-11T02:31:16+08:00
 draft: true
 ---
 
-各種資料庫的文件
+尚未歸類的文件
