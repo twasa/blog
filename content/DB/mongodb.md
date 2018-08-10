@@ -5,6 +5,7 @@ tags: [ "Mongodb" ]
 categories: [ "Database", "NoSQL" ]
 draft: true
 ---
+# MonboDB
 
 ## install
 
@@ -48,57 +49,58 @@ semanage port -a -t mongod_port_t -p tcp 27017
 ```
 
 ## shell
+
 ### connection
 
-```txt
+```shell
 mongo --port 27017 -u "unitadmin" -p "xyz123" --authenticationDatabase "test"
 ```
 
 ### list current using db
 
-```txt
+```shell
 db
 ```
 
 ### 列出資料庫清單
 
-```txt
+```shell
 show dbs
 ```
 
 ### 切換資料庫
 
-```txt
+```shell
 use 資料庫名稱
 ```
 
 ### 驗證
 
-```txt
+```shell
 db.auth('account', 'password')
 ```
 
 ### 顯示協助訊息
 
-```txt
+```shell
 help
 ```
 
 ### 列出資料表
 
-```txt
+```shell
 show collections
 ```
 
 ### 列出collection 資料筆數
 
-```txt
+```shell
 db.products.count()
 ```
 
 ### CRUD
 
-```txt
+```shell
 example:
 db.collectionname.find(
   {name: "william"},    #query
@@ -106,30 +108,30 @@ db.collectionname.find(
   ).limit(5)            #modifier
 ```
 
-### mongo <dbname> --eval "db.dropDatabase()" 移除 database。 或者下面這種方式：
+### mongo {{ DB_NAME }} --eval "db.dropDatabase()" 移除 database。 或者下面這種方式：
 
-```
+```shell
 > use mydb;
 > db.dropDatabase();
 ```
 
 ### 離開mongo Shell
 
-```txt
+```shell
 exit
 ```
 
 ### 直接執行
 
 ```shell
-mongo 資料庫名稱 --eval "語法"
+mongo {{ DB_NAME }} --eval "語法"
 mongo test --eval "db.egame.findOne()"
 mongo test --eval 'db.egame.remove({"createDateTime" : {$lt : ISODate("2017-06-10T13:56:00.001Z")}})'
 ```
 
 ### 使用js file帶入語法
 
-```txt
+```shell
 mongo < script.js
 //script.js 內容
 db.mycollection.findOne()
@@ -142,13 +144,13 @@ db.getCollectionNames().forEach(function(collection) {
 
 ### show accounts
 
-```txt
+```shell
 show users
 ```
 
 ### create account for db backup
 
-```txt
+```shell
 use 要備份的資料庫名稱
 db.createUser(
   {
@@ -158,9 +160,10 @@ db.createUser(
   }
 )
 ```
+
 ### for db only account
 
-```txt
+```shell
 use 資料庫名稱
 db.createUser({
   user: "帳號",
@@ -200,7 +203,7 @@ db.removeUser(帳號)
 
 ```yaml
 security:
-  authorization: enabled # 前面要空白,不然服務會無法啟動
+  authorization: enabled
 ```
 
 ## compare with relational database

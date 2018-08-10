@@ -11,14 +11,12 @@ draft: true
 - 功能：IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates.
 - 管理方式：**push-based** Ansible manages machines in an **agent-less** manner. Ansible by default manages machines **over the SSH protocol**. Because OpenSSH is one of the most peer-reviewed open source components, security exposure is greatly reduced.
 
-
-# Requirement
+## Requirement
 
 - Control Machine: SSH client and Linux system
 - Managed Node: Python 2.5+ and SSH service, or windows supprt winrm
 
-
-# Glossary
+## Glossary
 
 - Control Machine
 - Managed Node
@@ -35,7 +33,7 @@ draft: true
 - Galayx:  是一個搜尋、分享與下載 roles的網站
 - facts: 實際上是ansible的setup module功能，用來取得Managed Node的系統資訊
 
-# SSH connection issue
+## SSH connection issue
 
 - 關閉SSH key host 檢查：在ansible.cfg內 host_key_checking = False
 - 關閉gathering facts: 所有playbook不管有沒有設定gathering facts tasks，都會執行，可以在playbook中加入 gather_facts: no
@@ -54,7 +52,7 @@ ControlPath ~/.ssh/sockets/%r@%h-%p
 ControlPersist 1m
 ```
 
-# Speed Up Ansible
+## Speed Up Ansible
 
 - SSH multiplexing
 
@@ -364,6 +362,7 @@ ansible_become_pass='{{ ansible_become_pass }}'
 ```
 
 - play
+
 ```yaml
   ---
   - hosts: all

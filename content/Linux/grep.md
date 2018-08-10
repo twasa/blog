@@ -7,25 +7,29 @@ draft: true
 ---
 
 ## description
+
 - prints lines that contain a match for a pattern
 - reference
-```
-https://www.gnu.org/software/grep/manual/grep.html
-```
+
+<https://www.gnu.org/software/grep/manual/grep.html>
 
 ## syntax
 
-```
+```shell
 grep [OPTIONS] PATTERN [FILE...]
+```
 
-grep multiple patterns
+- grep multiple patterns
 
-OR
+```shell
+#OR
 grep 'pattern1\|pattern2\|pattern3'
 
-AND
+#AND
 grep -E 'pattern1.*pattern2.*pattern3' filename
+```
 
+```shell
 -v, --invert-match
     Invert the sense of matching, to select non-matching lines. (-v is specified by POSIX .)
 

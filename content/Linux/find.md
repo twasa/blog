@@ -9,10 +9,12 @@ draft: true
 # find
 
 ## description
+
 - search for files in a directory hierarchy
 
 ## syntax
-```
+
+```shell
 find [options] [path...] [expression]
 
 --newerXY
