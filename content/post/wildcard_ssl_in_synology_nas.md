@@ -38,7 +38,8 @@ $ ./acme.sh --issue -d "$CERT_DOMAIN" --dns "$CERT_DNS" \
       --certpath /usr/syno/etc/certificate/system/default/cert.pem \
       --keypath /usr/syno/etc/certificate/system/default/privkey.pem \
       --fullchainpath /usr/syno/etc/certificate/system/default/fullchain.pem \
-      --reloadcmd "/usr/syno/sbin/synoservicectl --reload nginx" \
+      --capath /usr/syno/etc/certificate/system/default/chain.pem \
+      --reloadcmd "cp -a /usr/syno/etc/certificate/system/default/* `find /usr/syno/etc/certificate/_archive/ -maxdepth 1 -mindepth 1 -type d` && /usr/syno/sbin/synoservicectl --reload nginx" \
       --dnssleep 20 \
       --config-home "/path/to/save/acmeconfigs/"
 ```
