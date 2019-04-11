@@ -1,4 +1,4 @@
-baseURL = "https://blog.twasa.cf/"
+baseURL = "https://twasa.ml/"
 languageCode = "en-US"
 defaultContentLanguage = "en"
 
@@ -9,7 +9,7 @@ metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= true
 
 [params]
-  editURL = "https://blog.twasa.cf"
+  editURL = "https://twasa.ml"
   description = "William's blog"
   author = "Mathieu Cornic"
   showVisitedLinks = true
