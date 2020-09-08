@@ -3,6 +3,7 @@ title: "WSL + zsh + oh-my-zsh + powerlevel9k + cmder"
 date: 2018-07-08T23:00:24+08:00
 draft: true
 ---
+
 # Introduction install Windows Subsystem for Linux and Beautiful shell
 
 ## Required
