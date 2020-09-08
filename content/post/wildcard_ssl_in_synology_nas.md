@@ -1,5 +1,5 @@
 ---
-title: "How to install and auto update Let's encrypt wildcard certs on Synology NAS with cloudflare DNS API"
+title: "How to install and auto update Let's encrypt wildcard certs on Synology NAS with Route53 DNS"
 date: 2018-07-05T02:25:04+08:00
 draft: true
 ---
